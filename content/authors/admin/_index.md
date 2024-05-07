@@ -3,7 +3,7 @@
 title: Nicholas A. Vest
 
 # Name pronunciation (optional)
-name_pronunciation:
+name_pronunciation: Hi
 
 # Full name (for SEO)
 first_name: Nicholas
