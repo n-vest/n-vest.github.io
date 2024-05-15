@@ -52,7 +52,7 @@ education:
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
   - icon: osf
-    icon_pack: academicons
+    icon_pack: Academicons
     link: https://osf.io/jzfa8/
   - icon: envelope
     icon_pack: fas
