@@ -67,7 +67,7 @@ social:
     icon_pack: fab
     link: https://github.com/n-vest
   - icon: osf
-    icon_pack: fab
+    icon_pack: academicons
     link: https://osf.io/jzfa8/
 
 # Highlight the author in author lists? (true/false)
