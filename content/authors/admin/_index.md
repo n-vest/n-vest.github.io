@@ -59,16 +59,13 @@ social:
     link: https://twitter.com/nicholas_vest
     label: Follow me on Twitter
     display:
-      header: true
+      header: false
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.co.uk/citations?user=IW2udwcAAAAJ&hl=en
   - icon: github
     icon_pack: fab
     link: https://github.com/n-vest
-  - icon: hero/sparkles
-    icon_pack: hero
-    link: https://osf.io/jzfa8/
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
