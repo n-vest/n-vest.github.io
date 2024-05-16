@@ -74,5 +74,12 @@ social:
 highlight_name: true
 ---
 
-Under construction.
+I am a graduate student in the Department of Psychology at the University of Wisconsin-Madison. I work in the Cognitive Development and Communication Lab. 
+
+Prior to graduate school, I was a lab manager for the Learning, Education, and Development Lab in the Department of Psychological and Brain Sciences at Indiana University.
+
+Starting Fall 2024, I will be exploring opportunities for post-doctoral positions as well as tenure track faculty positions.
+
+Broadly, my research interests include numerical and mathematical cognitive development. I am particularly passionate about exploring how cognitive processes intersect with education and child development, aiming to make meaningful contributions to these fields through my research.
+
 {style="text-align: justify;"}
