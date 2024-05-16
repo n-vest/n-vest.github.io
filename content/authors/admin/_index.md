@@ -41,7 +41,7 @@ education:
       year: 2025
     - course: MSc in Developmental Psychology
       institution: University of Wisconsin-Madison
-      year: 2020
+      year: 2021
     - course: BSc in Psychology
       institution: Indiana University-Bloomington
       year: 2016
