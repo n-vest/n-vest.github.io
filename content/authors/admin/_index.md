@@ -29,9 +29,9 @@ bio: My research interests include mathematical and numerical cognitive developm
 
 # Interests to show in About widget
 interests:
-  - Cognitive Development
-  - Numerical Cognition
-  - Mathematical Cognition
+  - Numerical magnitude
+  - Mathematical fluency
+  - Affect in the classroom
 
 # Education to show in About widget
 education:
