@@ -2,7 +2,7 @@
 title: Concepts of Zero
 summary: Examining the children's conceptions of zero
 tags:
-  - Integer Understanding
+  - Integers
 date: '2016-04-27T00:00:00Z'
 
 ---

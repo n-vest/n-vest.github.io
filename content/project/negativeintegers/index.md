@@ -1,8 +1,8 @@
 ---
-title: Negative Numbers
+title: Negative Number Magnitudes
 summary: Examining the cognitive representations of negative numbers
 tags:
-  - Integer Understanding
+  - Integers
 date: '2016-04-27T00:00:00Z'
 
 ---
