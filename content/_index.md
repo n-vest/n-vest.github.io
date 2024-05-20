@@ -59,10 +59,12 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Integer Understanding
-          tag: Integer Understanding
-        - name: Pattern Learning
-          tag: Pattern Learning
+        - name: Integers
+          tag: Integers
+        - name: Patterns
+          tag: Patterns
+        - name: Algebra
+          tag: Algebra
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '2'
