@@ -1,11 +1,13 @@
 ---
-title: Supporting Children's Patterning
-summary: How can we best teach children patterns?
+title: Finding Functions in Datasets
+summary: Do people struggle to detect patterns from datasets such as positive or negative linear growth?
 tags:
+  - Algebra
   - Patterns
+  - Integers
 date: '2016-04-27T00:00:00Z'
 
 ---
 
-In my graduate studies, I have been examining ways to improve children's patterning skills.
+In a new study, I seek to integrate my research to test how college students induce patterns from small datasets.
 

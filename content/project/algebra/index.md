@@ -1,10 +1,8 @@
 ---
-title: Finding Functions in Datasets
-summary: Do people struggle to detect patterns from datasets such as positive or negative linear growth?
+title: Conceptual and Procedural Knowledge of Algebra
+summary: What concepts and procedures associated with algebraic linear equations?
 tags:
   - Algebra
-  - Patterns
-  - Integers
 date: '2016-04-27T00:00:00Z'
 
 ---
