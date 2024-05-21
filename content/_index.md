@@ -39,7 +39,7 @@ sections:
   - block: about.biography
     id: about
     content:
-      title: Biography
+      title: <p style="font-size:23px;font-family:roboto;color:#4c925f"><b>Biography</b></p>
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
   - block: portfolio
