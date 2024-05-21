@@ -73,6 +73,7 @@ social:
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
+<i>Hello! 👋 </i>
 
 I am a graduate student in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin-Madison. I work in the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/). 
 
