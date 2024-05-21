@@ -1,6 +1,6 @@
 ---
 title: Negative Number Magnitudes
-summary: Examining the cognitive representations of negative numbers
+summary: Do children and adults have magnitude knowledge about negative numbers?
 tags:
   - Integers
 date: '2016-04-27T00:00:00Z'

@@ -1,6 +1,6 @@
 ---
 title: Supporting Children's Patterning
-summary: How can we best teach children patterns?
+summary: How can we best teach children repeating and growing shape patterns?
 tags:
   - Patterns
 date: '2016-04-27T00:00:00Z'

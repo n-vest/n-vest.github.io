@@ -1,6 +1,6 @@
 ---
 title: Finding Functions in Datasets
-summary: Do people struggle to detect patterns from datasets such as positive or negative linear growth?
+summary: Can adults detect patterns from small datasets such as positive or negative linear growth?
 tags:
   - Algebra
   - Patterns
