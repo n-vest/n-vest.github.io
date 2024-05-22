@@ -10,8 +10,9 @@ In my graduate studies, I am investigating (1) student’s explicit and implicit
 
 I hypothesize that (1) children’s concepts of zero will fall into two groups: the empty set or the symmetry point between positive and negative numbers, (2) practice with a number line that includes negative as well as positive numbers will encourage children to develop an explicit understanding of zero as the symmetry point (i.e., the midpoint between positives and negatives), and (3) activities with the number line will also support children’s use of the additive inverse principle. 
 
-<strong>Selected Works:</strong>
-Vest, N.A. & Alibali, M.W. (under review). Is zero more than nothing? Relations between concepts of zero and integer understanding.
+<strong>Selected Works:</strong>  
+
+Vest, N.A. & Alibali, M.W. (under review). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [preprint]
 
 Vest, N.A. & Alibali, M.W. (2023, June). Conceptions of zero and the semantic congruence effect: Evidence from children and adults. In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [slides]
 
