@@ -3,7 +3,7 @@ title: Concepts of Zero
 summary: What are children's conceptions of zero and do they relate to integer knowledge?
 tags:
   - Integers
-date: '2016-04-27T00:00:00Z'
+date: '2024-05-22T00:00:00Z'
 
 ---
 In my graduate studies, I am investigating (1) student’s explicit and implicit concepts of zero, (2) whether an activities with number lines fosters learning sophisticated concepts of zero, and (3) whether concepts of zero predict students’ performance on problems that involve the additive inverse principle (X + -X = 0). We assess explicit concepts via questions tapping student’s definition of zero (e.g., “What is zero?”) and we measure implicit concepts via timed magnitude comparisons (e.g., “Choose the greater number: -2  0”). 
