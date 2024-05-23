@@ -3,7 +3,7 @@ title: Conceptual and Procedural Knowledge of Algebra
 summary: What concepts and procedures are involved with solving linear equations in algebra?
 tags:
   - Algebra
-date: '2016-04-27T00:00:00Z'
+date: '2024-05-23T00:00:00Z'
 
 ---
 <img align="left" src="https://n-vest.github.io/project/algebra/its.webp" alt="ITS"><p>In another project, I am working with an interdisciplinary team (psychologists, computer scientists, and former educators) to study how to enhance algebra learning through the integration of key concepts and problem-solving procedures. Our team is tackling this question using a software-based intelligent tutoring system (ITS), which uses artificial intelligence to provide detailed and targeted guidance that adapts to students’ errors, strategies, and developing algebra knowledge. We are testing the effects of variations in the ITS on middle-school students’ learning about linear equations.</p>
