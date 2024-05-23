@@ -18,4 +18,4 @@ Vest, N.A., Silla, E. M., Bartel, A. N., Nagashima, T., Aleven, V., & Alibali, M
 
 Vest, N.A., Silla, E.M., Bartel, A.N., Nagashima, T., Aleven, V., & Alibali, M.W. (2021, April) <span style="color:green">Learning from worked examples: Conceptually rich explanations predict conceptual gains.</span> [Poster] Biennial Meeting of the Society for Research in Child Development. [[poster]](https://n-vest.github.io/project/algebra/)
 
-Vest, N. A., Fyfe, E. R., Nathan, M. J., & Alibali, M. W. (2020). <span style="color:green">Learning from an avatar video instructor: The role of gesture mimicry.</span> Gesture. [[paper]](http://dx.doi.org/10.1075/gest.18019.ves)
+Vest, N. A., Fyfe, E. R., Nathan, M. J., & Alibali, M. W. (2020). <span style="color:green">Learning from an avatar video instructor: The role of gesture mimicry.</span> Gesture. [[paper]](https://www.researchgate.net/publication/350888767_Learning_from_an_avatar_video_instructor_The_role_of_gesture_mimicry)
