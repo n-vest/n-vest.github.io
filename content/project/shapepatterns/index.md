@@ -6,6 +6,5 @@ tags:
 date: '2016-04-27T00:00:00Z'
 
 ---
-
-In my graduate studies, I have been examining ways to improve children's patterning skills.
+<img src="https://n-vest.github.io/project/shapepatterns/patterns.png" alt="Zero">In my graduate studies, I have been examining ways to improve children's patterning skills.
 
