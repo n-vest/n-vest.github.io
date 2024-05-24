@@ -12,9 +12,9 @@ In one study, I investigated whether an instructor's gestures could help childre
 
 <strong>Selected Works:</strong>
 
-Vest, N. A., Anthony, L. E., Becerra, C., Maheshwary, P., Callery, K., Shack, A. P., & Alibali, M. W. (2024, March). Learning to extend shape and number patterns: Do lessons focused on the pattern unit help? [Poster] Biennial Meeting of the Cognitive Development Society. [[poster]](http://dx.doi.org/10.13140/RG.2.2.20787.64804)
+Vest, N. A., Anthony, L. E., Becerra, C., Maheshwary, P., Callery, K., Shack, A. P., & Alibali, M. W. (2024, March). <span style="color:green">Learning to extend shape and number patterns: Do lessons focused on the pattern unit help?</span> [Poster] Biennial Meeting of the Cognitive Development Society. [[poster]](http://dx.doi.org/10.13140/RG.2.2.20787.64804)
 
-Vest, N. A., Fagan, S. E., & Fyfe, E. R. (2022). The role of gesture and mimicry for children’s pattern learning. Cognitive Development. [[paper]](https://www.researchgate.net/publication/361265082_The_role_of_gesture_and_mimicry_for_children's_pattern_learning)
+Vest, N. A., Fagan, S. E., & Fyfe, E. R. (2022). <span style="color:green">The role of gesture and mimicry for children’s pattern learning.</span> Cognitive Development. [[paper]](https://www.researchgate.net/publication/361265082_The_role_of_gesture_and_mimicry_for_children's_pattern_learning)
 
 
 
