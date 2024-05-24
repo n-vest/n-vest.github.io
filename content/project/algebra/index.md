@@ -12,7 +12,7 @@ date: '2024-05-23T00:00:00Z'
 
 <p>Also, as a lab manager, I spearheaded an independent project exploring gesture and algebra learning. In this research, I examined whether students mimic the gestures produced by a computer-animated pedagogical avatar during a mathematics lesson.</p>
 
-<strong>Related Works:</strong>  
+<strong>Selected Works:</strong>  
 
 Vest, N. A., Silla, E. M., Bartel, A. N., Nagashima, T., Aleven, V., & Alibali, M. W. (2022, July). <span style="color:green">Self-explanation of worked examples integrated in an Intelligent Tutoring System enhances problem solving and efficiency in algebra.</span> Proceedings of the Annual Conference of the Cognitive Science Society. Toronto, Canada. [[paper]](https://www.researchgate.net/publication/362505071_Self-Explanation_of_Worked_Examples_Integrated_in_an_Intelligent_Tutoring_System_Enhances_Problem_Solving_and_Efficiency_in_Algebra)
 
