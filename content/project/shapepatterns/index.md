@@ -10,11 +10,11 @@ date: '2024-05-24T00:00:00Z'
 
 In one study, I investigated whether an instructor's gestures could help children identify pattern units and improve their performance in patterning tasks. Additionally, I explored whether having children mimic the instructor's gestures would enhance their understanding. In another study, I examined whether providing perceptual support, such as drawing a line under the pattern unit, would help children recognize the pattern units more effectively.
 
-<strong>Related Works:</strong>
+<strong>Selected Works:</strong>
 
-Vest, N. A., Anthony, L. E., Becerra, C., Maheshwary, P., Callery, K., Shack, A. P., & Alibali, M. W. (2024, March). Learning to extend shape and number patterns: Do lessons focused on the pattern unit help? [Poster] Biennial Meeting of the Cognitive Development Society. [poster](http://dx.doi.org/10.13140/RG.2.2.20787.64804)
+Vest, N. A., Anthony, L. E., Becerra, C., Maheshwary, P., Callery, K., Shack, A. P., & Alibali, M. W. (2024, March). Learning to extend shape and number patterns: Do lessons focused on the pattern unit help? [Poster] Biennial Meeting of the Cognitive Development Society. [[poster]](http://dx.doi.org/10.13140/RG.2.2.20787.64804)
 
-Vest, N. A., Fagan, S. E., & Fyfe, E. R. (2022). The role of gesture and mimicry for children’s pattern learning. Cognitive Development. [paper](https://www.researchgate.net/publication/361265082_The_role_of_gesture_and_mimicry_for_children's_pattern_learning)
+Vest, N. A., Fagan, S. E., & Fyfe, E. R. (2022). The role of gesture and mimicry for children’s pattern learning. Cognitive Development. [[paper]](https://www.researchgate.net/publication/361265082_The_role_of_gesture_and_mimicry_for_children's_pattern_learning)
 
 
 
