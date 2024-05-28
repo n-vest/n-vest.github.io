@@ -3,7 +3,7 @@ title: Negative Number Magnitudes
 summary: Do children and adults have magnitude knowledge about negative numbers?
 tags:
   - Integers
-date: '2016-04-27T00:00:00Z'
+date: '2024-05-27T00:00:00Z'
 
 ---
 <img src="https://n-vest.github.io/project/negativeintegers/negint.png" alt="SMC">
