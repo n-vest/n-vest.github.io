@@ -1,5 +1,5 @@
 ---
-title: Negative Magnitudes
+title: Negative Integer Magnitudes
 summary: Do children and adults have magnitude knowledge about negative numbers?
 tags:
   - Integers
