@@ -1,6 +1,6 @@
 ---
 title: Concepts of Zero
-summary: What are children's conceptions of zero and do they relate to integer knowledge?
+summary: What are children's concepts of zero and do they relate to integer knowledge?
 tags:
   - Integers
 date: '2024-05-22T00:00:00Z'
