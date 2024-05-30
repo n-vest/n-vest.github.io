@@ -6,7 +6,7 @@ tags:
 date: '2024-05-24T00:00:00Z'
 
 ---
-<img src="https://n-vest.github.io/project/shapepatterns/patterns.png" alt="Zero">Children are constantly recognizing and encoding patterns in their environment, and math is essentially the science of patterns. Importantly, children's ability to recognize shape patterns (e.g., square, circle, circle, square, circle, circle) is related to their numerical knowledge. Part of my research focuses on teaching patterns to young children.
+<img src="https://n-vest.github.io/project/shapepatterns/patterns.png" alt="Zero" style='border:1px solid #000000'>Children are constantly recognizing and encoding patterns in their environment, and math is essentially the science of patterns. Importantly, children's ability to recognize shape patterns (e.g., square, circle, circle, square, circle, circle) is related to their numerical knowledge. Part of my research focuses on teaching patterns to young children.
 
 In one study, I investigated whether an instructor's gestures could help children identify pattern units and improve their performance in patterning tasks. Additionally, I explored whether having children mimic the instructor's gestures would enhance their understanding. In another study, I examined whether providing perceptual support, such as drawing a line under the pattern unit, would help children recognize the pattern units more effectively.
 
