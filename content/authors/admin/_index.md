@@ -39,10 +39,10 @@ education:
     - course: PhD in Developmental Psychology
       institution: University of Wisconsin-Madison
       year: 2025
-    - course: MSc in Developmental Psychology
+    - course: MS in Developmental Psychology
       institution: University of Wisconsin-Madison
       year: 2021
-    - course: BSc in Psychology
+    - course: BS in Psychology
       institution: Indiana University-Bloomington
       year: 2016
 
