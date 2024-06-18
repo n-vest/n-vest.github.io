@@ -1,6 +1,6 @@
 ---
 title: Understanding of Zero
-summary: What are children's concepts of zero and do they relate to integer knowledge?
+summary: How do students' explicit and implicit concepts of zero develop, and how do activities with number lines influence their understanding of zero and their ability to use the additive inverse principle?
 tags:
   - Integers
 date: '2024-05-22T00:00:00Z'
