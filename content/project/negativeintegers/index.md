@@ -1,6 +1,6 @@
 ---
 title: Understanding of Negative Integer Magnitudes
-summary: Do children and adults have magnitude knowledge about negative numbers?
+summary: How do people mentally represent negative integers, and how do these representations influence their behavior during numerical tasks such as symbolic number comparisons?
 tags:
   - Integers
 date: '2024-05-27T00:00:00Z'
