@@ -1,6 +1,6 @@
 ---
 title: Supporting Children's Patterning
-summary: How can we best teach children repeating and growing shape patterns?
+summary: How can instructional strategies, such as the use of gestures and perceptual support, enhance young children's ability to recognize and understand shape patterns, and how does this impact their numerical knowledge?
 tags:
   - Patterns
 date: '2024-05-24T00:00:00Z'
