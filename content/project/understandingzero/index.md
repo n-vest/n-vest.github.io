@@ -6,7 +6,7 @@ tags:
 date: '2024-05-22T00:00:00Z'
 
 ---
-<img src="https://n-vest.github.io/project/understandingzero/zero.png" alt="Zero" style='border:1px solid #000000'>In my graduate studies, I am investigating (1) student’s explicit and implicit concepts of zero, (2) whether an activities with number lines fosters learning sophisticated concepts of zero, and (3) whether concepts of zero predict students’ performance on problems that involve the additive inverse principle (X + -X = 0). We assess explicit concepts via questions tapping student’s definition of zero (e.g., “What is zero?”) and we measure implicit concepts via timed magnitude comparisons (e.g., “Choose the greater number: -2  0”). 
+In my graduate studies, I am investigating (1) student’s explicit and implicit concepts of zero, (2) whether an activities with number lines fosters learning sophisticated concepts of zero, and (3) whether concepts of zero predict students’ performance on problems that involve the additive inverse principle (X + -X = 0). We assess explicit concepts via questions tapping student’s definition of zero (e.g., “What is zero?”) and we measure implicit concepts via timed magnitude comparisons (e.g., “Choose the greater number: -2  0”). 
 <p> </p>
 <p>I hypothesize that (1) children’s concepts of zero will fall into two groups: the empty set or the symmetry point between positive and negative numbers, (2) practice with a number line that includes negative as well as positive numbers will encourage children to develop an explicit understanding of zero as the symmetry point (i.e., the midpoint between positives and negatives), and (3) activities with the number line will also support children’s use of the additive inverse principle.</p>
 
