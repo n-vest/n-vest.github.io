@@ -1,6 +1,6 @@
 ---
 title: Conceptual and Procedural Knowledge of Algebra
-summary: What concepts and procedures are involved with solving linear equations in algebra?
+summary: How can adaptive instructional strategies and tools, such as intelligent tutoring systems and pedagogical gestures, influence the development of mathematical understanding and problem-solving skills in middle-school students?
 tags:
   - Algebra
 date: '2024-05-23T00:00:00Z'
