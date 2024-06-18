@@ -6,7 +6,6 @@ tags:
 date: '2024-05-27T00:00:00Z'
 
 ---
-<img src="https://n-vest.github.io/project/negativeintegers/negint.png" alt="SMC">
 <p>In another arm of my graduate studies, I have been exploring how people mentally represent negative integers. There are potentially two ways to represent a negative integer like -4. One approach is to imagine the positive number "4" and then apply a rule to account for the negative sign ("-"). The other approach is to represent the integer holistically, perhaps visualizing it on mental number line.</p>
 <p> </p>
 <p>Each type of mental representation leaves distinct behavioral signatures, such as reaction times (RT), during numerical tasks like symbolic number comparisons. In multiple studies, I have examined the behaviors of both adults and children during these tasks. Our results indicate that there are indeed multiple ways to represent integers, and these methods might not be mutually exclusive.</p>
