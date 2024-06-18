@@ -1,5 +1,5 @@
 ---
-title: Concepts of Zero
+title: Understanding of Zero
 summary: What are children's concepts of zero and do they relate to integer knowledge?
 tags:
   - Integers
