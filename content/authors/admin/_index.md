@@ -75,7 +75,7 @@ highlight_name: true
 ---
 <i>Hello! 👋 </i>
 
-I am a graduate student in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin-Madison, and I am a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/). 
+I am a graduate student in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin-Madison and a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/). 
 
 Prior to graduate school, I was a lab manager for the [Learning, Education, and Development Lab](https://leadlab.sitehost.iu.edu/) in the [Department of Psychological and Brain Sciences](https://psych.indiana.edu/index.html) at Indiana University.
 
