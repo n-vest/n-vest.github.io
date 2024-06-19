@@ -13,6 +13,8 @@ date: '2024-05-24T00:00:00Z'
 
 <strong>Selected Works:</strong>
 
+Vest, N. A., Anthony, L. E., Callery, K., Shack, A. P., Becerra, C., Maheshwary, P., & Alibali, M.W. (2024, June). <span style="color:green">Does focusing on the unit of change help children extend and abstract shape and number patterns? </span>In N.A. Vest (Chair), Pattern learning: Empirical research about interventions, parental beliefs, and links to mathematical competence in children. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference.
+
 Vest, N. A., Anthony, L. E., Becerra, C., Maheshwary, P., Callery, K., Shack, A. P., & Alibali, M. W. (2024, March). <span style="color:green">Learning to extend shape and number patterns: Do lessons focused on the pattern unit help?</span> [Poster] Biennial Meeting of the Cognitive Development Society. [[poster]](http://dx.doi.org/10.13140/RG.2.2.20787.64804)
 
 Vest, N. A., Fagan, S. E., & Fyfe, E. R. (2022). <span style="color:green">The role of gesture and mimicry for children’s pattern learning.</span> Cognitive Development. [[paper]](https://www.researchgate.net/publication/361265082_The_role_of_gesture_and_mimicry_for_children's_pattern_learning)
