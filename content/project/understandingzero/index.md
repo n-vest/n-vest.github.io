@@ -12,8 +12,8 @@ date: '2024-05-22T00:00:00Z'
 
 <strong>Selected Works:</strong>  
 
-Vest, N. A. & Alibali, M. W. (under review). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
+Vest, N. A., & Alibali, M. W. (under review). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
 
-Vest, N. A. & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
+Vest, N. A., & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
 
 Vest, N. A., Weaver, H. J., & Alibali, M. W. (2022, July). <span style="color:green">Zero in on this: Children are exposed to various concepts of zero prior to age six.</span> Proceedings of the Annual Conference of the Cognitive Science Society. Toronto, Canada. [[paper]](https://www.researchgate.net/publication/381184844_Zero_in_on_This_Children_are_Exposed_to_Various_Concepts_of_Zero_Prior_to_Age_Six)
