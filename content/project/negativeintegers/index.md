@@ -12,7 +12,7 @@ date: '2024-05-27T00:00:00Z'
 
 <strong>Selected Works:</strong>
 
-Vest, N. A., & Alibali, M. W. (under review). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
+Vest, N. A., & Alibali, M. W. (in press). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
 
 Vest, N. A., & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
 
