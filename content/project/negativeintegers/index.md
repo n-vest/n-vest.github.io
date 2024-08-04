@@ -7,8 +7,9 @@ date: '2024-05-27T00:00:00Z'
 ---
  <font size="-1">In one arm of my graduate studies, I have been exploring how people mentally represent negative integers. There are potentially two ways to represent a negative integer such as -4. One approach is to imagine the positive number "4" and then apply a rule to account for the negative sign ("-"). The other approach is to represent the integer holistically, perhaps by visualizing it on mental number line. <br>
 Each type of mental representation leaves distinct behavioral ”traces”, such as reaction times (RT) during numerical tasks like symbolic number comparisons. In multiple studies, I have examined the behaviors of both adults and children during these tasks. Our results indicate that there are indeed multiple ways to represent integers, and that people may represent integers in different ways, depending on the task at hand. <br>
-In future work, I plan to (1) explore factors that influence how people represent integers, including task characteristics and instructional experiences, and (2) strategically manipulate task features during symbolic magnitude comparisons to induce specific representations of negative integers. <br>
-<strong>Selected Works:</strong> <br>
+In future work, I plan to (1) explore factors that influence how people represent integers, including task characteristics and instructional experiences, and (2) strategically manipulate task features during symbolic magnitude comparisons to induce specific representations of negative integers. 
+
+<strong>Selected Works:</strong>
 Vest, N. A., & Alibali, M. W. (in press). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
 
 Vest, N. A., & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
