@@ -56,7 +56,7 @@ social:
     link: mailto:navest@wisc.edu
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/nicholas_vest
+    link: https://twitter.com/nicholasvest_
     label: Follow me on Twitter
     display:
       header: false
