@@ -36,13 +36,13 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Developmental Psychology
+    - course: Ph.D. in Developmental Psychology
       institution: University of Wisconsin-Madison
       year: 2025
-    - course: MS in Developmental Psychology
+    - course: M.S. in Developmental Psychology
       institution: University of Wisconsin-Madison
       year: 2021
-    - course: BS in Psychology
+    - course: B.S. in Psychology
       institution: Indiana University-Bloomington
       year: 2016
 
