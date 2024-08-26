@@ -10,7 +10,7 @@ In one study, at the outset, many children viewed zero as "nothing" (null concep
 In future research, I will develop and employ more extensive assessments of children’s concepts of zero and their understanding of the additive inverse principle. I will also test more substantial interventions, as longer and more intense sessions have shown significant effects in similar contexts. <br>
 
 <strong>Selected Works:</strong> <br>
-Vest, N. A., & Alibali, M. W. (in press). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[preprint]](https://osf.io/preprints/psyarxiv/49m27)
+Vest, N. A., & Alibali, M. W. (2024). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[paper]](https://www.researchgate.net/publication/380830829_Is_zero_more_than_nothing_Relations_between_concepts_of_zero_and_integer_understanding)
 
 Vest, N. A., & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
 

@@ -10,7 +10,7 @@ Each type of mental representation leaves distinct behavioral ”traces”, such
 In future work, I plan to (1) explore factors that influence how people represent integers, including task characteristics and instructional experiences, and (2) strategically manipulate task features during symbolic magnitude comparisons to induce specific representations of negative integers. <br>
 
 <strong>Selected Works:</strong> <br> 
-Vest, N. A., & Alibali, M. W. (in press). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[paper]](https://www.researchgate.net/publication/383337762_Is_zero_more_than_nothing_Relations_between_concepts_of_zero_and_integer_understanding)
+Vest, N. A., & Alibali, M. W. (2024). <span style="color:green">Is zero more than nothing? Relations between concepts of zero and integer understanding.</span> [[paper]](https://www.researchgate.net/publication/383337762_Is_zero_more_than_nothing_Relations_between_concepts_of_zero_and_integer_understanding)
 
 Vest, N. A., & Alibali, M. W. (2023, June). <span style="color:green">Conceptions of zero and the semantic congruence effect: Evidence from children and adults.</span> In N.A. Vest (Chair), More than nothing? Empirical insights into children and adults’ conceptions of “zero”. Symposium presented at the Annual Meeting of the Mathematical and Cognition Learning Society Conference. [[slides]](http://dx.doi.org/10.13140/RG.2.2.17772.99202)
 
