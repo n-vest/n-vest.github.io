@@ -79,6 +79,6 @@ I am a graduate student in the [Department of Psychology](https://psych.wisc.edu
 
 Prior to graduate school, I was a lab manager for the [Learning, Education, and Development Lab](https://leadlab.sitehost.iu.edu/) in the [Department of Psychological and Brain Sciences](https://psych.indiana.edu/index.html) at Indiana University.
 
-<strong>My research focuses on the cognitive processes underlying numerical and mathematical thinking and how they shape human behavior.</strong> I am especially interested in how these cognitive processes develop in children and intersect with education. By studying numerical cognition, I aim to contribute insights that inform both learning and broader cognitive development.
+<strong>My research focuses on the basic cognitive processes underlying numerical cognition and their role in broader human intelligence.</strong> I am particularly interested in how these processes develop in children and intersect with education, aiming to contribute insights that enhance our understanding of learning and cognition.
 
 {style="text-align: justify;"}
