@@ -54,10 +54,10 @@ social:
   - icon: envelope
     icon_pack: fas
     link: mailto:navest@wisc.edu
-  - icon: twitter
+  - icon: linkedin
     icon_pack: fab
-    link: https://twitter.com/nicholasvest_
-    label: Follow me on Twitter
+    link: https://www.linkedin.com/in/nicholas-vest/
+    label: Connect with me on LinkedIn
     display:
       header: false
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
