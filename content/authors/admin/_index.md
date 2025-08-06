@@ -75,10 +75,10 @@ highlight_name: true
 ---
 <i>Hello! 👋 </i>
 
-I am a postdoctoral fellow in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida, where I study how cognitive science can inform the design of tools that support math learning. 
+I am a postdoctoral fellow in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida.
 
-I recently completed my Ph.D. in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin-Madison, where I was a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/).
+<strong>My research examines the cognitive processes that shape numerical understanding - especially how learners build on what they already know to accommodate new mathematical concepts.</strong> I focus on how these skills develop in children and how they relate to educational experiences, with the goal of advancing our understanding of learning and thinking.
 
-<strong>My research examines the cognitive processes that shape numerical understanding, particularly how we build on what we already know to accomodate new concepts.</strong> I focus on how these skills develop in children and how they relate to education, advancing our understanding of learning and thinking.
+I earned my Ph.D. in [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin–Madison, where I was a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/).
 
 {style="text-align: justify;"}
