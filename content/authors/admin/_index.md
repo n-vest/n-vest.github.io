@@ -75,7 +75,7 @@ highlight_name: true
 ---
 <i>Hello! 👋 </i>
 
-I am a postdoctoral fellow in [Educational Technology](https://education.ufl.edu/educational-technology/) at the University of Florida, where I study how cognitive science can inform the design of tools that support math learning. 
+I am a postdoctoral fellow in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida, where I study how cognitive science can inform the design of tools that support math learning. 
 
 I recently completed my Ph.D. in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin-Madison, where I was a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/).
 
