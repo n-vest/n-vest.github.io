@@ -17,12 +17,12 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Graduate Student
+role: Postdoctoral Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: University of Wisconsin-Madison
-    url: https://psych.wisc.edu/
+  - name: University of Florida
+    url: https://education.ufl.edu/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include mathematical and numerical cognitive development.
