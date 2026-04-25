@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Postdoctoral Fellow
+role: Research Scientist (Postdoc)
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -75,7 +75,7 @@ highlight_name: true
 ---
 <i>Hello! 👋 </i>
 
-I am a postdoctoral fellow in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida.
+I am a postdoctoral research scientist in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida.
 
 <strong>My research examines the cognitive processes that shape numerical understanding --- especially how learners build on what they already know to accommodate new mathematical concepts. I study how these skills develop across age groups and how AI-mediated learning environments shape that development, with the goal of building educational technology that reflects how people actually think and learn.</strong>
 
