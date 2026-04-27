@@ -77,7 +77,7 @@ highlight_name: true
 
 I am a postdoctoral research scientist in the [School of Teaching and Learning](https://education.ufl.edu/school-teaching-learning/) at the University of Florida.
 
-My research examines the cognitive processes that shape numerical understanding --- especially <strong>how learners build on what they already know</strong> to accommodate new mathematical concepts. I study how these <strong>skills develop across age groups</strong> and how <strong>AI-mediated learning environments</strong> shape that development, with the goal of building educational technology that reflects how people actually think and learn.
+My research examines the cognitive processes that shape numerical understanding, with a focus on <strong>how learners build on what they already know</strong> to accommodate new mathematical concepts. I study how these <strong>skills develop across age groups</strong> and how <strong>AI-mediated learning environments</strong> shape that development, with the goal of building educational technology that reflects how people actually think and learn.
 
 I earned my Ph.D. in the [Department of Psychology](https://psych.wisc.edu/) at the University of Wisconsin–Madison, where I was a member of the [Cognitive Development and Communication Lab](https://alibali.psych.wisc.edu/).
 
