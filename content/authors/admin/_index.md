@@ -31,7 +31,7 @@ bio: My research interests include mathematical and numerical cognitive developm
 interests:
   - Mathematical thinking
   - AI-mediated learning
-  - Research–practice & research–practice–industry partnerships
+  - Collaborative research (research–practice and industry partnerships)
 
 # Education to show in About widget
 education:
