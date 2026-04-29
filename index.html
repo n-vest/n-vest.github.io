@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicholas A. Vest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232e6a8a'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='DM Sans,Helvetica,Arial,sans-serif' font-size='13' font-weight='700' fill='white'>NV</text></svg>">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:         #0f1923;
+  --ink-mid:     #3d4e5c;
+  --ink-light:   #8a96a3;
+  --rule:        #c8d8e4;
+  --accent:      #2e6a8a;
+  --accent-warm: #c07010;
+  --accent-light:#4a8faa;
+  --surface:     #ffffff;
+  --sans: 'DM Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+  --max: 920px;
+  --pad: clamp(1.4rem, 3.5vw, 2.4rem);
+}
+
+html { font-size: 15px; scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(ellipse at 0% 50%,   rgba(185, 215, 225, 0.95) 0%, transparent 45%),
+    radial-gradient(ellipse at 38% 55%,  rgba(185, 155, 120, 0.75) 0%, transparent 38%),
+    radial-gradient(ellipse at 72% 30%,  rgba(70,  140, 200, 0.90) 0%, transparent 40%),
+    radial-gradient(ellipse at 95% 70%,  rgba(210, 140,  30, 0.85) 0%, transparent 38%),
+    radial-gradient(ellipse at 55% 90%,  rgba(90,  160, 210, 0.60) 0%, transparent 40%),
+    linear-gradient(135deg, #a8c8d8 0%, #8aacbc 40%, #5a88a8 70%, #c87c20 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(255,255,255,0.9);
+  border-right: 1px solid rgba(255,255,255,0.9);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+
+.nav-links a {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+/* ── PANEL ── */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-left: 1px solid rgba(180, 210, 228, 0.7);
+  border-right: 1px solid rgba(180, 210, 228, 0.7);
+  border-bottom: 1px solid rgba(180, 210, 228, 0.6);
+  border-radius: 0;
+  box-shadow:
+    0 12px 60px rgba(15, 40, 70, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* ── HERO ── */
+#about {
+  padding: 4rem var(--pad) 0;
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+/* ── ANIMATED NAME ── */
+.hero-name-wrap {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.hero-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--ink);
+  display: inline-block;
+  position: relative;
+}
+
+/* typewriter cursor blink after name appears */
+.hero-name::after {
+  content: '|';
+  position: absolute;
+  right: -0.15em;
+  bottom: 0;
+  color: var(--accent-warm);
+  font-weight: 300;
+  animation: cursor-in 0s 1.1s forwards, blink 1s 1.1s step-end 4;
+  opacity: 0;
+}
+
+@keyframes cursor-in {
+  to { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* whole name slides up as one unit */
+.hero-name {
+  opacity: 0;
+  animation: name-up 0.65s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes name-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-role {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-light);
+  letter-spacing: 0.01em;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fade-up 0.5s 1.1s ease forwards;
+}
+
+.hero-role a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.hero-role a:hover { text-decoration: underline; }
+.role-sep { color: var(--rule); }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── AVATAR ── */
+.avatar-wrap {
+  float: left;
+  margin: 0 2.2rem 1.2rem 0;
+  position: relative;
+  shape-outside: inset(0);
+  opacity: 0;
+  animation: fade-up 0.6s 0.4s ease forwards;
+}
+
+.avatar-wrap img {
+  width: 225px;
+  height: 210px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  border-radius: 6px;
+  filter: contrast(0.92) saturate(0.95);
+  box-shadow:
+    0 2px 12px rgba(20, 60, 100, 0.12),
+    0 0 0 1px rgba(180, 210, 230, 0.4);
+}
+
+/* ── BODY TEXT ── */
+.hero-body {
+  overflow: hidden;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 2.0;
+  opacity: 0;
+  animation: fade-up 0.6s 0.6s ease forwards;
+}
+
+.hero-body p + p { margin-top: 1.1rem; }
+
+.hero-body strong {
+  font-weight: 700;
+  background: linear-gradient(
+    90deg,
+    var(--ink) 0%,
+    #4a9ec4 40%,
+    #7ac0e0 50%,
+    #4a9ec4 60%,
+    var(--ink) 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.hero-body em { font-style: italic; color: var(--ink); font-weight: 500; }
+
+.hero-body a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.hero-body a:hover { color: var(--ink); }
+
+/* ── META STRIP ── */
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 3rem;
+  margin: 1.8rem 0 0;
+  padding: 1.6rem var(--pad);
+  border-top: 1px solid var(--rule);
+  background: rgba(220, 238, 248, 0.18);
+  opacity: 0;
+  animation: fade-up 0.6s 0.9s ease forwards;
+}
+
+.meta-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 0.6rem;
+}
+
+
+.meta-list { list-style: none; }
+
+.meta-list li {
+  font-size: 0.84rem;
+  color: var(--ink);
+  line-height: 1.65;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.meta-list li::before {
+  content: '—';
+  font-size: 0.65rem;
+  color: var(--rule);
+  flex-shrink: 0;
+}
+
+.edu-item { margin-bottom: 0.6rem; }
+.edu-item:last-child { margin-bottom: 0; }
+
+.edu-degree { font-size: 0.84rem; color: var(--ink); font-weight: 600; line-height: 1.3; }
+.edu-year   { color: var(--ink-light); font-weight: 400; }
+.edu-inst   { font-size: 0.73rem; color: var(--ink-mid); margin-top: 0.06rem; }
+
+/* ── PROJECTS ── */
+#projects { padding: 0 var(--pad) 3rem; }
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.8rem 0 1.2rem;
+}
+
+.section-head h2 {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  white-space: nowrap;
+}
+
+.section-head::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-warm), var(--rule) 40%);
+}
+
+/* ── CARDS ── */
+.project-list { display: flex; flex-direction: column; }
+
+.project-card {
+  border-bottom: 1px solid var(--rule);
+  border-left: 3px solid transparent;
+  padding: 1.7rem 1rem;
+  margin-left: -1rem;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.project-card:first-child { border-top: 1px solid var(--rule); }
+
+.project-card:hover {
+  border-left-color: #c8dce8;
+  background: rgba(255,255,255,0.35);
+}
+
+.project-card.expanded {
+  border-left-color: var(--accent-warm);
+  background: rgba(255, 248, 238, 0.5);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-size: 0.93rem;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.card-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: #e8f2f8;
+  padding: 0.2em 0.65em;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.card-summary {
+  font-size: 0.83rem;
+  color: var(--ink-light);
+  line-height: 1.68;
+  max-width: 70ch;
+}
+
+/* smooth accordion */
+.card-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  overflow: hidden;
+}
+
+.card-detail-inner { min-height: 0; }
+
+.card-detail.open { grid-template-rows: 1fr; }
+
+.card-detail.open .card-detail-inner {
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 1.1rem;
+}
+
+.card-detail p {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.78;
+  margin-bottom: 0.8rem;
+}
+
+.works-head {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin: 0.9rem 0 0.65rem;
+}
+
+.works-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+
+.works-list li {
+  font-size: 0.81rem;
+  color: var(--ink-mid);
+  line-height: 1.65;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2em 0.65em;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-left: 0.35rem;
+  transition: opacity 0.15s, transform 0.12s;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.badge:hover { opacity: 0.75; transform: translateY(-1px); }
+.badge-paper  { background: #ddeef8; color: #1a3d5c; }
+.badge-slides { background: #ddf0ea; color: #1a4a38; }
+.badge-poster { background: #f5e8d8; color: #5a3820; }
+
+.toggle-row {
+  margin-top: 0.65rem;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.project-card:hover .toggle-row { color: var(--accent); }
+.arrow { display: inline-block; transition: transform 0.25s ease; }
+.project-card.expanded .toggle-row .arrow { transform: rotate(180deg); }
+
+/* ── FOOTER ── */
+footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.1rem var(--pad);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 0 0 16px 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.35);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-name { font-size: 0.66rem; color: var(--ink-light); letter-spacing: 0.02em; }
+
+.footer-links { display: flex; gap: 1.1rem; list-style: none; }
+
+.footer-links a {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: var(--accent-warm); }
+
+/* ── CARD ENTRANCE ── */
+.project-card:nth-child(1) { animation: fade-up 0.35s 0.12s ease both; }
+.project-card:nth-child(2) { animation: fade-up 0.35s 0.18s ease both; }
+.project-card:nth-child(3) { animation: fade-up 0.35s 0.24s ease both; }
+.project-card:nth-child(4) { animation: fade-up 0.35s 0.30s ease both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 560px) {
+  .hero-meta { grid-template-columns: 1fr; }
+  .avatar-wrap img { width: 140px; height: 175px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .footer-links { flex-wrap: wrap; gap: 0.7rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#about">Nicholas A. Vest</a>
+    <ul class="nav-links">
+      <li><a href="#about" data-section="about">Home</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="https://nicholasvest.com/uploads/cv_navest.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section id="about">
+    <div class="hero-top">
+      <div class="hero-name-wrap">
+        <span class="hero-name" id="hero-name">Nicholas A. Vest</span>
+      </div>
+      <div class="hero-role">
+        <span>Research Scientist (Postdoc)</span>
+        <span class="role-sep">·</span>
+        <a href="https://education.ufl.edu/" target="_blank">University of Florida</a>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <div class="avatar-wrap">
+        <img src="https://nicholasvest.com/authors/admin/avatar_huc7d6f8609fd1f5f6c36a4c1a27aef00d_1396189_270x270_fill_lanczos_center_3.png" alt="Nicholas A. Vest">
+      </div>
+      <p><em>Hello! 👋</em> I am a postdoctoral researcher in the <a href="https://education.ufl.edu/school-teaching-learning/" target="_blank">School of Teaching and Learning</a> at the University of Florida.</p>
+      <p>My research examines the cognitive processes that shape numerical understanding, with a focus on <strong>how learners build on what they already know</strong> to accommodate new mathematical concepts. I study how these <strong>skills develop across age groups</strong> and how <strong>AI-mediated learning environments</strong> shape that development, with the goal of building educational technology that reflects how people actually think and learn.</p>
+      <p>I earned my Ph.D. in the <a href="https://psych.wisc.edu/" target="_blank">Department of Psychology</a> at the University of Wisconsin–Madison, where I was a member of the <a href="https://alibali.psych.wisc.edu/" target="_blank">Cognitive Development and Communication Lab</a>.</p>
+      <div style="clear:left"></div>
+    </div>
+
+    <div class="hero-meta">
+      <div>
+        <div class="meta-label">Interests</div>
+        <ul class="meta-list">
+          <li>Mathematical thinking</li>
+          <li>AI-mediated learning</li>
+          <li>Research-practice-industry partnerships</li>
+        </ul>
+      </div>
+      <div>
+        <div class="meta-label">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">Ph.D. in Developmental Psychology <span class="edu-year">· 2025</span></div>
+          <div class="edu-inst">University of Wisconsin-Madison</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">M.S. in Developmental Psychology <span class="edu-year">· 2021</span></div>
+          <div class="edu-inst">University of Wisconsin-Madison</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">B.S. in Psychology <span class="edu-year">· 2016</span></div>
+          <div class="edu-inst">Indiana University-Bloomington</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><h2>Projects</h2></div>
+    <div class="project-list">
+
+      <div class="project-card" onclick="toggle(this)">
+        <div class="card-header">
+          <div class="card-title">Understanding of Negative Integer Magnitudes</div>
+          <span class="card-tag">Integers</span>
+        </div>
+        <p class="card-summary">How do people mentally represent negative integers, and how do these representations influence their behavior during numerical tasks such as symbolic number comparisons?</p>
+        <div class="card-detail"><div class="card-detail-inner">
+          <p>In one arm of my graduate studies, I have been exploring how people mentally represent negative integers. There are potentially two ways to represent a negative integer such as -4. One approach is to imagine the positive number "4" and then apply a rule to account for the negative sign. The other approach is to represent the integer holistically, perhaps by visualizing it on a mental number line.</p>
+          <p>Each type of mental representation leaves distinct behavioral "traces," such as reaction times during symbolic number comparisons. In multiple studies, I examined the behaviors of both adults and children during these tasks. Our results indicate that there are indeed multiple ways to represent integers, and that people may represent integers in different ways depending on the task at hand.</p>
+          <p>In future work, I plan to (1) explore factors that influence how people represent integers, including task characteristics and instructional experiences, and (2) strategically manipulate task features during symbolic magnitude comparisons to induce specific representations of negative integers.</p>
+          <div class="works-head">Selected Works</div>
+          <ul class="works-list">
+            <li>Vest, N. A., &amp; Alibali, M. W. (2024). Is zero more than nothing? Relations between concepts of zero and integer understanding. <a class="badge badge-paper" href="https://www.researchgate.net/publication/383337762" target="_blank">paper</a></li>
+            <li>Vest, N. A., &amp; Alibali, M. W. (2023, June). Conceptions of zero and the semantic congruence effect: Evidence from children and adults. MCLS. <a class="badge badge-slides" href="http://dx.doi.org/10.13140/RG.2.2.17772.99202" target="_blank">slides</a></li>
+            <li>Vest, N. A., &amp; Alibali, M. W. (2021, July). The mental representation of integers. <em>Proceedings of CogSci.</em> <a class="badge badge-paper" href="https://www.researchgate.net/publication/353343390" target="_blank">paper</a></li>
+          </ul>
+        </div></div>
+        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
+      </div>
+
+      <div class="project-card" onclick="toggle(this)">
+        <div class="card-header">
+          <div class="card-title">Supporting Children's Patterning</div>
+          <span class="card-tag">Patterns</span>
+        </div>
+        <p class="card-summary">How can instructional strategies, such as the use of gestures and perceptual support, enhance young children's ability to recognize and understand shape patterns, and how does this impact their numerical knowledge?</p>
+        <div class="card-detail"><div class="card-detail-inner">
+          <p>Mathematics is essentially the science of patterns. Children are constantly recognizing and encoding patterns in their environment. Importantly, children's ability to recognize shape patterns is related to their numerical knowledge. Part of my research focuses on approaches to teaching patterning skills to young children.</p>
+          <p>In one study, I investigated whether an instructor's gestures could help children identify pattern units and improve performance in patterning tasks. The inclusion of gestures by the experimenter did not significantly affect children's learning outcomes compared to speech alone. However, children's <em>spontaneous</em> mimicry of the experimenter's speech was positively associated with better posttest performance.</p>
+          <p>In another study, I examined whether providing perceptual support — such as drawing a line under the pattern unit — would help children recognize pattern units more effectively. I am currently preparing a manuscript with these results.</p>
+          <div class="works-head">Selected Works</div>
+          <ul class="works-list">
+            <li>Vest, N. A., Anthony, L. E., Callery, K., et al. (2024, June). Does focusing on the unit of change help children extend and abstract shape and number patterns? MCLS. <a class="badge badge-slides" href="https://www.researchgate.net/publication/382865674" target="_blank">slides</a></li>
+            <li>Vest, N. A., Anthony, L. E., Becerra, C., et al. (2024, March). Learning to extend shape and number patterns. CDS. <a class="badge badge-poster" href="http://dx.doi.org/10.13140/RG.2.2.20787.64804" target="_blank">poster</a></li>
+            <li>Vest, N. A., Fagan, S. E., &amp; Fyfe, E. R. (2022). The role of gesture and mimicry for children's pattern learning. <em>Cognitive Development.</em> <a class="badge badge-paper" href="https://www.researchgate.net/publication/361265082" target="_blank">paper</a></li>
+          </ul>
+        </div></div>
+        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
+      </div>
+
+      <div class="project-card" onclick="toggle(this)">
+        <div class="card-header">
+          <div class="card-title">Conceptual and Procedural Knowledge of Algebra</div>
+          <span class="card-tag">Algebra</span>
+        </div>
+        <p class="card-summary">How can adaptive instructional strategies and tools, such as intelligent tutoring systems and pedagogical gestures, influence the development of mathematical understanding and problem-solving skills in middle-school students?</p>
+        <div class="card-detail"><div class="card-detail-inner">
+          <p>I have worked with an interdisciplinary team of psychologists, computer scientists, and educators to study how to enhance algebra learning through the integration of key concepts and problem-solving procedures. Our team used a software-based intelligent tutoring system (ITS) that provides detailed, targeted guidance adapting to students' errors, strategies, and developing algebra knowledge.</p>
+          <p>In one study, students completed a pretest, a computer-based lesson, worked examples with explanations, and a posttest. We found that expressing concepts when explaining worked examples helped activate and strengthen conceptual knowledge, particularly for learners with low prior knowledge.</p>
+          <p>In earlier work, I spearheaded a project exploring gesture and algebra learning, finding that students whose gestures aligned with a computer-animated pedagogical avatar scored higher than those who did not.</p>
+          <div class="works-head">Selected Works</div>
+          <ul class="works-list">
+            <li>Vest, N. A., Silla, E. M., Bartel, A. N., et al. (2022). Self-explanation of worked examples integrated in an ITS enhances problem solving in algebra. <em>Proceedings of CogSci.</em> <a class="badge badge-paper" href="https://www.researchgate.net/publication/362505071" target="_blank">paper</a></li>
+            <li>Vest, N. A., Silla, E. M., Bartel, A. N., et al. (2021). Learning from worked examples: Conceptually rich explanations predict conceptual gains. SRCD. <a class="badge badge-poster" href="https://www.researchgate.net/publication/381151343" target="_blank">poster</a></li>
+            <li>Vest, N. A., Fyfe, E. R., Nathan, M. J., &amp; Alibali, M. W. (2020). Learning from an avatar video instructor: The role of gesture mimicry. <em>Gesture.</em> <a class="badge badge-paper" href="https://www.researchgate.net/publication/350888767" target="_blank">paper</a></li>
+          </ul>
+        </div></div>
+        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
+      </div>
+
+      <div class="project-card" onclick="toggle(this)">
+        <div class="card-header">
+          <div class="card-title">Understanding of Zero</div>
+          <span class="card-tag">Integers</span>
+        </div>
+        <p class="card-summary">How do students' explicit and implicit concepts of zero develop, and how do activities with number lines influence their understanding of zero and their ability to use the additive inverse principle?</p>
+        <div class="card-detail"><div class="card-detail-inner">
+          <p>In my graduate studies, I investigated students' explicit and implicit concepts of zero, the potential of number line activities to foster sophisticated understandings of zero, and whether these concepts predict performance on problems involving the additive inverse principle (X + -X = 0).</p>
+          <p>Many children viewed zero as "nothing" (null conception), while some saw it as the symmetry point between positive and negative integers. Children in higher grades were more likely to express a symmetry conception. Those with a symmetry conception showed greater understanding of the additive inverse principle and better integer arithmetic skills.</p>
+          <p>We also explored whether a brief lesson on zero as the symmetry point could shift conceptions and enhance additive inverse understanding — but the brief lesson did not significantly change conceptions or additive inverse knowledge. In future research, I will develop more extensive assessments and test more substantial interventions.</p>
+          <div class="works-head">Selected Works</div>
+          <ul class="works-list">
+            <li>Vest, N. A., &amp; Alibali, M. W. (2024). Is zero more than nothing? Relations between concepts of zero and integer understanding. <a class="badge badge-paper" href="https://www.researchgate.net/publication/380830829" target="_blank">paper</a></li>
+            <li>Vest, N. A., &amp; Alibali, M. W. (2023, June). Conceptions of zero and the semantic congruence effect. MCLS. <a class="badge badge-slides" href="http://dx.doi.org/10.13140/RG.2.2.17772.99202" target="_blank">slides</a></li>
+            <li>Vest, N. A., Weaver, H. J., &amp; Alibali, M. W. (2022). Zero in on this: Children are exposed to various concepts of zero prior to age six. <em>Proceedings of CogSci.</em> <a class="badge badge-paper" href="https://www.researchgate.net/publication/381184844" target="_blank">paper</a></li>
+          </ul>
+        </div></div>
+        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Nicholas A. Vest &nbsp;·&nbsp; University of Florida</span>
+    <ul class="footer-links">
+      <li><a href="mailto:vestnicholas@gmail.com">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=IW2udwcAAAAJ&hl=en&oi=ao" target="_blank">Scholar</a></li>
+      <li><a href="https://github.com/n-vest" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/nicholas-vest/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://nicholasvest.com/uploads/cv_navest.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// ── Accordion
+function toggle(card) {
+  const detail = card.querySelector('.card-detail');
+  const isOpen = detail.classList.contains('open');
+  document.querySelectorAll('.card-detail.open').forEach(d => {
+    d.classList.remove('open');
+    d.closest('.project-card').classList.remove('expanded');
+  });
+  if (!isOpen) {
+    detail.classList.add('open');
+    card.classList.add('expanded');
+  }
+}
+
+// ── Active nav
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[data-section="${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
