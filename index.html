@@ -3,227 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nicholas A. Vest</title>
+<title>Nicholas A. Vest | Mathematical Cognition & Educational Technology</title>
+<meta name="description" content="Nicholas A. Vest is a postdoctoral research scientist at the University of Florida studying mathematical cognition, learning, and AI-mediated educational technology.">
+<meta name="theme-color" content="#fdfdfc">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23000000'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-size='14' font-weight='700' fill='white'>NV</text></svg>">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink:      #000000;
-  --ink-mid:  #3a3a3a;
-  --ink-soft: #767676;
-  --rule:     #d4d4d4;
-  --paper:    #ffffff;
-  --max: 720px;
+  --ink:      #14171a;
+  --ink-mid:  #3f4448;
+  --ink-soft: #767b80;
+  --rule:     #dcdcda;
+  --paper:    #fdfdfc;
+  --accent:   #3b5a74;
+  --accent-soft: #5c7f97;
+  --max: 880px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
   --sans: Helvetica, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
+html, body { width: 100%; }
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-a:hover { color: var(--ink-soft); }
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 2px; transition: color 0.15s ease; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 
 /* ── NAV ── */
 nav { border-bottom: 1px solid var(--ink); }
 .nav-inner {
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 0.7rem 1.2rem;
+  margin-inline: auto;
+  padding: 0.85rem var(--gutter);
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 .nav-name {
+  font-family: var(--sans);
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
 }
-.nav-links { display: flex; gap: 1.1rem; list-style: none; }
+.nav-name:hover { color: var(--ink); }
+.nav-links { display: flex; gap: 1.3rem; list-style: none; }
 .nav-links a {
-  font-size: 0.76rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
   font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--ink-soft);
   text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--ink); }
+.nav-links a:hover, .nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
 
-main { max-width: var(--max); margin: 0 auto; padding: 0 1.2rem; }
+main { max-width: var(--max); margin-inline: auto; padding: 0 var(--gutter); }
 
-/* ── HERO ── */
-#about { padding: 1.6rem 0 1.2rem; border-bottom: 1px solid var(--rule); }
-
-.hero-top { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 0.9rem; }
-
-.avatar-wrap img {
-  width: 200px;
-  height: 200px;
+/* ── BANNER ── */
+.banner {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  margin-top: 1.75rem;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 90%, transparent 100%);
+}
+.banner img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 18%;
   display: block;
 }
 
-.hero-name { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; margin-bottom: 0.2rem; }
+/* ── HERO ── */
+#about { padding: 1.4rem 0 1.6rem; }
+
+.hero-top { margin-bottom: 1.4rem; }
+
+.hero-name {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 4vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin-bottom: 0.55rem;
+}
+
+.hero-rule {
+  width: 34px;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 0.65rem;
+}
 
 .hero-role {
-  font-size: 0.85rem;
+  font-size: 0.96rem;
   color: var(--ink-mid);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
 }
 .hero-role a { font-weight: 500; }
 
 .hero-links {
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   color: var(--ink-soft);
 }
 .hero-links a { text-decoration: none; }
-.hero-links a:hover { text-decoration: underline; }
-.hero-links .sep { color: var(--rule); margin: 0 0.4em; }
+.hero-links a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+.hero-links .sep { color: var(--rule); margin: 0 0.5em; }
 
-.hero-body p { margin-bottom: 0.6rem; font-size: 0.88rem; color: var(--ink-mid); }
+.hero-body p {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-mid);
+}
 .hero-body p:last-child { margin-bottom: 0; }
 
 /* ── META (interests / education) ── */
 .hero-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem 2rem;
-  margin-top: 1rem;
-  padding-top: 0.9rem;
+  gap: 1.2rem 3rem;
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
   border-top: 1px solid var(--rule);
 }
 .meta-label {
-  font-size: 0.64rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 0.4rem;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
 }
-.meta-list { list-style: none; font-size: 0.8rem; color: var(--ink); }
-.meta-list li { margin-bottom: 0.2rem; }
-.meta-list li::before { content: '– '; color: var(--ink-soft); }
+.meta-list { list-style: none; font-size: 0.94rem; color: var(--ink); }
+.meta-list li { margin-bottom: 0.3rem; padding-left: 0.75rem; position: relative; }
+.meta-list li::before { content: '–'; color: var(--ink-soft); position: absolute; left: 0; }
 
-.edu-item { margin-bottom: 0.35rem; }
+.edu-item { margin-bottom: 0.5rem; }
 .edu-item:last-child { margin-bottom: 0; }
-.edu-degree { font-size: 0.8rem; color: var(--ink); font-weight: 700; }
+.edu-degree { font-size: 0.94rem; color: var(--ink); font-weight: 600; }
 .edu-year { color: var(--ink-soft); font-weight: 400; }
-.edu-inst { font-size: 0.74rem; color: var(--ink-mid); margin-top: 0.02rem; }
-
-/* ── SECTION HEADS ── */
-.section-head { padding: 1.1rem 0 0.6rem; }
-.section-head h2 {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-/* ── TOPIC GROUPS (collapsible) ── */
-.topic-group { border-top: 1px solid var(--rule); }
-.topic-group:last-child { border-bottom: 1px solid var(--rule); }
-
-.topic-head {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-  padding: 0.7rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  user-select: none;
-}
-.topic-line { flex: 1; height: 1px; background: var(--rule); }
-.topic-arrow { font-size: 0.68rem; color: var(--ink-soft); transition: transform 0.15s ease; flex-shrink: 0; }
-.topic-group.expanded .topic-arrow { transform: rotate(180deg); }
-
-.group-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.2s ease; overflow: hidden; }
-.group-body-inner { min-height: 0; }
-.topic-group.expanded .group-body { grid-template-rows: 1fr; }
-.topic-group.expanded .group-body-inner { padding-bottom: 0.3rem; }
-
-/* ── PROJECTS ── */
-#projects { padding-bottom: 0.2rem; }
-.project-card { border-top: 1px solid var(--rule); padding: 0.75rem 0; cursor: pointer; }
-
-.card-header { margin-bottom: 0.15rem; }
-.card-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
-
-.card-summary { font-size: 0.85rem; color: var(--ink-mid); }
-
-.card-detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.15s ease; overflow: hidden; }
-.card-detail-inner { min-height: 0; }
-.card-detail.open { grid-template-rows: 1fr; }
-.card-detail.open .card-detail-inner { padding-top: 0.55rem; }
-
-.card-detail p { font-size: 0.85rem; color: var(--ink-mid); margin-bottom: 0.45rem; }
-
-.works-head {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 0.5rem 0 0.3rem;
-}
-.works-list { list-style: none; }
-.works-list li {
-  font-size: 0.81rem;
-  color: var(--ink-mid);
-  line-height: 1.45;
-  padding-left: 0.7rem;
-  border-left: 2px solid var(--rule);
-  margin-bottom: 0.35rem;
-}
-.works-list a { font-size: 0.7rem; font-weight: 700; margin-left: 0.25rem; }
-
-.toggle-row {
-  margin-top: 0.35rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.project-card:hover .toggle-row { color: var(--ink); }
-.arrow { display: inline-block; }
-.project-card.expanded .toggle-row .arrow { transform: rotate(180deg); display: inline-block; }
-
-/* ── PERSONAL ── */
-#personal { padding-bottom: 1.4rem; border-bottom: 1px solid var(--rule); }
-#personal p { font-size: 0.88rem; color: var(--ink-mid); margin-bottom: 0.55rem; }
-#personal p:last-child { margin-bottom: 0; }
-#personal strong { color: var(--ink); font-weight: 700; }
+.edu-inst { font-size: 0.9rem; color: var(--ink-mid); margin-top: 0.05rem; font-style: italic; }
 
 /* ── FOOTER ── */
-footer { max-width: var(--max); margin: 0 auto; padding: 0.8rem 1.2rem 1.4rem; }
+footer { max-width: var(--max); margin-inline: auto; margin-top: 1rem; padding: 0.9rem var(--gutter) 1.6rem; border-top: 1px solid var(--rule); }
 .footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
   flex-wrap: wrap;
+  padding-top: 0.9rem;
 }
-.footer-name { font-size: 0.68rem; color: var(--ink-soft); }
-.footer-links { display: flex; gap: 0.85rem; list-style: none; }
-.footer-links a { font-size: 0.68rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
-.footer-links a:hover { color: var(--ink); }
+.footer-name { font-size: 0.9rem; color: var(--ink-soft); letter-spacing: 0.01em; }
+.footer-name .name { font-weight: 700; }
+.footer-links { display: flex; gap: 0.9rem; list-style: none; }
+.footer-links a { font-size: 0.9rem; font-weight: 500; color: var(--ink-soft); text-decoration: none; }
+.footer-links a:hover { color: var(--accent); }
 
 @media (max-width: 560px) {
-  .hero-top { flex-direction: column; }
-  .avatar-wrap img { width: 80px; height: 80px; }
+  body { font-size: 15px; }
+  .banner { aspect-ratio: 16 / 10; margin-top: 1.2rem; }
+  .hero-name { font-size: 1.85rem; }
+  .hero-links { line-height: 1.9; }
   .hero-meta { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+}
+
+@media (min-width: 1400px) {
+  :root { --gutter: clamp(1.25rem, 4vw, 4.5rem); }
 }
 </style>
 </head>
@@ -234,32 +203,30 @@ footer { max-width: var(--max); margin: 0 auto; padding: 0.8rem 1.2rem 1.4rem; }
     <a class="nav-name" href="#about">Nicholas A. Vest</a>
     <ul class="nav-links">
       <li><a href="#about" data-section="about">Home</a></li>
-      <li><a href="#projects" data-section="projects">Projects</a></li>
-      <li><a href="#personal" data-section="personal">Personal</a></li>
-      <li><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank">CV</a></li>
+      <li><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
 </nav>
 
 <main>
+  <div class="banner" aria-hidden="true">
+  <img src="vest.png" alt="Nicholas A. Vest">
+</div>
+
   <section id="about">
     <div class="hero-top">
-      <div class="avatar-wrap">
-        <img src="vest.png" alt="Nicholas A. Vest">
-      </div>
-      <div>
-        <div class="hero-name">Nicholas A. Vest</div>
-        <div class="hero-role">Research Scientist (Postdoc) · <a href="https://education.ufl.edu/" target="_blank">University of Florida</a></div>
-        <div class="hero-links">
-          <a href="mailto:vestnicholas@gmail.com">Email</a><span class="sep">|</span><a href="https://scholar.google.com/citations?user=IW2udwcAAAAJ&hl=en&oi=ao" target="_blank">Scholar</a><span class="sep">|</span><a href="https://github.com/n-vest" target="_blank">GitHub</a><span class="sep">|</span><a href="https://www.linkedin.com/in/nicholas-vest/" target="_blank">LinkedIn</a><span class="sep">|</span><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank">CV</a>
-        </div>
+      <h1 class="hero-name">Nicholas A. Vest</h1>
+      <div class="hero-rule"></div>
+      <div class="hero-role">Postdoctoral Research Scientist · <a href="https://education.ufl.edu/" target="_blank" rel="noopener">University of Florida</a></div>
+      <div class="hero-links">
+        <a href="mailto:vestnicholas@gmail.com">Email</a><span class="sep">|</span><a href="https://scholar.google.com/citations?user=IW2udwcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a><span class="sep">|</span><a href="https://github.com/n-vest" target="_blank" rel="noopener">GitHub</a><span class="sep">|</span><a href="https://www.linkedin.com/in/nicholas-vest/" target="_blank" rel="noopener">LinkedIn</a><span class="sep">|</span><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank" rel="noopener">CV</a>
       </div>
     </div>
 
     <div class="hero-body">
-      <p>Hello! I'm a postdoctoral researcher in the <a href="https://education.ufl.edu/school-teaching-learning/" target="_blank">School of Teaching and Learning</a> at the University of Florida.</p>
-      <p>My research examines the cognitive processes that shape numerical understanding, with a focus on how learners build on what they already know to accommodate new mathematical concepts. I study how these skills develop across age groups and how AI-mediated learning environments shape that development, with the goal of building educational technology that reflects how people actually think and learn.</p>
-      <p>I earned my Ph.D. in the <a href="https://psych.wisc.edu/" target="_blank">Department of Psychology</a> at the University of Wisconsin–Madison, where I was a member of the <a href="https://alibali.psych.wisc.edu/" target="_blank">Cognitive Development and Communication Lab</a>.</p>
+      <p>I am a postdoctoral researcher in the <a href="https://education.ufl.edu/school-teaching-learning/" target="_blank" rel="noopener">School of Teaching and Learning</a> at the University of Florida, where I study how people learn mathematics and how educational technologies can better support that learning.</p>
+      <p>My research examines the cognitive processes that shape numerical understanding, especially how learners build on existing knowledge to make sense of new mathematical concepts. I study these processes across development and in AI-mediated learning environments, with the goal of designing educational technology that reflects how people actually think and learn.</p>
+      <p>I earned my Ph.D. in the <a href="https://psych.wisc.edu/" target="_blank" rel="noopener">Department of Psychology</a> at the University of Wisconsin–Madison, where I was a member of the <a href="https://alibali.psych.wisc.edu/" target="_blank" rel="noopener">Cognitive Development and Communication Lab</a>.</p>
     </div>
 
     <div class="hero-meta">
@@ -288,224 +255,22 @@ footer { max-width: var(--max); margin: 0 auto; padding: 0.8rem 1.2rem 1.4rem; }
       </div>
     </div>
   </section>
-
-  <section id="projects">
-    <div class="section-head"><h2>Projects</h2></div>
-
-    <div class="topic-group">
-      <div class="topic-head" onclick="toggleGroup(this)">
-        <span>Integer Cognition</span>
-        <span class="topic-line"></span>
-        <span class="topic-arrow">↓</span>
-      </div>
-      <div class="group-body"><div class="group-body-inner">
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Understanding of Negative Integer Magnitudes</div>
-        </div>
-        <p class="card-summary">How do people mentally represent negative integers, and how do these representations influence their behavior during numerical tasks such as symbolic number comparisons?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>In one arm of my graduate studies, I have been exploring how people mentally represent negative integers. There are potentially two ways to represent a negative integer such as -4. One approach is to imagine the positive number "4" and then apply a rule to account for the negative sign. The other approach is to represent the integer holistically, perhaps by visualizing it on a mental number line.</p>
-          <p>Each type of mental representation leaves distinct behavioral "traces," such as reaction times during symbolic number comparisons. In multiple studies, I examined the behaviors of both adults and children during these tasks. Our results indicate that there are indeed multiple ways to represent integers, and that people may represent integers in different ways depending on the task at hand.</p>
-          <p>In future work, I plan to (1) explore factors that influence how people represent integers, including task characteristics and instructional experiences, and (2) strategically manipulate task features during symbolic magnitude comparisons to induce specific representations of negative integers.</p>
-          <div class="works-head">Selected Works</div>
-          <ul class="works-list">
-            <li>Vest, N. A., &amp; Alibali, M. W. (2024). Is zero more than nothing? Relations between concepts of zero and integer understanding. <a href="https://www.researchgate.net/publication/383337762" target="_blank">paper</a></li>
-            <li>Vest, N. A., &amp; Alibali, M. W. (2023, June). Conceptions of zero and the semantic congruence effect: Evidence from children and adults. MCLS. <a href="http://dx.doi.org/10.13140/RG.2.2.17772.99202" target="_blank">slides</a></li>
-            <li>Vest, N. A., &amp; Alibali, M. W. (2021, July). The mental representation of integers. <em>Proceedings of CogSci.</em> <a href="https://www.researchgate.net/publication/353343390" target="_blank">paper</a></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Understanding of Zero</div>
-        </div>
-        <p class="card-summary">How do students' explicit and implicit concepts of zero develop, and how do activities with number lines influence their understanding of zero and their ability to use the additive inverse principle?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>In my graduate studies, I investigated students' explicit and implicit concepts of zero, the potential of number line activities to foster sophisticated understandings of zero, and whether these concepts predict performance on problems involving the additive inverse principle (X + -X = 0).</p>
-          <p>Many children viewed zero as "nothing" (null conception), while some saw it as the symmetry point between positive and negative integers. Children in higher grades were more likely to express a symmetry conception. Those with a symmetry conception showed greater understanding of the additive inverse principle and better integer arithmetic skills.</p>
-          <p>We also explored whether a brief lesson on zero as the symmetry point could shift conceptions and enhance additive inverse understanding — but the brief lesson did not significantly change conceptions or additive inverse knowledge. In future research, I will develop more extensive assessments and test more substantial interventions.</p>
-          <div class="works-head">Selected Works</div>
-          <ul class="works-list">
-            <li>Vest, N. A., &amp; Alibali, M. W. (2024). Is zero more than nothing? Relations between concepts of zero and integer understanding. <a href="https://www.researchgate.net/publication/380830829" target="_blank">paper</a></li>
-            <li>Vest, N. A., &amp; Alibali, M. W. (2023, June). Conceptions of zero and the semantic congruence effect. MCLS. <a href="http://dx.doi.org/10.13140/RG.2.2.17772.99202" target="_blank">slides</a></li>
-            <li>Vest, N. A., Weaver, H. J., &amp; Alibali, M. W. (2022). Zero in on this: Children are exposed to various concepts of zero prior to age six. <em>Proceedings of CogSci.</em> <a href="https://www.researchgate.net/publication/381184844" target="_blank">paper</a></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Negative Number Representations Across Secondary Grades</div>
-        </div>
-        <p class="card-summary">How do adolescents' representations of negative numbers vary across secondary grades, and are these representations related to arithmetic performance?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>Three competing accounts of how people represent negative numbers have been proposed in the literature: the componential, extension, and reflection accounts. This project tests how these accounts hold up across adolescence by embedding cognitive research tasks within Atlas, Innovamat's digital learning platform, drawing on data from 708 students in Grades 7–10 across six secondary schools in Spain.</p>
-          <p>Contrary to preregistered predictions, we found no evidence of a grade-related shift in mixed-sign distance effects. Instead, students showed substantial and stable individual variability, with behavioral patterns consistent with all three theoretical accounts present at every grade level. At the group level, performance was most consistent with the extension account, and arithmetic performance improved primarily for extended-range integer operations. Individual differences in integer representation were not associated with arithmetic performance.</p>
-          <p>Together, these findings suggest that representational heterogeneity, rather than a uniform progression toward a single mature representation, characterizes adolescent integer cognition.</p>
-          <div class="works-head">Status</div>
-          <ul class="works-list">
-            <li>Vest, N. A., Colomer, M., &amp; Closser, A. (2026). Negative number representations and arithmetic across secondary grades: Evidence from a digital learning platform. <em>Revise &amp; resubmit, Contemporary Educational Psychology.</em></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      </div></div>
-    </div>
-
-    <div class="topic-group">
-      <div class="topic-head" onclick="toggleGroup(this)">
-        <span>Pattern Learning in Mathematics (Including Functions)</span>
-        <span class="topic-line"></span>
-        <span class="topic-arrow">↓</span>
-      </div>
-      <div class="group-body"><div class="group-body-inner">
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Supporting Children's Patterning</div>
-        </div>
-        <p class="card-summary">How can instructional strategies, such as the use of gestures and perceptual support, enhance young children's ability to recognize and understand shape patterns, and how does this impact their numerical knowledge?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>Mathematics is essentially the science of patterns. Children are constantly recognizing and encoding patterns in their environment. Importantly, children's ability to recognize shape patterns is related to their numerical knowledge. Part of my research focuses on approaches to teaching patterning skills to young children.</p>
-          <p>In one study, I investigated whether an instructor's gestures could help children identify pattern units and improve performance in patterning tasks. The inclusion of gestures by the experimenter did not significantly affect children's learning outcomes compared to speech alone. However, children's spontaneous mimicry of the experimenter's speech was positively associated with better posttest performance.</p>
-          <p>In another study, I examined whether providing perceptual support — such as drawing a line under the pattern unit — would help children recognize pattern units more effectively. I am currently preparing a manuscript with these results.</p>
-          <div class="works-head">Selected Works</div>
-          <ul class="works-list">
-            <li>Vest, N. A., Anthony, L. E., Callery, K., et al. (2024, June). Does focusing on the unit of change help children extend and abstract shape and number patterns? MCLS. <a href="https://www.researchgate.net/publication/382865674" target="_blank">slides</a></li>
-            <li>Vest, N. A., Anthony, L. E., Becerra, C., et al. (2024, March). Learning to extend shape and number patterns. CDS. <a href="http://dx.doi.org/10.13140/RG.2.2.20787.64804" target="_blank">poster</a></li>
-            <li>Vest, N. A., Fagan, S. E., &amp; Fyfe, E. R. (2022). The role of gesture and mimicry for children's pattern learning. <em>Cognitive Development.</em> <a href="https://www.researchgate.net/publication/361265082" target="_blank">paper</a></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Conceptual and Procedural Knowledge of Algebra</div>
-        </div>
-        <p class="card-summary">How can adaptive instructional strategies and tools, such as intelligent tutoring systems and pedagogical gestures, influence the development of mathematical understanding and problem-solving skills in middle-school students?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>I have worked with an interdisciplinary team of psychologists, computer scientists, and educators to study how to enhance algebra learning through the integration of key concepts and problem-solving procedures. Our team used a software-based intelligent tutoring system (ITS) that provides detailed, targeted guidance adapting to students' errors, strategies, and developing algebra knowledge.</p>
-          <p>In one study, students completed a pretest, a computer-based lesson, worked examples with explanations, and a posttest. We found that expressing concepts when explaining worked examples helped activate and strengthen conceptual knowledge, particularly for learners with low prior knowledge.</p>
-          <p>In earlier work, I spearheaded a project exploring gesture and algebra learning, finding that students whose gestures aligned with a computer-animated pedagogical avatar scored higher than those who did not.</p>
-          <div class="works-head">Selected Works</div>
-          <ul class="works-list">
-            <li>Vest, N. A., Silla, E. M., Bartel, A. N., et al. (2022). Self-explanation of worked examples integrated in an ITS enhances problem solving in algebra. <em>Proceedings of CogSci.</em> <a href="https://www.researchgate.net/publication/362505071" target="_blank">paper</a></li>
-            <li>Vest, N. A., Silla, E. M., Bartel, A. N., et al. (2021). Learning from worked examples: Conceptually rich explanations predict conceptual gains. SRCD. <a href="https://www.researchgate.net/publication/381151343" target="_blank">poster</a></li>
-            <li>Vest, N. A., Fyfe, E. R., Nathan, M. J., &amp; Alibali, M. W. (2020). Learning from an avatar video instructor: The role of gesture mimicry. <em>Gesture.</em> <a href="https://www.researchgate.net/publication/350888767" target="_blank">paper</a></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Task-Dependent Difficulty with Negative Slope in Linear Functions</div>
-        </div>
-        <p class="card-summary">Under what task conditions does difficulty with negative-slope linear functions arise, and how do representational and response formats shape performance and metacognitive judgments?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>Students often struggle with linear functions that have negative slopes, yet the task conditions under which this difficulty arises have remained unclear. This project examined how slope direction (positive vs. negative), representational format (graphs vs. tables), and response format (equation generation vs. multiple choice) jointly influence performance and metacognitive judgments during a function translation task, across 351 U.S. undergraduates solving 20 linear translation problems.</p>
-          <p>Negative-slope problems yielded lower accuracy than positive-slope problems, but this disadvantage emerged only for tables and not for graphs, and it did not vary by response format. Error analyses showed that slope-sign reversals were the error type most systematically associated with decreasing functions. The absence of a response-format effect suggests the difficulty does not primarily reflect symbolic production demands.</p>
-          <p>Graphical representations appear to attenuate the negative-slope disadvantage not simply by being easier, but by making direction perceptually salient — supporting accurate encoding and error detection. Students' confidence and difficulty judgments mirrored this pattern, indicating well-calibrated awareness of the task conditions that amplified performance costs.</p>
-          <div class="works-head">Status</div>
-          <ul class="works-list">
-            <li>Task-dependent difficulty with negative slope in linear functions. <em>Submitted to Journal of Numerical Cognition, March 2026.</em></li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      </div></div>
-    </div>
-
-    <div class="topic-group">
-      <div class="topic-head" onclick="toggleGroup(this)">
-        <span>AI-Mediated Learning and Ed Tech</span>
-        <span class="topic-line"></span>
-        <span class="topic-arrow">↓</span>
-      </div>
-      <div class="group-body"><div class="group-body-inner">
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Gemini for Education: A Multi-Site Study with MDCPS</div>
-        </div>
-        <p class="card-summary">How does the adoption of an AI tool like Gemini for Education affect teacher practice, student engagement, and student achievement across a large public school district?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>I co-lead a multi-site quasi-experimental study examining the implementation and impact of Google Gemini for Education within Miami-Dade County Public Schools (MDCPS), in partnership with Google.org. The study follows teachers, students, and school leaders across participating high schools, combining propensity-score-matched achievement comparisons with classroom observation, survey, and AI usage-log data.</p>
-          <p>The project examines how AI self-efficacy, professional development, and school leadership shape adoption, and whether consistent use of Gemini for Education is associated with gains in math and ELA achievement and in student engagement — while paying particular attention to students with IEPs and other subgroups whose usage patterns and outcomes may differ.</p>
-          <div class="works-head">Status</div>
-          <ul class="works-list">
-            <li>Multi-site quasi-experimental study underway with Google.org and Miami-Dade County Public Schools; baseline and mid-year data collection in progress.</li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      <div class="project-card" onclick="event.stopPropagation(); toggle(this)">
-        <div class="card-header">
-          <div class="card-title">Misconception Trajectories as Early Indicators of Math Risk</div>
-        </div>
-        <p class="card-summary">Can feature-engineered trajectories of students' misconception patterns, drawn from a digital learning platform's AI-annotated student work, predict math risk earlier and more equitably than behavioral engagement metrics?</p>
-        <div class="card-detail"><div class="card-detail-inner">
-          <p>As PI on the AIMS EduData Initiative, a Gates Foundation-funded grant in partnership with Digital Promise and EdLight, I lead a project testing whether longitudinal patterns in students' misconception types improve prediction of end-of-year math outcomes beyond static cognitive indicators and behavioral engagement metrics.</p>
-          <p>Using EdLight's longitudinal, AI-annotated corpus of handwritten middle-school math work, we engineer features capturing error-type slopes, conceptual-versus-procedural error accumulation, and profile volatility over time, then compare their predictive value against static aggregate error rates and behavioral engagement indicators through nested predictive models. A central goal of the project is equity: subgroup calibration and fairness analyses will assess whether trajectory-based signals identify risk earlier without introducing differential bias for English learners, students with IEPs, or racial and ethnic groups.</p>
-          <div class="works-head">Status</div>
-          <ul class="works-list">
-            <li>Feature engineering underway (2026); nested predictive modeling and subgroup fairness analyses planned through early 2027.</li>
-          </ul>
-        </div></div>
-        <div class="toggle-row">Read more <span class="arrow">↓</span></div>
-      </div>
-
-      </div></div>
-    </div>
-  </section>
-
-  <section id="personal">
-    <div class="section-head"><h2>Personal</h2></div>
-    <p>Outside of research, I... under construction!
-  </section>
 </main>
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-name">Nicholas A. Vest · University of Florida</span>
+    <span class="footer-name"><span class="name">Nicholas A. Vest</span> · University of Florida</span>
     <ul class="footer-links">
       <li><a href="mailto:vestnicholas@gmail.com">Email</a></li>
-      <li><a href="https://scholar.google.com/citations?user=IW2udwcAAAAJ&hl=en&oi=ao" target="_blank">Scholar</a></li>
-      <li><a href="https://github.com/n-vest" target="_blank">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/nicholas-vest/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank">CV</a></li>
+      <li><a href="https://scholar.google.com/citations?user=IW2udwcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar</a></li>
+      <li><a href="https://github.com/n-vest" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/nicholas-vest/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://nicholasvest.com/cv_navest.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
 </footer>
 
 <script>
-function toggle(card) {
-  const detail = card.querySelector('.card-detail');
-  const isOpen = detail.classList.contains('open');
-  document.querySelectorAll('.card-detail.open').forEach(d => {
-    d.classList.remove('open');
-    d.closest('.project-card').classList.remove('expanded');
-  });
-  if (!isOpen) {
-    detail.classList.add('open');
-    card.classList.add('expanded');
-  }
-}
-
-function toggleGroup(head) {
-  const group = head.closest('.topic-group');
-  group.classList.toggle('expanded');
-}
-
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[data-section]');
 const observer = new IntersectionObserver((entries) => {
