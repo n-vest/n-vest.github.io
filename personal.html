@@ -8,7 +8,7 @@
 
 <meta
   name="description"
-  content="Outside of research, Nicholas A. Vest enjoys running, fitness, the outdoors, music, and spending time with his border collie, Mila."
+  content="A little more about Nicholas A. Vest outside of research."
 >
 
 <meta name="theme-color" content="#fbfbfa">
@@ -143,11 +143,12 @@ a:hover {
 
 
 /* =========================================================
-   PAGE HERO
+   INTRO
    ========================================================= */
 
-.page-hero {
-  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+.intro {
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4rem, 6vw, 5.5rem);
 }
 
 .eyebrow {
@@ -162,8 +163,8 @@ a:hover {
   text-transform: uppercase;
 }
 
-.page-hero h1 {
-  max-width: 1050px;
+.intro h1 {
+  max-width: 900px;
 
   font-size: clamp(3.2rem, 5.5vw, 5.4rem);
   line-height: 1;
@@ -172,168 +173,74 @@ a:hover {
   font-weight: 600;
 }
 
-.page-intro {
-  max-width: 830px;
+.intro-text {
+  max-width: 760px;
 
   margin-top: 2rem;
 
   color: var(--ink-mid);
 
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  line-height: 1.7;
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  line-height: 1.75;
 }
 
 
 /* =========================================================
-   PHOTO GRID
+   RUNNING + FITNESS
    ========================================================= */
 
-.photo-section {
-  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+.life {
+  padding-bottom: clamp(5rem, 8vw, 7rem);
 }
 
-.photo-grid {
-  display: grid;
-
-  grid-template-columns: 1.65fr 0.75fr;
-
-  gap: 1rem;
-
-  align-items: stretch;
-}
-
-.photo {
-  overflow: hidden;
-
-  background: #eee;
-}
-
-.photo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.photo-run {
-  aspect-ratio: 16 / 10;
-}
-
-.photo-mila {
-  aspect-ratio: 3 / 4;
-}
-
-.photo-mila img {
-  object-position: center;
-}
-
-
-/* =========================================================
-   PERSONAL SECTIONS
-   ========================================================= */
-
-.personal-section {
-  padding-block: clamp(4.5rem, 7vw, 6rem);
-
-  border-top: 1px solid var(--rule);
-}
-
-.personal-grid {
+.life-grid {
   display: grid;
 
   grid-template-columns:
-    minmax(180px, 0.28fr)
-    minmax(0, 1fr);
+    minmax(0, 1.15fr)
+    minmax(300px, 0.55fr);
 
   gap: clamp(3rem, 7vw, 7rem);
 
-  align-items: start;
+  align-items: center;
 }
 
-.section-number {
-  color: var(--ink-soft);
+.run-photo img {
+  width: 100%;
 
-  font-size: 0.74rem;
-  font-weight: 700;
+  aspect-ratio: 4 / 3;
 
-  letter-spacing: 0.1em;
+  object-fit: cover;
+  object-position: center;
 }
 
-.section-label {
-  margin-top: 0.75rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-
-  text-transform: uppercase;
+.life-copy {
+  max-width: 460px;
 }
 
-.personal-content {
-  max-width: 900px;
-}
+.life-copy h2,
+.mila-copy h2,
+.music-copy h2 {
+  margin-bottom: 1.2rem;
 
-.personal-content h2 {
-  max-width: 850px;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.15;
 
-  font-size: clamp(2rem, 3.3vw, 3.25rem);
-  line-height: 1.1;
-
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   font-weight: 500;
 }
 
-.personal-lead {
-  max-width: 780px;
-
-  margin-top: 1.5rem;
-
+.life-copy p,
+.mila-copy p,
+.music-copy p {
   color: var(--ink-mid);
 
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
-
-/* =========================================================
-   INTERESTS
-   ========================================================= */
-
-.interests {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  margin-top: 3rem;
-
-  border-top: 1px solid var(--rule);
-}
-
-.interest {
-  padding: 1.75rem 2rem 0 0;
-}
-
-.interest + .interest {
-  padding-left: 2rem;
-
-  border-left: 1px solid var(--rule);
-}
-
-.interest h3 {
-  margin-bottom: 0.6rem;
-
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.interest p {
-  color: var(--ink-mid);
-
-  font-size: 0.89rem;
-  line-height: 1.7;
+.life-copy p + p {
+  margin-top: 1rem;
 }
 
 
@@ -341,8 +248,51 @@ a:hover {
    MILA
    ========================================================= */
 
-.mila-name {
-  font-style: italic;
+.mila-section {
+  padding-block: clamp(5rem, 8vw, 7rem);
+
+  border-top: 1px solid var(--rule);
+}
+
+.mila-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.6fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 8vw, 8rem);
+
+  align-items: center;
+}
+
+.mila-photo {
+  max-width: 440px;
+}
+
+.mila-photo img {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
+.mila-copy {
+  max-width: 600px;
+}
+
+.mila-label,
+.music-label {
+  margin-bottom: 1rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 
@@ -350,50 +300,53 @@ a:hover {
    MUSIC
    ========================================================= */
 
-.music-link {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 2rem;
-
-  margin-top: 2.5rem;
-  padding-block: 1.5rem;
+.music {
+  padding-block: clamp(5rem, 8vw, 7rem);
 
   border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-
-  text-decoration: none;
 }
 
-.music-link-title {
-  font-size: 1rem;
-  font-weight: 600;
+.music-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.35fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 8vw, 8rem);
+
+  align-items: start;
 }
 
-.music-link-sub {
-  margin-top: 0.2rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.85rem;
+.music-side {
+  padding-top: 0.25rem;
 }
 
-.music-link-arrow {
-  color: var(--ink-soft);
-
-  font-size: 1.15rem;
-
-  transition: transform 0.15s ease;
+.music-content {
+  max-width: 850px;
 }
 
-.music-link:hover {
-  color: var(--ink);
+.music-copy {
+  max-width: 780px;
 }
 
-.music-link:hover .music-link-arrow {
-  transform: translateX(4px);
+.artist-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.65rem 1.6rem;
+
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.artist-list span {
+  color: var(--ink-mid);
+
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
 
@@ -453,18 +406,27 @@ footer {
 
 @media (max-width: 900px) {
 
-  .photo-grid {
-    grid-template-columns: 1.4fr 0.8fr;
-  }
-
-  .personal-grid {
+  .life-grid,
+  .mila-grid {
     grid-template-columns: 1fr;
 
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
-  .section-label {
-    margin-top: 0.4rem;
+  .music-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .life-copy,
+  .mila-copy,
+  .music-copy {
+    max-width: 700px;
+  }
+
+  .mila-photo {
+    max-width: 520px;
   }
 
 }
@@ -480,36 +442,26 @@ footer {
     gap: 1rem;
   }
 
-  .page-hero {
-    padding-block: 3.5rem;
+  .intro {
+    padding-top: 3.5rem;
   }
 
-  .photo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-run {
+  .run-photo img {
     aspect-ratio: 4 / 3;
   }
 
-  .photo-mila {
+  .mila-photo {
+    max-width: 100%;
+  }
+
+  .mila-photo img {
     aspect-ratio: 4 / 3;
+
+    object-position: center 38%;
   }
 
-  .interests {
-    grid-template-columns: 1fr;
-  }
-
-  .interest {
-    padding: 1.5rem 0;
-
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .interest + .interest {
-    padding-left: 0;
-
-    border-left: 0;
+  .artist-list {
+    gap: 0.5rem 1.2rem;
   }
 
   .footer-inner {
@@ -621,7 +573,7 @@ footer {
      INTRO
      ======================================================= -->
 
-<section class="page-hero">
+<section class="intro">
 
   <div class="container">
 
@@ -630,13 +582,12 @@ footer {
     </div>
 
     <h1>
-      Life beyond research.
+      When I'm not working...
     </h1>
 
-    <p class="page-intro">
-      Outside of work, I like to stay active, spend time
-      outdoors, discover new music, and explore new places,
-      usually with my border collie, Mila, somewhere nearby.
+    <p class="intro-text">
+      I'm usually doing something active, looking for somewhere
+      new to explore, listening to music, or hanging out with Mila.
     </p>
 
   </div>
@@ -646,128 +597,44 @@ footer {
 
 
 <!-- =======================================================
-     PHOTOS
+     RUNNING + FITNESS
      ======================================================= -->
 
-<section class="photo-section">
+<section class="life">
 
-  <div class="container">
-
-    <div class="photo-grid">
+  <div class="container life-grid">
 
 
-      <div class="photo photo-run">
+    <div class="run-photo">
 
-        <img
-          src="runclub.JPG"
-          alt="Nick with friends after a run"
-        >
-
-      </div>
-
-
-      <div class="photo photo-mila">
-
-        <img
-          src="mila.png"
-          alt="Mila, Nick's border collie"
-        >
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     ACTIVE + OUTDOORS
-     ======================================================= -->
-
-<section class="personal-section">
-
-  <div class="container personal-grid">
-
-
-    <div>
-
-      <div class="section-number">
-        01
-      </div>
-
-      <div class="section-label">
-        Active + Outdoors
-      </div>
+      <img
+        src="runclub.JPG"
+        alt="Nick with friends at run club"
+      >
 
     </div>
 
 
-    <div class="personal-content">
+    <div class="life-copy">
 
       <h2>
-        Usually moving.
+        I like to keep moving.
       </h2>
 
-      <p class="personal-lead">
-        Staying active is a big part of my life. I enjoy
-        run clubs, F45 classes, rollerblading, and getting
-        outside whenever I can. I especially like exploring
-        new trails and spending time outdoors with Mila.
+      <p>
+        Run clubs and F45 are regular parts of my week.
+        I also love rollerblading, hiking, and generally
+        finding an excuse to be outside.
       </p>
 
-
-      <div class="interests">
-
-
-        <div class="interest">
-
-          <h3>
-            Running
-          </h3>
-
-          <p>
-            I enjoy social runs and run clubs, especially as
-            a way to stay active and meet people.
-          </p>
-
-        </div>
-
-
-        <div class="interest">
-
-          <h3>
-            Training
-          </h3>
-
-          <p>
-            F45 is a regular part of my routine, along with
-            other ways of keeping fitness varied and social.
-          </p>
-
-        </div>
-
-
-        <div class="interest">
-
-          <h3>
-            Outdoors
-          </h3>
-
-          <p>
-            Trails, new places, rollerblading, and pretty much
-            any excuse to spend more time outside.
-          </p>
-
-        </div>
-
-
-      </div>
+      <p>
+        A lot of that is social for me. Some of my favorite
+        ways to explore a place are running through it with
+        other people or finding a new trail with Mila.
+      </p>
 
     </div>
+
 
   </div>
 
@@ -779,39 +646,40 @@ footer {
      MILA
      ======================================================= -->
 
-<section class="personal-section">
+<section class="mila-section">
 
-  <div class="container personal-grid">
+  <div class="container mila-grid">
 
 
-    <div>
+    <div class="mila-photo">
 
-      <div class="section-number">
-        02
-      </div>
+      <img
+        src="mila.png"
+        alt="Mila, Nick's border collie"
+      >
 
-      <div class="section-label">
+    </div>
+
+
+    <div class="mila-copy">
+
+      <div class="mila-label">
         Mila
       </div>
 
-    </div>
-
-
-    <div class="personal-content">
-
       <h2>
-        Meet <span class="mila-name">Mila.</span>
+        My favorite adventure buddy.
       </h2>
 
-      <p class="personal-lead">
-        Mila is my border collie and frequent adventure
-        companion. She is happiest when we're outside
-        exploring, and she has been a constant companion
-        through graduate school, moves, and everything
-        in between.
+      <p>
+        Mila is my border collie and has been with me through
+        graduate school, moves, and plenty of adventures in
+        between. She's happiest outside exploring, which works
+        out pretty well for both of us.
       </p>
 
     </div>
+
 
   </div>
 
@@ -823,61 +691,50 @@ footer {
      MUSIC
      ======================================================= -->
 
-<section class="personal-section">
+<section class="music">
 
-  <div class="container personal-grid">
+  <div class="container music-grid">
 
 
-    <div>
+    <div class="music-side">
 
-      <div class="section-number">
-        03
-      </div>
-
-      <div class="section-label">
+      <div class="music-label">
         Music
       </div>
 
     </div>
 
 
-    <div class="personal-content">
+    <div class="music-content">
 
-      <h2>
-        Always looking for something new to listen to.
-      </h2>
+      <div class="music-copy">
 
-      <p class="personal-lead">
-        Music is another big part of my life. I love
-        discovering new artists, building playlists, and
-        seeing live shows whenever I get the chance.
-      </p>
+        <h2>
+          Always listening to something.
+        </h2>
+
+        <p>
+          My music taste is mostly rooted in pop, especially
+          art pop and hyperpop, but it wanders pretty freely
+          into R&amp;B, indie, psychedelic music, and country.
+          I love finding new artists and seeing live music
+          whenever I can.
+        </p>
+
+      </div>
 
 
-      <a
-        class="music-link"
-        href="https://open.spotify.com/user/nick.vest?si=sk5HGwZ1S4qFHHJAYPTPWA&utm_source=copy-link&nd=1&dlsi=802569fbe3694a67"
-        target="_blank"
-        rel="noopener"
-      >
+      <div class="artist-list">
 
-        <div>
+        <span>Charli xcx</span>
+        <span>Kacey Musgraves</span>
+        <span>Ariana Grande</span>
+        <span>Tove Lo</span>
+        <span>SZA</span>
+        <span>Carly Rae Jepsen</span>
 
-          <div class="music-link-title">
-            Find me on Spotify
-          </div>
+      </div>
 
-          <div class="music-link-sub">
-            Playlists, music, and what I'm listening to.
-          </div>
-
-        </div>
-
-        <div class="music-link-arrow">
-          ↗
-        </div>
-
-      </a>
 
     </div>
 
