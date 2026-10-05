@@ -1,1 +1,972 @@
-under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal | Nicholas A. Vest</title>
+
+<meta
+  name="description"
+  content="Outside of research, Nicholas A. Vest enjoys running, fitness, the outdoors, music, and spending time with his border collie, Mila."
+>
+
+<meta name="theme-color" content="#fbfbfa">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #111315;
+  --ink-mid: #41464b;
+  --ink-soft: #73787d;
+
+  --paper: #fbfbfa;
+  --rule: #dededb;
+
+  --max: 1380px;
+  --gutter: clamp(1.25rem, 3vw, 2.75rem);
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink-soft);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.nav-name {
+  font-size: 0.87rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.nav-name:hover {
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
+
+.page-hero {
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.eyebrow {
+  margin-bottom: 1.2rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  max-width: 1050px;
+
+  font-size: clamp(3.2rem, 5.5vw, 5.4rem);
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.page-intro {
+  max-width: 830px;
+
+  margin-top: 2rem;
+
+  color: var(--ink-mid);
+
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PHOTO GRID
+   ========================================================= */
+
+.photo-section {
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.photo-grid {
+  display: grid;
+
+  grid-template-columns: 1.65fr 0.75fr;
+
+  gap: 1rem;
+
+  align-items: stretch;
+}
+
+.photo {
+  overflow: hidden;
+
+  background: #eee;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.photo-run {
+  aspect-ratio: 16 / 10;
+}
+
+.photo-mila {
+  aspect-ratio: 3 / 4;
+}
+
+.photo-mila img {
+  object-position: center;
+}
+
+
+/* =========================================================
+   PERSONAL SECTIONS
+   ========================================================= */
+
+.personal-section {
+  padding-block: clamp(4.5rem, 7vw, 6rem);
+
+  border-top: 1px solid var(--rule);
+}
+
+.personal-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.28fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 7vw, 7rem);
+
+  align-items: start;
+}
+
+.section-number {
+  color: var(--ink-soft);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.section-label {
+  margin-top: 0.75rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+.personal-content {
+  max-width: 900px;
+}
+
+.personal-content h2 {
+  max-width: 850px;
+
+  font-size: clamp(2rem, 3.3vw, 3.25rem);
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.personal-lead {
+  max-width: 780px;
+
+  margin-top: 1.5rem;
+
+  color: var(--ink-mid);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTERESTS
+   ========================================================= */
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 3rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.interest {
+  padding: 1.75rem 2rem 0 0;
+}
+
+.interest + .interest {
+  padding-left: 2rem;
+
+  border-left: 1px solid var(--rule);
+}
+
+.interest h3 {
+  margin-bottom: 0.6rem;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.interest p {
+  color: var(--ink-mid);
+
+  font-size: 0.89rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MILA
+   ========================================================= */
+
+.mila-name {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+.music-link {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-top: 2.5rem;
+  padding-block: 1.5rem;
+
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+
+  text-decoration: none;
+}
+
+.music-link-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.music-link-sub {
+  margin-top: 0.2rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.85rem;
+}
+
+.music-link-arrow {
+  color: var(--ink-soft);
+
+  font-size: 1.15rem;
+
+  transition: transform 0.15s ease;
+}
+
+.music-link:hover {
+  color: var(--ink);
+}
+
+.music-link:hover .music-link-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 3rem;
+
+  padding-block: 3rem;
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-description {
+  margin-top: 0.25rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem 1.5rem;
+
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.85rem;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .photo-grid {
+    grid-template-columns: 1.4fr 0.8fr;
+  }
+
+  .personal-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .section-label {
+    margin-top: 0.4rem;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .page-hero {
+    padding-block: 3.5rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-run {
+    aspect-ratio: 4 / 3;
+  }
+
+  .photo-mila {
+    aspect-ratio: 4 / 3;
+  }
+
+  .interests {
+    grid-template-columns: 1fr;
+  }
+
+  .interest {
+    padding: 1.5rem 0;
+
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .interest + .interest {
+    padding-left: 0;
+
+    border-left: 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .nav {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    padding-block: 1rem;
+  }
+
+  .nav-name {
+    font-size: 0.76rem;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     NAVIGATION
+     ======================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a
+      class="nav-name"
+      href="https://nicholasvest.com/"
+    >
+      Nicholas A. Vest
+    </a>
+
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="https://nicholasvest.com/research.html">
+          Research
+        </a>
+      </li>
+
+      <li>
+        <a href="https://nicholasvest.com/portfolio.html">
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV ↗
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="active"
+          href="https://nicholasvest.com/personal.html"
+        >
+          Personal
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =======================================================
+     INTRO
+     ======================================================= -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Outside the Lab
+    </div>
+
+    <h1>
+      Life beyond research.
+    </h1>
+
+    <p class="page-intro">
+      Outside of work, I like to stay active, spend time
+      outdoors, discover new music, and explore new places,
+      usually with my border collie, Mila, somewhere nearby.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PHOTOS
+     ======================================================= -->
+
+<section class="photo-section">
+
+  <div class="container">
+
+    <div class="photo-grid">
+
+
+      <div class="photo photo-run">
+
+        <img
+          src="runclub.JPG"
+          alt="Nick with friends after a run"
+        >
+
+      </div>
+
+
+      <div class="photo photo-mila">
+
+        <img
+          src="mila.png"
+          alt="Mila, Nick's border collie"
+        >
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     ACTIVE + OUTDOORS
+     ======================================================= -->
+
+<section class="personal-section">
+
+  <div class="container personal-grid">
+
+
+    <div>
+
+      <div class="section-number">
+        01
+      </div>
+
+      <div class="section-label">
+        Active + Outdoors
+      </div>
+
+    </div>
+
+
+    <div class="personal-content">
+
+      <h2>
+        Usually moving.
+      </h2>
+
+      <p class="personal-lead">
+        Staying active is a big part of my life. I enjoy
+        run clubs, F45 classes, rollerblading, and getting
+        outside whenever I can. I especially like exploring
+        new trails and spending time outdoors with Mila.
+      </p>
+
+
+      <div class="interests">
+
+
+        <div class="interest">
+
+          <h3>
+            Running
+          </h3>
+
+          <p>
+            I enjoy social runs and run clubs, especially as
+            a way to stay active and meet people.
+          </p>
+
+        </div>
+
+
+        <div class="interest">
+
+          <h3>
+            Training
+          </h3>
+
+          <p>
+            F45 is a regular part of my routine, along with
+            other ways of keeping fitness varied and social.
+          </p>
+
+        </div>
+
+
+        <div class="interest">
+
+          <h3>
+            Outdoors
+          </h3>
+
+          <p>
+            Trails, new places, rollerblading, and pretty much
+            any excuse to spend more time outside.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MILA
+     ======================================================= -->
+
+<section class="personal-section">
+
+  <div class="container personal-grid">
+
+
+    <div>
+
+      <div class="section-number">
+        02
+      </div>
+
+      <div class="section-label">
+        Mila
+      </div>
+
+    </div>
+
+
+    <div class="personal-content">
+
+      <h2>
+        Meet <span class="mila-name">Mila.</span>
+      </h2>
+
+      <p class="personal-lead">
+        Mila is my border collie and frequent adventure
+        companion. She is happiest when we're outside
+        exploring, and she has been a constant companion
+        through graduate school, moves, and everything
+        in between.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MUSIC
+     ======================================================= -->
+
+<section class="personal-section">
+
+  <div class="container personal-grid">
+
+
+    <div>
+
+      <div class="section-number">
+        03
+      </div>
+
+      <div class="section-label">
+        Music
+      </div>
+
+    </div>
+
+
+    <div class="personal-content">
+
+      <h2>
+        Always looking for something new to listen to.
+      </h2>
+
+      <p class="personal-lead">
+        Music is another big part of my life. I love
+        discovering new artists, building playlists, and
+        seeing live shows whenever I get the chance.
+      </p>
+
+
+      <a
+        class="music-link"
+        href="https://open.spotify.com/user/nick.vest?si=sk5HGwZ1S4qFHHJAYPTPWA&utm_source=copy-link&nd=1&dlsi=802569fbe3694a67"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <div>
+
+          <div class="music-link-title">
+            Find me on Spotify
+          </div>
+
+          <div class="music-link-sub">
+            Playlists, music, and what I'm listening to.
+          </div>
+
+        </div>
+
+        <div class="music-link-arrow">
+          ↗
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+
+    <div>
+
+      <div class="footer-name">
+        Nicholas A. Vest
+      </div>
+
+      <div class="footer-description">
+        Mathematical Cognition · Learning · Educational Technology
+      </div>
+
+    </div>
+
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="mailto:vestnicholas@ufl.edu">
+          Email
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
+          target="_blank"
+          rel="noopener"
+        >
+          Scholar
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://github.com/n-vest"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.linkedin.com/in/nicholas-vest/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
