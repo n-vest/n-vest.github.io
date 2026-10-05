@@ -46,7 +46,7 @@
   --representation: #7334a6;
   --ai: #637f9e;
 
-  /* Wider page + tighter margins */
+  /* Wide layout with tighter margins */
   --max: 1380px;
   --gutter: clamp(1.25rem, 3vw, 2.75rem);
 
@@ -61,9 +61,11 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
+
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -85,6 +87,7 @@ a:hover {
 .container {
   width: 100%;
   max-width: var(--max);
+
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
@@ -177,13 +180,13 @@ a:hover {
 }
 
 .hero h1 {
+  margin-bottom: 1.7rem;
+
   font-size: clamp(3.3rem, 6vw, 5.7rem);
   line-height: 0.98;
 
   letter-spacing: -0.065em;
   font-weight: 600;
-
-  margin-bottom: 1.7rem;
 
   white-space: nowrap;
 }
@@ -191,12 +194,12 @@ a:hover {
 .hero-statement {
   max-width: 760px;
 
+  color: var(--ink);
+
   font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   line-height: 1.3;
 
   letter-spacing: -0.025em;
-
-  color: var(--ink);
 }
 
 .hero-sub {
@@ -309,13 +312,29 @@ a:hover {
 .pillar {
   position: relative;
 
-  padding: 2rem 2.5rem 1rem 0;
+  min-width: 0;
+
+  padding: 2rem 2.25rem 1rem 0;
 }
 
 .pillar + .pillar {
-  border-left: 1px solid var(--rule);
+  padding-left: 2.25rem;
 
-  padding-left: 2.5rem;
+  border-left: 1px solid var(--rule);
+}
+
+.pillar::before {
+  content: "";
+
+  position: absolute;
+
+  top: -2px;
+  left: 0;
+
+  width: 42px;
+  height: 3px;
+
+  background: var(--pillar-color);
 }
 
 .pillar-number {
@@ -332,34 +351,25 @@ a:hover {
 .pillar-title {
   margin-bottom: 1rem;
 
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
   line-height: 1.25;
 
   letter-spacing: -0.025em;
   font-weight: 600;
 }
 
+/* Keep shorter pillar titles on one line on wide screens */
+.pillar-title-nowrap {
+  white-space: nowrap;
+}
+
 .pillar-question {
-  max-width: 360px;
+  max-width: 370px;
 
   color: var(--ink-mid);
 
   font-size: 0.97rem;
   line-height: 1.7;
-}
-
-.pillar::before {
-  content: "";
-
-  position: absolute;
-
-  top: -2px;
-  left: 0;
-
-  width: 42px;
-  height: 3px;
-
-  background: var(--pillar-color);
 }
 
 .pillar-abstract {
@@ -521,6 +531,10 @@ footer {
     font-size: clamp(3.2rem, 6.5vw, 5rem);
   }
 
+  .pillar-title-nowrap {
+    white-space: normal;
+  }
+
 }
 
 
@@ -553,13 +567,21 @@ footer {
   }
 
   .pillar + .pillar {
-    border-left: 0;
-
     padding-left: 0;
+
+    border-left: 0;
   }
 
   .pillar-number {
     margin-bottom: 1.2rem;
+  }
+
+  .pillar-title {
+    font-size: 1.35rem;
+  }
+
+  .pillar-title-nowrap {
+    white-space: normal;
   }
 
   .pillar-question {
@@ -832,13 +854,13 @@ footer {
         </div>
 
         <h3 class="pillar-title">
-          Understanding Abstract Concepts
+          Learning &amp; Adapting Abstract Concepts
         </h3>
 
         <p class="pillar-question">
-          How do spatial representations support understanding
-          of abstract mathematical concepts, including zero and
-          negative numbers?
+          How do learners build and adapt representations of
+          abstract mathematical concepts across development
+          and contexts?
         </p>
 
       </article>
@@ -852,7 +874,7 @@ footer {
           02
         </div>
 
-        <h3 class="pillar-title">
+        <h3 class="pillar-title pillar-title-nowrap">
           Encoding External Representations
         </h3>
 
@@ -874,7 +896,7 @@ footer {
         </div>
 
         <h3 class="pillar-title">
-          Human–AI Interactions
+          Human-AI Interactions
         </h3>
 
         <p class="pillar-question">
@@ -942,7 +964,7 @@ footer {
 
         <p>
           I earned my Ph.D. in Developmental Psychology at the
-          University of Wisconsin–Madison, where I was a member
+          University of Wisconsin-Madison, where I was a member
           of the Cognitive Development and Communication Lab.
         </p>
 
@@ -967,7 +989,7 @@ footer {
             </div>
 
             <div class="edu-school">
-              University of Wisconsin–Madison
+              University of Wisconsin-Madison
             </div>
 
           </div>
@@ -981,7 +1003,7 @@ footer {
             </div>
 
             <div class="edu-school">
-              University of Wisconsin–Madison
+              University of Wisconsin-Madison
             </div>
 
           </div>
