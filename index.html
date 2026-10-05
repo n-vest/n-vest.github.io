@@ -333,8 +333,6 @@ a:hover {
   line-height: 1.7;
 }
 
-/* Color appears only as a small, intentional accent */
-
 .pillar::before {
   content: "";
 
@@ -358,88 +356,6 @@ a:hover {
 
 .pillar-ai {
   --pillar-color: var(--ai);
-}
-
-
-/* =========================================================
-   SELECTED WORK
-   ========================================================= */
-
-.work-list {
-  margin-top: 3.5rem;
-
-  border-top: 1px solid var(--rule);
-}
-
-.work-item {
-  display: grid;
-  grid-template-columns: 180px 1fr auto;
-
-  gap: 2rem;
-
-  align-items: start;
-
-  padding-block: 2rem;
-
-  border-bottom: 1px solid var(--rule);
-
-  text-decoration: none;
-}
-
-.work-category {
-  padding-top: 0.2rem;
-
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.category-abstract {
-  color: var(--abstract);
-}
-
-.category-representation {
-  color: var(--representation);
-}
-
-.category-ai {
-  color: var(--ai);
-}
-
-.work-title {
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  line-height: 1.3;
-
-  letter-spacing: -0.02em;
-  font-weight: 500;
-}
-
-.work-description {
-  max-width: 680px;
-
-  margin-top: 0.65rem;
-
-  color: var(--ink-mid);
-
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-.work-arrow {
-  color: var(--ink-soft);
-  font-size: 1.2rem;
-
-  transition: transform 0.15s ease;
-}
-
-.work-item:hover {
-  color: var(--ink);
-}
-
-.work-item:hover .work-arrow {
-  transform: translateX(4px);
 }
 
 
@@ -620,25 +536,12 @@ footer {
     gap: 1rem;
   }
 
-  .nav-links li:first-child {
-    display: none;
-  }
-
   .hero {
     padding-block: 3.5rem;
   }
 
   .hero h1 {
     font-size: clamp(3rem, 15vw, 4.5rem);
-  }
-
-  .work-item {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-  }
-
-  .work-category {
-    grid-column: 1 / -1;
   }
 
   .footer-inner {
@@ -663,7 +566,7 @@ footer {
     font-size: 0.8rem;
   }
 
-  .nav-links li:nth-child(2) {
+  .nav-links li:nth-child(3) {
     display: none;
   }
 
@@ -692,10 +595,6 @@ footer {
 
       <li>
         <a href="#research">Research</a>
-      </li>
-
-      <li>
-        <a href="#work">Portfolio</a>
       </li>
 
       <li>
@@ -750,26 +649,39 @@ footer {
 
       <div class="hero-links">
 
-        <!-- Replace email if needed -->
         <a href="mailto:YOUR_EMAIL_HERE">
           Email
         </a>
 
-        <!-- Replace URLs below with your actual profiles -->
-
-        <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener">
+        <a
+          href="YOUR_GOOGLE_SCHOLAR_URL"
+          target="_blank"
+          rel="noopener"
+        >
           Scholar ↗
         </a>
 
-        <a href="https://github.com/n-vest" target="_blank" rel="noopener">
+        <a
+          href="https://github.com/n-vest"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub ↗
         </a>
 
-        <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">
+        <a
+          href="YOUR_LINKEDIN_URL"
+          target="_blank"
+          rel="noopener"
+        >
           LinkedIn ↗
         </a>
 
-        <a href="cv_navest.pdf" target="_blank" rel="noopener">
+        <a
+          href="cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
           CV ↗
         </a>
 
@@ -881,122 +793,6 @@ footer {
         </p>
 
       </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     SELECTED WORK
-     ======================================================= -->
-
-<section class="section" id="work">
-
-  <div class="container">
-
-    <div class="section-label">
-      Selected Work
-    </div>
-
-    <h2 class="section-heading">
-      Current questions and projects.
-    </h2>
-
-
-    <div class="work-list">
-
-
-      <!-- PROJECT 1 -->
-
-      <div class="work-item">
-
-        <div class="work-category category-ai">
-          Human–AI Interactions
-        </div>
-
-        <div>
-
-          <h3 class="work-title">
-            Student–AI Interactions in High School Mathematics
-          </h3>
-
-          <p class="work-description">
-            Examining what mathematical work students ask AI
-            to perform, how they engage with AI-generated
-            support, and how those interactions unfold across
-            turns.
-          </p>
-
-        </div>
-
-        <div class="work-arrow">
-          →
-        </div>
-
-      </div>
-
-
-      <!-- PROJECT 2 -->
-
-      <div class="work-item">
-
-        <div class="work-category category-abstract">
-          Abstract Concepts
-        </div>
-
-        <div>
-
-          <h3 class="work-title">
-            Learning Abstract Mathematical Concepts
-          </h3>
-
-          <p class="work-description">
-            Investigating how learners use spatial and
-            relational structure to understand concepts such
-            as zero, negative numbers, and additive inverses.
-          </p>
-
-        </div>
-
-        <div class="work-arrow">
-          →
-        </div>
-
-      </div>
-
-
-      <!-- PROJECT 3 -->
-
-      <div class="work-item">
-
-        <div class="work-category category-representation">
-          Representations · AI
-        </div>
-
-        <div>
-
-          <h3 class="work-title">
-            Representational Alignment in Learning with AI
-          </h3>
-
-          <p class="work-description">
-            Studying how learners and generative AI construct,
-            communicate, and align representations across
-            interactions.
-          </p>
-
-        </div>
-
-        <div class="work-arrow">
-          →
-        </div>
-
-      </div>
 
 
     </div>
@@ -1152,25 +948,41 @@ footer {
       </li>
 
       <li>
-        <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener">
+        <a
+          href="YOUR_GOOGLE_SCHOLAR_URL"
+          target="_blank"
+          rel="noopener"
+        >
           Scholar
         </a>
       </li>
 
       <li>
-        <a href="https://github.com/n-vest" target="_blank" rel="noopener">
+        <a
+          href="https://github.com/n-vest"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub
         </a>
       </li>
 
       <li>
-        <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">
+        <a
+          href="YOUR_LINKEDIN_URL"
+          target="_blank"
+          rel="noopener"
+        >
           LinkedIn
         </a>
       </li>
 
       <li>
-        <a href="cv_navest.pdf" target="_blank" rel="noopener">
+        <a
+          href="cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
           CV
         </a>
       </li>
