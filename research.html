@@ -41,12 +41,14 @@
   --paper: #fbfbfa;
   --rule: #dededb;
 
+  /* Research pillar colors */
   --abstract: #56863b;
   --representation: #7334a6;
   --ai: #637f9e;
 
-  --max: 1180px;
-  --gutter: clamp(1.4rem, 4vw, 3.5rem);
+  /* Match homepage */
+  --max: 1380px;
+  --gutter: clamp(1.25rem, 3vw, 2.75rem);
 
   --sans: "Inter", -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
@@ -135,27 +137,25 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
   color: var(--ink);
 }
 
 .nav-links a.active {
-  text-decoration: underline;
-  text-underline-offset: 6px;
+  color: var(--ink);
 }
 
 
 /* =========================================================
-   PAGE INTRO
+   PAGE HERO
    ========================================================= */
 
 .page-hero {
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding-block: clamp(5rem, 8vw, 7.5rem);
 }
 
 .eyebrow {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
 
   color: var(--ink-soft);
 
@@ -167,24 +167,24 @@ a:hover {
 }
 
 .page-hero h1 {
-  max-width: 1000px;
+  max-width: 1100px;
 
-  font-size: clamp(3.4rem, 7vw, 6.5rem);
-  line-height: 0.98;
+  font-size: clamp(3.5rem, 6.5vw, 6.2rem);
+  line-height: 0.99;
 
   letter-spacing: -0.06em;
   font-weight: 600;
 }
 
 .page-intro {
-  max-width: 830px;
+  max-width: 880px;
 
-  margin-top: 2.5rem;
+  margin-top: 2.2rem;
 
   color: var(--ink-mid);
 
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
-  line-height: 1.6;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.65;
 
   letter-spacing: -0.015em;
 }
@@ -206,13 +206,16 @@ a:hover {
 .map-item {
   position: relative;
 
-  padding: 2rem 2.3rem 0 0;
+  min-height: 190px;
+
+  padding: 2rem 2.75rem 2rem 0;
 
   text-decoration: none;
 }
 
 .map-item + .map-item {
-  padding-left: 2.3rem;
+  padding-left: 2.75rem;
+
   border-left: 1px solid var(--rule);
 }
 
@@ -220,37 +223,45 @@ a:hover {
   content: "";
 
   position: absolute;
+
   top: -2px;
   left: 0;
 
-  width: 42px;
+  width: 48px;
   height: 3px;
 
   background: var(--accent);
 }
 
 .map-number {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.3rem;
 
   color: var(--ink-soft);
 
-  font-size: 0.73rem;
+  font-size: 0.75rem;
   font-weight: 600;
+
+  letter-spacing: 0.08em;
 }
 
 .map-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  max-width: 320px;
 
-  line-height: 1.35;
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
 
 .map-arrow {
   display: inline-block;
 
-  margin-top: 0.75rem;
+  margin-top: 1rem;
 
   color: var(--ink-soft);
+
+  font-size: 0.95rem;
 
   transition: transform 0.15s ease;
 }
@@ -260,7 +271,7 @@ a:hover {
 }
 
 .map-item:hover .map-arrow {
-  transform: translateY(3px);
+  transform: translateY(4px);
 }
 
 .map-abstract {
@@ -283,17 +294,21 @@ a:hover {
 .research-section {
   border-top: 1px solid var(--rule);
 
-  padding-block: clamp(5rem, 9vw, 8rem);
+  padding-block: clamp(5rem, 8vw, 7.5rem);
+
+  scroll-margin-top: 30px;
 }
 
 .research-grid {
   display: grid;
 
   grid-template-columns:
-    minmax(190px, 0.34fr)
+    minmax(220px, 0.34fr)
     minmax(0, 1fr);
 
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(4rem, 9vw, 9rem);
+
+  align-items: start;
 }
 
 .research-side {
@@ -310,7 +325,7 @@ a:hover {
 }
 
 .research-short-title {
-  max-width: 180px;
+  max-width: 210px;
 
   margin-top: 1rem;
 
@@ -324,18 +339,22 @@ a:hover {
 }
 
 .research-content {
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .research-question {
-  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
-  line-height: 1.1;
+  max-width: 880px;
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.08;
 
   letter-spacing: -0.045em;
   font-weight: 500;
 }
 
 .research-lead {
+  max-width: 790px;
+
   margin-top: 2rem;
 
   color: var(--ink-mid);
@@ -358,20 +377,25 @@ a:hover {
 
 
 /* =========================================================
-   TOPICS
+   RESEARCH TOPICS
    ========================================================= */
 
 .topics {
-  margin-top: 3.5rem;
+  max-width: 900px;
+
+  margin-top: 3.75rem;
 
   border-top: 1px solid var(--rule);
 }
 
 .topic {
   display: grid;
-  grid-template-columns: minmax(190px, 0.35fr) 1fr;
 
-  gap: 2rem;
+  grid-template-columns:
+    minmax(200px, 0.35fr)
+    minmax(0, 1fr);
+
+  gap: 2.75rem;
 
   padding-block: 2rem;
 
@@ -386,6 +410,8 @@ a:hover {
 }
 
 .topic p {
+  max-width: 600px;
+
   color: var(--ink-mid);
 
   font-size: 0.97rem;
@@ -398,7 +424,9 @@ a:hover {
    ========================================================= */
 
 .selected-pubs {
-  margin-top: 3.5rem;
+  max-width: 900px;
+
+  margin-top: 4rem;
 }
 
 .small-label {
@@ -414,14 +442,14 @@ a:hover {
 }
 
 .publication {
-  padding-block: 1rem;
+  padding-block: 1.15rem;
 
   border-top: 1px solid var(--rule);
 
   color: var(--ink-mid);
 
   font-size: 0.91rem;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .publication:last-child {
@@ -430,54 +458,64 @@ a:hover {
 
 .publication strong {
   color: var(--ink);
+
   font-weight: 600;
 }
 
 .publication a {
   color: var(--ink);
+
+  white-space: nowrap;
 }
 
 
 /* =========================================================
-   FUTURE / INTEGRATION
+   INTEGRATION
    ========================================================= */
 
 .integration {
   border-top: 1px solid var(--rule);
 
-  padding-block: clamp(5rem, 10vw, 9rem);
+  padding-block: clamp(5rem, 8vw, 7.5rem);
 }
 
 .integration-inner {
-  max-width: 950px;
+  max-width: 1050px;
 }
 
 .integration h2 {
-  font-size: clamp(2.6rem, 5vw, 4.8rem);
-  line-height: 1.05;
+  max-width: 950px;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.04;
 
   letter-spacing: -0.055em;
   font-weight: 500;
 }
 
 .integration-lead {
-  max-width: 790px;
+  max-width: 800px;
 
-  margin-top: 2rem;
+  margin-top: 2.2rem;
 
   color: var(--ink-mid);
 
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
   line-height: 1.75;
 }
+
+
+/* =========================================================
+   INTEGRATION VISUAL
+   ========================================================= */
 
 .integration-line {
   display: flex;
   align-items: center;
 
-  max-width: 700px;
+  max-width: 760px;
 
-  margin-top: 3.5rem;
+  margin-top: 4rem;
 }
 
 .integration-node {
@@ -525,20 +563,21 @@ a:hover {
   align-items: center;
   justify-content: space-between;
 
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .cta-text {
-  max-width: 650px;
+  max-width: 700px;
 
-  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
-  line-height: 1.45;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.5;
 
   letter-spacing: -0.02em;
 }
 
 .cta-links {
   display: flex;
+
   gap: 1.5rem;
 
   white-space: nowrap;
@@ -553,6 +592,10 @@ a:hover {
   text-decoration: none;
 }
 
+.cta-links a:hover {
+  color: var(--ink);
+}
+
 
 /* =========================================================
    FOOTER
@@ -564,6 +607,7 @@ footer {
 
 .footer-inner {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-end;
 
@@ -607,6 +651,19 @@ footer {
    RESPONSIVE
    ========================================================= */
 
+@media (max-width: 1000px) {
+
+  .research-grid {
+    grid-template-columns:
+      minmax(170px, 0.28fr)
+      minmax(0, 1fr);
+
+    gap: 4rem;
+  }
+
+}
+
+
 @media (max-width: 900px) {
 
   .research-map {
@@ -614,6 +671,8 @@ footer {
   }
 
   .map-item {
+    min-height: auto;
+
     padding: 2rem 0;
 
     border-bottom: 1px solid var(--rule);
@@ -621,13 +680,18 @@ footer {
 
   .map-item + .map-item {
     padding-left: 0;
+
     border-left: 0;
+  }
+
+  .map-number {
+    margin-bottom: 1rem;
   }
 
   .research-grid {
     grid-template-columns: 1fr;
 
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .research-short-title {
@@ -638,6 +702,10 @@ footer {
     grid-template-columns: 1fr;
 
     gap: 0.75rem;
+  }
+
+  .topic p {
+    max-width: 700px;
   }
 
 }
@@ -657,13 +725,19 @@ footer {
     padding-block: 4rem;
   }
 
+  .page-hero h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
   .cta-inner {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
   .footer-inner {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
@@ -672,16 +746,30 @@ footer {
 
 @media (max-width: 500px) {
 
+  .nav {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    padding-block: 1rem;
+  }
+
   .nav-name {
     font-size: 0.76rem;
   }
 
   .nav-links {
-    gap: 0.8rem;
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 0.6rem;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
 }
@@ -753,7 +841,7 @@ footer {
 
 
 <!-- =======================================================
-     INTRODUCTION
+     PAGE INTRO
      ======================================================= -->
 
 <section class="page-hero">
@@ -764,10 +852,12 @@ footer {
       Research
     </div>
 
+
     <h1>
       Mathematical thinking<br>
       is representational.
     </h1>
+
 
     <p class="page-intro">
       I study how learners represent mathematical ideas,
@@ -793,7 +883,9 @@ footer {
           Understanding Abstract Concepts
         </div>
 
-        <span class="map-arrow">↓</span>
+        <span class="map-arrow">
+          ↓
+        </span>
 
       </a>
 
@@ -811,7 +903,9 @@ footer {
           Encoding External Representations
         </div>
 
-        <span class="map-arrow">↓</span>
+        <span class="map-arrow">
+          ↓
+        </span>
 
       </a>
 
@@ -829,7 +923,9 @@ footer {
           Human–AI Interactions
         </div>
 
-        <span class="map-arrow">↓</span>
+        <span class="map-arrow">
+          ↓
+        </span>
 
       </a>
 
@@ -843,7 +939,8 @@ footer {
 
 
 <!-- =======================================================
-     01 — INTERNAL REPRESENTATIONS
+     01
+     UNDERSTANDING ABSTRACT CONCEPTS
      ======================================================= -->
 
 <section
@@ -869,9 +966,11 @@ footer {
 
     <div class="research-content">
 
+
       <h2 class="research-question">
         How do learners represent abstract mathematical concepts?
       </h2>
+
 
       <p class="research-lead">
         Learners can represent the same mathematical concept
@@ -897,7 +996,7 @@ footer {
             collections, where it represents absence. My work
             examines the development of a spatial conception
             of zero as a reference point between positive and
-            negative numbers—and how this conceptual shift
+            negative numbers, and how this conceptual shift
             relates to integer reasoning.
           </p>
 
@@ -953,7 +1052,9 @@ footer {
 
         <div class="publication">
 
-          <strong>Vest, N. A., &amp; Alibali, M. W. (2026).</strong>
+          <strong>
+            Vest, N. A., &amp; Alibali, M. W. (2026).
+          </strong>
 
           The mental representation of negative integer
           magnitude over development and across contexts.
@@ -973,7 +1074,9 @@ footer {
 
         <div class="publication">
 
-          <strong>Vest, N. A., &amp; Alibali, M. W. (2024).</strong>
+          <strong>
+            Vest, N. A., &amp; Alibali, M. W. (2024).
+          </strong>
 
           Is zero more than nothing? Relations between
           concepts of zero and integer understanding.
@@ -1002,7 +1105,8 @@ footer {
 
 
 <!-- =======================================================
-     02 — EXTERNAL REPRESENTATIONS
+     02
+     EXTERNAL REPRESENTATIONS
      ======================================================= -->
 
 <section
@@ -1028,9 +1132,11 @@ footer {
 
     <div class="research-content">
 
+
       <h2 class="research-question">
         How do external representations shape mathematical reasoning?
       </h2>
+
 
       <p class="research-lead">
         Learners' reasoning depends not only on what they know,
@@ -1186,7 +1292,8 @@ footer {
 
 
 <!-- =======================================================
-     03 — HUMAN–AI INTERACTION
+     03
+     HUMAN-AI INTERACTIONS
      ======================================================= -->
 
 <section
@@ -1212,9 +1319,11 @@ footer {
 
     <div class="research-content">
 
+
       <h2 class="research-question">
         How can AI provide new windows into mathematical reasoning and learning?
       </h2>
+
 
       <p class="research-lead">
         AI is both a new source of evidence about learners'
@@ -1222,7 +1331,7 @@ footer {
         part of the environments in which learning occurs.
         My current work examines both possibilities through
         AI-enabled measurement, learning analytics, and the
-        study of human–AI interaction in authentic educational
+        study of human-AI interaction in authentic educational
         settings.
       </p>
 
@@ -1252,7 +1361,7 @@ footer {
         <div class="topic">
 
           <h3>
-            Student–AI interaction
+            Student-AI interaction
           </h3>
 
           <p>
@@ -1277,7 +1386,7 @@ footer {
             to characterize what students ask AI to do,
             the support AI provides, and how students engage
             with that support. This creates new opportunities
-            to connect human–AI interaction with mathematical
+            to connect human-AI interaction with mathematical
             reasoning and learning over time.
           </p>
 
@@ -1297,7 +1406,7 @@ footer {
         <div class="publication">
 
           <strong>
-            Human–AI interaction in high school mathematics.
+            Human-AI interaction in high school mathematics.
           </strong>
 
           Examining how students use generative AI,
@@ -1332,7 +1441,7 @@ footer {
 
 
 <!-- =======================================================
-     INTEGRATION / FUTURE
+     INTEGRATION
      ======================================================= -->
 
 <section class="integration">
@@ -1341,20 +1450,23 @@ footer {
 
     <div class="integration-inner">
 
+
       <div class="eyebrow">
         Looking Forward
       </div>
+
 
       <h2>
         Connecting minds,
         representations, and AI.
       </h2>
 
+
       <p class="integration-lead">
         My current research brings these three strands together.
         I am particularly interested in how the external
         representations AI provides interact with the internal
-        representations learners recruit—and in distinguishing
+        representations learners recruit, and in distinguishing
         AI support that improves immediate performance from
         interactions that produce durable changes in learners'
         own mathematical reasoning.
@@ -1378,6 +1490,7 @@ footer {
 
       </div>
 
+
     </div>
 
   </div>
@@ -1387,12 +1500,13 @@ footer {
 
 
 <!-- =======================================================
-     CV / SCHOLAR
+     CV + SCHOLAR
      ======================================================= -->
 
 <section class="cta">
 
   <div class="container cta-inner">
+
 
     <div class="cta-text">
       For publications, presentations, and ongoing work,
@@ -1420,6 +1534,7 @@ footer {
 
     </div>
 
+
   </div>
 
 </section>
@@ -1436,6 +1551,7 @@ footer {
 <footer>
 
   <div class="container footer-inner">
+
 
     <div>
 
@@ -1499,6 +1615,7 @@ footer {
       </li>
 
     </ul>
+
 
   </div>
 
