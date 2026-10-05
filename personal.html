@@ -41,6 +41,10 @@
   --paper: #fbfbfa;
   --rule: #dededb;
 
+  --spotify: #1ed760;
+  --spotify-dark: #121212;
+  --spotify-mid: #242424;
+
   --max: 1380px;
   --gutter: clamp(1.25rem, 3vw, 2.75rem);
 
@@ -147,16 +151,16 @@ a:hover {
    ========================================================= */
 
 .intro {
-  padding-top: clamp(4.5rem, 7vw, 6.5rem);
-  padding-bottom: clamp(4rem, 6vw, 5.5rem);
+  padding-top: clamp(3.75rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4rem);
 }
 
 .eyebrow {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 
   color: var(--ink-soft);
 
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
 
   letter-spacing: 0.14em;
@@ -166,7 +170,7 @@ a:hover {
 .intro h1 {
   max-width: 900px;
 
-  font-size: clamp(3.2rem, 5.5vw, 5.4rem);
+  font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1;
 
   letter-spacing: -0.055em;
@@ -174,73 +178,83 @@ a:hover {
 }
 
 .intro-text {
-  max-width: 760px;
+  max-width: 750px;
 
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 
   color: var(--ink-mid);
 
-  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
-  line-height: 1.75;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
 }
 
 
 /* =========================================================
-   RUNNING + FITNESS
+   ACTIVE
    ========================================================= */
 
-.life {
-  padding-bottom: clamp(5rem, 8vw, 7rem);
+.active-section {
+  padding-bottom: clamp(4rem, 6vw, 5.5rem);
 }
 
-.life-grid {
+.active-grid {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(300px, 0.55fr);
+    minmax(0, 1.2fr)
+    minmax(300px, 0.8fr);
 
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(2.5rem, 5vw, 5rem);
 
   align-items: center;
 }
 
-.run-photo img {
+.active-photo img {
   width: 100%;
 
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 
   object-fit: cover;
-  object-position: center;
+  object-position: center 46%;
 }
 
-.life-copy {
-  max-width: 460px;
+.active-copy {
+  max-width: 500px;
 }
 
-.life-copy h2,
-.mila-copy h2,
-.music-copy h2 {
-  margin-bottom: 1.2rem;
+.small-label {
+  margin-bottom: 0.9rem;
 
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
-  line-height: 1.15;
+  color: var(--ink-soft);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.active-copy h2,
+.mila-copy h2 {
+  margin-bottom: 1rem;
+
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  line-height: 1.12;
 
   letter-spacing: -0.035em;
   font-weight: 500;
 }
 
-.life-copy p,
-.mila-copy p,
-.music-copy p {
+.active-copy p,
+.mila-copy p {
   color: var(--ink-mid);
 
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.97rem;
+  line-height: 1.75;
 }
 
-.life-copy p + p {
-  margin-top: 1rem;
+.active-copy p + p {
+  margin-top: 0.9rem;
 }
 
 
@@ -249,7 +263,7 @@ a:hover {
    ========================================================= */
 
 .mila-section {
-  padding-block: clamp(5rem, 8vw, 7rem);
+  padding-block: clamp(3.5rem, 5vw, 4.5rem);
 
   border-top: 1px solid var(--rule);
 }
@@ -258,16 +272,16 @@ a:hover {
   display: grid;
 
   grid-template-columns:
-    minmax(280px, 0.6fr)
+    minmax(220px, 0.42fr)
     minmax(0, 1fr);
 
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(2.5rem, 6vw, 6rem);
 
   align-items: center;
 }
 
 .mila-photo {
-  max-width: 440px;
+  max-width: 350px;
 }
 
 .mila-photo img {
@@ -279,20 +293,7 @@ a:hover {
 }
 
 .mila-copy {
-  max-width: 600px;
-}
-
-.mila-label,
-.music-label {
-  margin-bottom: 1rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  max-width: 620px;
 }
 
 
@@ -300,53 +301,161 @@ a:hover {
    MUSIC
    ========================================================= */
 
-.music {
-  padding-block: clamp(5rem, 8vw, 7rem);
+.music-section {
+  margin-top: clamp(1rem, 2vw, 2rem);
 
-  border-top: 1px solid var(--rule);
+  background: var(--spotify-dark);
+  color: #ffffff;
 }
 
-.music-grid {
+.music-inner {
+  padding-top: clamp(3.5rem, 6vw, 5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+}
+
+.music-top {
   display: grid;
 
   grid-template-columns:
-    minmax(180px, 0.35fr)
-    minmax(0, 1fr);
+    minmax(0, 1fr)
+    minmax(300px, 0.7fr);
 
-  gap: clamp(3rem, 8vw, 8rem);
+  gap: clamp(3rem, 7vw, 7rem);
 
-  align-items: start;
+  align-items: end;
 }
 
-.music-side {
-  padding-top: 0.25rem;
+.music-label {
+  margin-bottom: 1rem;
+
+  color: var(--spotify);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.music-content {
-  max-width: 850px;
+.music-title {
+  max-width: 720px;
+
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+  font-weight: 600;
 }
 
 .music-copy {
-  max-width: 780px;
+  max-width: 520px;
+
+  color: #b3b3b3;
+
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
 
-.artist-list {
+
+/* =========================================================
+   GENRES
+   ========================================================= */
+
+.genres {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 0.65rem 1.6rem;
+  gap: 0.6rem;
 
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-
-  border-top: 1px solid var(--rule);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-.artist-list span {
-  color: var(--ink-mid);
+.genre {
+  padding: 0.55rem 0.9rem;
+
+  background: var(--spotify-mid);
+  border: 1px solid #343434;
+  border-radius: 999px;
+
+  color: #eeeeee;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.genre.primary {
+  background: var(--spotify);
+  border-color: var(--spotify);
+
+  color: #0c351b;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ARTISTS
+   ========================================================= */
+
+.artists {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  margin-top: 2.5rem;
+
+  border-top: 1px solid #333333;
+}
+
+.artist {
+  min-height: 110px;
+
+  padding: 1.35rem 1rem 1rem 0;
+
+  border-right: 1px solid #333333;
+}
+
+.artist + .artist {
+  padding-left: 1rem;
+}
+
+.artist:last-child {
+  border-right: 0;
+}
+
+.artist-number {
+  margin-bottom: 0.65rem;
+
+  color: var(--spotify);
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.artist-name {
+  color: #ffffff;
 
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   MUSIC DECORATION
+   ========================================================= */
+
+.music-rule {
+  width: 44px;
+  height: 4px;
+
+  margin-bottom: 1.25rem;
+
+  background: var(--spotify);
+
+  border-radius: 999px;
 }
 
 
@@ -355,6 +464,8 @@ a:hover {
    ========================================================= */
 
 footer {
+  background: var(--paper);
+
   border-top: 1px solid var(--rule);
 }
 
@@ -404,29 +515,41 @@ footer {
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-  .life-grid,
-  .mila-grid {
-    grid-template-columns: 1fr;
-
-    gap: 2.5rem;
+  .artists {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .music-grid {
-    grid-template-columns: 1fr;
-
-    gap: 1rem;
+  .artist:nth-child(3) {
+    border-right: 0;
   }
 
-  .life-copy,
+  .artist:nth-child(-n+3) {
+    border-bottom: 1px solid #333333;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .active-grid,
+  .mila-grid,
+  .music-top {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .active-copy,
   .mila-copy,
   .music-copy {
     max-width: 700px;
   }
 
   .mila-photo {
-    max-width: 520px;
+    max-width: 400px;
   }
 
 }
@@ -443,10 +566,10 @@ footer {
   }
 
   .intro {
-    padding-top: 3.5rem;
+    padding-top: 3.25rem;
   }
 
-  .run-photo img {
+  .active-photo img {
     aspect-ratio: 4 / 3;
   }
 
@@ -460,8 +583,22 @@ footer {
     object-position: center 38%;
   }
 
-  .artist-list {
-    gap: 0.5rem 1.2rem;
+  .artists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artist,
+  .artist:nth-child(3) {
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+  }
+
+  .artist:nth-child(even) {
+    border-right: 0;
+  }
+
+  .artist:nth-last-child(-n+2) {
+    border-bottom: 0;
   }
 
   .footer-inner {
@@ -499,6 +636,10 @@ footer {
 
   .nav-links a {
     font-size: 0.78rem;
+  }
+
+  .artists {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
@@ -597,15 +738,15 @@ footer {
 
 
 <!-- =======================================================
-     RUNNING + FITNESS
+     ACTIVE
      ======================================================= -->
 
-<section class="life">
+<section class="active-section">
 
-  <div class="container life-grid">
+  <div class="container active-grid">
 
 
-    <div class="run-photo">
+    <div class="active-photo">
 
       <img
         src="runclub.JPG"
@@ -615,7 +756,11 @@ footer {
     </div>
 
 
-    <div class="life-copy">
+    <div class="active-copy">
+
+      <div class="small-label">
+        Staying Active
+      </div>
 
       <h2>
         I like to keep moving.
@@ -663,7 +808,7 @@ footer {
 
     <div class="mila-copy">
 
-      <div class="mila-label">
+      <div class="small-label">
         Mila
       </div>
 
@@ -691,52 +836,163 @@ footer {
      MUSIC
      ======================================================= -->
 
-<section class="music">
+<section class="music-section">
 
-  <div class="container music-grid">
-
-
-    <div class="music-side">
-
-      <div class="music-label">
-        Music
-      </div>
-
-    </div>
+  <div class="container music-inner">
 
 
-    <div class="music-content">
+    <div class="music-top">
 
-      <div class="music-copy">
 
-        <h2>
-          Always listening to something.
+      <div>
+
+        <div class="music-rule"></div>
+
+        <div class="music-label">
+          On Repeat
+        </div>
+
+        <h2 class="music-title">
+          Always listening<br>
+          to something.
         </h2>
 
-        <p>
-          My music taste is mostly rooted in pop, especially
-          art pop and hyperpop, but it wanders pretty freely
-          into R&amp;B, indie, psychedelic music, and country.
-          I love finding new artists and seeing live music
-          whenever I can.
-        </p>
+      </div>
+
+
+      <p class="music-copy">
+        My taste is rooted in pop, especially art pop and
+        hyperpop, but it wanders pretty freely into R&amp;B,
+        indie, psychedelic music, and country. I'm always
+        looking for new artists and a good live show.
+      </p>
+
+
+    </div>
+
+
+
+    <!-- GENRES -->
+
+    <div class="genres">
+
+      <span class="genre primary">
+        Pop
+      </span>
+
+      <span class="genre primary">
+        Art Pop
+      </span>
+
+      <span class="genre">
+        Hyperpop
+      </span>
+
+      <span class="genre">
+        R&amp;B
+      </span>
+
+      <span class="genre">
+        Indie
+      </span>
+
+      <span class="genre">
+        Neo-Psychedelic
+      </span>
+
+      <span class="genre">
+        Country
+      </span>
+
+    </div>
+
+
+
+    <!-- FAVORITE ARTISTS -->
+
+    <div class="artists">
+
+
+      <div class="artist">
+
+        <div class="artist-number">
+          01
+        </div>
+
+        <div class="artist-name">
+          Charli xcx
+        </div>
 
       </div>
 
 
-      <div class="artist-list">
+      <div class="artist">
 
-        <span>Charli xcx</span>
-        <span>Kacey Musgraves</span>
-        <span>Ariana Grande</span>
-        <span>Tove Lo</span>
-        <span>SZA</span>
-        <span>Carly Rae Jepsen</span>
+        <div class="artist-number">
+          02
+        </div>
+
+        <div class="artist-name">
+          Kacey Musgraves
+        </div>
+
+      </div>
+
+
+      <div class="artist">
+
+        <div class="artist-number">
+          03
+        </div>
+
+        <div class="artist-name">
+          Ariana Grande
+        </div>
+
+      </div>
+
+
+      <div class="artist">
+
+        <div class="artist-number">
+          04
+        </div>
+
+        <div class="artist-name">
+          Tove Lo
+        </div>
+
+      </div>
+
+
+      <div class="artist">
+
+        <div class="artist-number">
+          05
+        </div>
+
+        <div class="artist-name">
+          SZA
+        </div>
+
+      </div>
+
+
+      <div class="artist">
+
+        <div class="artist-number">
+          06
+        </div>
+
+        <div class="artist-name">
+          Carly Rae Jepsen
+        </div>
 
       </div>
 
 
     </div>
+
 
   </div>
 
