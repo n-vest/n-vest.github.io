@@ -1,1 +1,1115 @@
-under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Nicholas A. Vest</title>
+
+<meta
+  name="description"
+  content="Selected data, research, and educational technology projects by Nicholas A. Vest."
+>
+
+<meta name="theme-color" content="#fbfbfa">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #111315;
+  --ink-mid: #41464b;
+  --ink-soft: #73787d;
+
+  --paper: #fbfbfa;
+  --rule: #dededb;
+
+  --peak: #2581c4;
+
+  --max: 1380px;
+  --gutter: clamp(1.25rem, 3vw, 2.75rem);
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink-soft);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.nav-name {
+  font-size: 0.87rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.nav-name:hover {
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
+
+.page-hero {
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.eyebrow {
+  margin-bottom: 1.2rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  max-width: 1000px;
+
+  font-size: clamp(3.2rem, 5.5vw, 5.4rem);
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.page-intro {
+  max-width: 800px;
+
+  margin-top: 2rem;
+
+  color: var(--ink-mid);
+
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECT
+   ========================================================= */
+
+.project {
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+
+  border-top: 1px solid var(--rule);
+}
+
+.project-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.28fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 7vw, 7rem);
+
+  align-items: start;
+}
+
+.project-meta {
+  position: relative;
+
+  padding-top: 1.25rem;
+}
+
+.project-meta::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 42px;
+  height: 3px;
+
+  background: var(--peak);
+}
+
+.project-number {
+  color: var(--ink-soft);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.project-type {
+  max-width: 190px;
+
+  margin-top: 0.75rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.project-content {
+  max-width: 950px;
+}
+
+.project-name {
+  margin-bottom: 0.6rem;
+
+  color: var(--peak);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-title {
+  max-width: 900px;
+
+  font-size: clamp(2.1rem, 3.6vw, 3.5rem);
+  line-height: 1.08;
+
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.project-lead {
+  max-width: 800px;
+
+  margin-top: 1.6rem;
+
+  color: var(--ink-mid);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+
+  margin-top: 2rem;
+}
+
+.project-tag {
+  padding: 0.35rem 0.7rem;
+
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+
+  color: var(--ink-mid);
+
+  font-size: 0.73rem;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SYSTEM FLOW
+   ========================================================= */
+
+.system {
+  margin-top: 4rem;
+  padding-block: 2rem;
+
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.small-label {
+  margin-bottom: 1.4rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.system-flow {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  color: var(--ink);
+}
+
+.flow-item {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.flow-arrow {
+  color: var(--ink-soft);
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   PROJECT DETAILS
+   ========================================================= */
+
+.project-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  column-gap: clamp(3rem, 7vw, 7rem);
+  row-gap: 0;
+
+  margin-top: 3.5rem;
+}
+
+.detail {
+  padding-block: 1.75rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.detail:nth-child(-n + 2) {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.detail-number {
+  margin-bottom: 0.8rem;
+
+  color: var(--peak);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.detail h3 {
+  margin-bottom: 0.65rem;
+
+  font-size: 1.05rem;
+  font-weight: 600;
+
+  letter-spacing: -0.015em;
+}
+
+.detail p {
+  max-width: 520px;
+
+  color: var(--ink-mid);
+
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ROLE / TOOLS
+   ========================================================= */
+
+.project-footer {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: clamp(3rem, 7vw, 7rem);
+
+  margin-top: 2rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.meta-label {
+  margin-bottom: 0.4rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  color: var(--ink-mid);
+
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MORE PROJECTS
+   ========================================================= */
+
+.more-projects {
+  padding-block: 4rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.more-inner {
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.28fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.more-label {
+  color: var(--ink-soft);
+
+  font-size: 0.74rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.more-text {
+  max-width: 720px;
+
+  color: var(--ink-mid);
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 3rem;
+
+  padding-block: 3rem;
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-description {
+  margin-top: 0.25rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem 1.5rem;
+
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.85rem;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .project-header,
+  .more-inner {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .project-type {
+    max-width: none;
+  }
+
+  .system-flow {
+    flex-wrap: wrap;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .page-hero {
+    padding-block: 3.5rem;
+  }
+
+  .project-details {
+    grid-template-columns: 1fr;
+  }
+
+  .detail,
+  .detail:nth-child(-n + 2) {
+    padding-block: 1.5rem;
+
+    border-top: 1px solid var(--rule);
+  }
+
+  .detail:first-child {
+    padding-top: 0;
+
+    border-top: 0;
+  }
+
+  .project-footer {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .system-flow {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 0.55rem;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .nav {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    padding-block: 1rem;
+  }
+
+  .nav-name {
+    font-size: 0.76rem;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     NAVIGATION
+     ======================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a
+      class="nav-name"
+      href="https://nicholasvest.com/"
+    >
+      Nicholas A. Vest
+    </a>
+
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="https://nicholasvest.com/research.html">
+          Research
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="active"
+          href="https://nicholasvest.com/portfolio.html"
+        >
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV ↗
+        </a>
+      </li>
+
+      <li>
+        <a href="https://nicholasvest.com/personal.html">
+          Personal
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =======================================================
+     INTRO
+     ======================================================= -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Portfolio
+    </div>
+
+    <h1>
+      Data, systems, and applied research.
+    </h1>
+
+    <p class="page-intro">
+      A selection of projects where I translate research,
+      data, and technology into systems that support
+      real-world decisions.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PROJECT 01 — PEAK LITERACY
+     ======================================================= -->
+
+<section class="project">
+
+  <div class="container">
+
+
+    <div class="project-header">
+
+
+      <!-- LEFT COLUMN -->
+
+      <div class="project-meta">
+
+        <div class="project-number">
+          01
+        </div>
+
+        <div class="project-type">
+          Data Infrastructure
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT COLUMN -->
+
+      <div class="project-content">
+
+        <div class="project-name">
+          PEAK Literacy
+        </div>
+
+        <h2 class="project-title">
+          Building an integrated data system for literacy programming and evaluation.
+        </h2>
+
+        <p class="project-lead">
+          PEAK Literacy serves students across community and
+          school-based sites, generating data across enrollment,
+          tutoring, assessment, attendance, and reading progress.
+          I am designing the data infrastructure that connects
+          these sources into a coherent system for program
+          operations, evaluation, and decision-making.
+        </p>
+
+
+        <div class="project-tags">
+
+          <span class="project-tag">
+            Relational Databases
+          </span>
+
+          <span class="project-tag">
+            Data Pipelines
+          </span>
+
+          <span class="project-tag">
+            Automation
+          </span>
+
+          <span class="project-tag">
+            APIs
+          </span>
+
+          <span class="project-tag">
+            Program Evaluation
+          </span>
+
+        </div>
+
+
+        <!-- SYSTEM FLOW -->
+
+        <div class="system">
+
+          <div class="small-label">
+            System Architecture
+          </div>
+
+
+          <div class="system-flow">
+
+            <span class="flow-item">
+              Intake
+            </span>
+
+            <span class="flow-arrow">
+              →
+            </span>
+
+            <span class="flow-item">
+              CRM
+            </span>
+
+            <span class="flow-arrow">
+              →
+            </span>
+
+            <span class="flow-item">
+              Assessments + Great Leaps
+            </span>
+
+            <span class="flow-arrow">
+              →
+            </span>
+
+            <span class="flow-item">
+              Analysis
+            </span>
+
+            <span class="flow-arrow">
+              →
+            </span>
+
+            <span class="flow-item">
+              Reporting
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="project-details">
+
+
+          <article class="detail">
+
+            <div class="detail-number">
+              01
+            </div>
+
+            <h3>
+              Relational data system
+            </h3>
+
+            <p>
+              Designed a relational CRM architecture connecting
+              students, caregivers, tutors, program sites,
+              assessments, and operational records while reducing
+              duplicate and disconnected data.
+            </p>
+
+          </article>
+
+
+          <article class="detail">
+
+            <div class="detail-number">
+              02
+            </div>
+
+            <h3>
+              Automated data pipelines
+            </h3>
+
+            <p>
+              Built workflows connecting enrollment and program
+              forms, CRM records, Great Leaps data, and assessment
+              results, reducing manual entry and surfacing
+              data-quality problems.
+            </p>
+
+          </article>
+
+
+          <article class="detail">
+
+            <div class="detail-number">
+              03
+            </div>
+
+            <h3>
+              Assessment automation
+            </h3>
+
+            <p>
+              Developed automated scoring and data workflows for
+              literacy assessments, including TOWRE-2 and fluency
+              measures, so results can flow directly into
+              longitudinal student records.
+            </p>
+
+          </article>
+
+
+          <article class="detail">
+
+            <div class="detail-number">
+              04
+            </div>
+
+            <h3>
+              Analytics &amp; reporting
+            </h3>
+
+            <p>
+              Developing longitudinal datasets and reporting
+              infrastructure that integrate attendance, reading
+              progress, assessments, and student characteristics
+              to support program evaluation and operational
+              decisions.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- ROLE / TOOLS -->
+
+        <div class="project-footer">
+
+
+          <div>
+
+            <div class="meta-label">
+              Role
+            </div>
+
+            <div class="meta-value">
+              Data Analyst · PEAK Literacy
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <div class="meta-label">
+              Tools
+            </div>
+
+            <div class="meta-value">
+              Zoho CRM · Zoho Forms · Zoho Flow · Deluge ·
+              APIs · R · Looker Studio
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MORE PROJECTS
+     ======================================================= -->
+
+<section class="more-projects">
+
+  <div class="container more-inner">
+
+    <div class="more-label">
+      More Projects
+    </div>
+
+    <p class="more-text">
+      Additional projects in educational data science,
+      AI-supported learning, and research infrastructure
+      will be added here.
+    </p>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+
+    <div>
+
+      <div class="footer-name">
+        Nicholas A. Vest
+      </div>
+
+      <div class="footer-description">
+        Mathematical Cognition · Learning · Educational Technology
+      </div>
+
+    </div>
+
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="mailto:vestnicholas@ufl.edu">
+          Email
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
+          target="_blank"
+          rel="noopener"
+        >
+          Scholar
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://github.com/n-vest"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.linkedin.com/in/nicholas-vest/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
