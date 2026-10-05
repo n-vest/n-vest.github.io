@@ -46,8 +46,9 @@
   --representation: #7334a6;
   --ai: #637f9e;
 
-  --max: 1180px;
-  --gutter: clamp(1.4rem, 4vw, 3.5rem);
+  /* Wider page + tighter margins */
+  --max: 1380px;
+  --gutter: clamp(1.25rem, 3vw, 2.75rem);
 
   --sans: "Inter", -apple-system, BlinkMacSystemFont,
           "Segoe UI", sans-serif;
@@ -131,6 +132,7 @@ a:hover {
 
 .nav-links a {
   color: var(--ink-mid);
+
   font-size: 0.9rem;
   font-weight: 500;
 
@@ -147,14 +149,18 @@ a:hover {
    ========================================================= */
 
 .hero {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(4rem, 7vw, 6.5rem);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
 
-  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(360px, 0.85fr);
+
+  gap: clamp(3rem, 5vw, 5.5rem);
+
   align-items: center;
 }
 
@@ -171,27 +177,30 @@ a:hover {
 }
 
 .hero h1 {
-  font-size: clamp(3.3rem, 7vw, 6.3rem);
-  line-height: 0.96;
+  font-size: clamp(3.3rem, 6vw, 5.7rem);
+  line-height: 0.98;
 
   letter-spacing: -0.065em;
   font-weight: 600;
 
   margin-bottom: 1.7rem;
+
+  white-space: nowrap;
 }
 
 .hero-statement {
-  max-width: 720px;
+  max-width: 760px;
 
-  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   line-height: 1.3;
 
   letter-spacing: -0.025em;
+
   color: var(--ink);
 }
 
 .hero-sub {
-  max-width: 640px;
+  max-width: 680px;
 
   margin-top: 1.4rem;
 
@@ -229,6 +238,7 @@ a:hover {
 
 .hero-image img {
   width: 100%;
+
   aspect-ratio: 4 / 5;
 
   object-fit: cover;
@@ -243,7 +253,8 @@ a:hover {
    ========================================================= */
 
 .section {
-  padding-block: clamp(4.5rem, 8vw, 7rem);
+  padding-block: clamp(4.5rem, 7vw, 6.5rem);
+
   border-top: 1px solid var(--rule);
 }
 
@@ -260,7 +271,7 @@ a:hover {
 }
 
 .section-heading {
-  max-width: 850px;
+  max-width: 1050px;
 
   font-size: clamp(2.2rem, 4.4vw, 4rem);
   line-height: 1.08;
@@ -270,7 +281,7 @@ a:hover {
 }
 
 .section-intro {
-  max-width: 760px;
+  max-width: 850px;
 
   margin-top: 1.6rem;
 
@@ -287,6 +298,7 @@ a:hover {
 
 .pillars {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   margin-top: clamp(3.5rem, 6vw, 5rem);
@@ -297,12 +309,13 @@ a:hover {
 .pillar {
   position: relative;
 
-  padding: 2rem 2.3rem 1rem 0;
+  padding: 2rem 2.5rem 1rem 0;
 }
 
 .pillar + .pillar {
   border-left: 1px solid var(--rule);
-  padding-left: 2.3rem;
+
+  padding-left: 2.5rem;
 }
 
 .pillar-number {
@@ -327,6 +340,8 @@ a:hover {
 }
 
 .pillar-question {
+  max-width: 360px;
+
   color: var(--ink-mid);
 
   font-size: 0.97rem;
@@ -337,6 +352,7 @@ a:hover {
   content: "";
 
   position: absolute;
+
   top: -2px;
   left: 0;
 
@@ -365,7 +381,10 @@ a:hover {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(300px, 0.6fr);
 
   gap: clamp(4rem, 8vw, 8rem);
 
@@ -373,7 +392,7 @@ a:hover {
 }
 
 .about-copy {
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .about-copy p {
@@ -407,6 +426,7 @@ a:hover {
 
 .edu-item {
   padding-block: 1.25rem;
+
   border-bottom: 1px solid var(--rule);
 }
 
@@ -419,6 +439,7 @@ a:hover {
 
 .edu-year {
   color: var(--ink-soft);
+
   font-weight: 400;
 }
 
@@ -442,6 +463,7 @@ footer {
 
 .footer-inner {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-end;
 
@@ -476,6 +498,7 @@ footer {
   color: var(--ink-mid);
 
   font-size: 0.85rem;
+
   text-decoration: none;
 }
 
@@ -484,19 +507,38 @@ footer {
    RESPONSIVE
    ========================================================= */
 
+@media (max-width: 1100px) {
+
+  .hero-grid {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(330px, 0.8fr);
+
+    gap: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 6.5vw, 5rem);
+  }
+
+}
+
+
 @media (max-width: 900px) {
 
   .hero-grid {
     grid-template-columns: 1fr;
+
     gap: 3rem;
   }
 
   .hero-image {
-    max-width: 600px;
+    max-width: 650px;
   }
 
   .hero-image img {
     aspect-ratio: 16 / 10;
+
     object-position: center 20%;
   }
 
@@ -506,11 +548,13 @@ footer {
 
   .pillar {
     padding: 2rem 0;
+
     border-bottom: 1px solid var(--rule);
   }
 
   .pillar + .pillar {
     border-left: 0;
+
     padding-left: 0;
   }
 
@@ -518,8 +562,13 @@ footer {
     margin-bottom: 1.2rem;
   }
 
+  .pillar-question {
+    max-width: 600px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
+
     gap: 3.5rem;
   }
 
@@ -542,10 +591,13 @@ footer {
 
   .hero h1 {
     font-size: clamp(3rem, 15vw, 4.5rem);
+
+    white-space: normal;
   }
 
   .footer-inner {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
@@ -554,16 +606,30 @@ footer {
 
 @media (max-width: 500px) {
 
+  .nav {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    padding-block: 1rem;
+  }
+
   .nav-name {
     font-size: 0.76rem;
   }
 
   .nav-links {
-    gap: 0.8rem;
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 0.6rem;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
 }
@@ -583,9 +649,13 @@ footer {
 
   <div class="container nav">
 
-    <a class="nav-name" href="https://nicholasvest.com/">
+    <a
+      class="nav-name"
+      href="https://nicholasvest.com/"
+    >
       Nicholas A. Vest
     </a>
+
 
     <ul class="nav-links">
 
@@ -635,27 +705,31 @@ footer {
 
   <div class="container hero-grid">
 
+
     <div class="hero-copy">
 
       <div class="eyebrow">
         Postdoctoral Research Scientist · University of Florida
       </div>
 
+
       <h1>
-        Nicholas<br>
-        A. Vest
+        Nicholas A. Vest
       </h1>
+
 
       <p class="hero-statement">
         I study how people represent, develop, and communicate
-        mathematical knowledge—and how technology can support
+        mathematical knowledge, and how technology can support
         that learning.
       </p>
+
 
       <p class="hero-sub">
         My work brings together mathematical cognition,
         cognitive development, and educational technology.
       </p>
+
 
       <div class="hero-links">
 
@@ -709,6 +783,7 @@ footer {
 
     </div>
 
+
   </div>
 
 </section>
@@ -719,17 +794,23 @@ footer {
      RESEARCH
      ======================================================= -->
 
-<section class="section" id="research">
+<section
+  class="section"
+  id="research"
+>
 
   <div class="container">
+
 
     <div class="section-label">
       Research
     </div>
 
+
     <h2 class="section-heading">
       How do people make sense of mathematics?
     </h2>
+
 
     <p class="section-intro">
       My research examines how learners build mathematical
@@ -776,9 +857,9 @@ footer {
         </h3>
 
         <p class="pillar-question">
-          How do external representations—patterns in shapes
-          and numbers, diagrams—help learners encode
-          relationships in mathematics?
+          How do external representations, including patterns
+          in shapes and numbers and diagrams, help learners
+          encode relationships in mathematics?
         </p>
 
       </article>
@@ -798,7 +879,7 @@ footer {
 
         <p class="pillar-question">
           How can interactions with AI provide new windows into
-          learners’ mathematical reasoning and support
+          learners' mathematical reasoning and support
           productive learning?
         </p>
 
@@ -817,9 +898,13 @@ footer {
      ABOUT
      ======================================================= -->
 
-<section class="section" id="about">
+<section
+  class="section"
+  id="about"
+>
 
   <div class="container">
+
 
     <div class="section-label">
       About
@@ -845,6 +930,7 @@ footer {
           better support that learning.
         </p>
 
+
         <p>
           My research examines the cognitive processes that
           shape numerical understanding, especially how learners
@@ -852,6 +938,7 @@ footer {
           mathematical concepts. I study these processes across
           development and in AI-mediated learning environments.
         </p>
+
 
         <p>
           I earned my Ph.D. in Developmental Psychology at the
@@ -867,6 +954,7 @@ footer {
         <div class="section-label">
           Education
         </div>
+
 
         <div class="education">
 
@@ -917,6 +1005,7 @@ footer {
 
       </div>
 
+
     </div>
 
   </div>
@@ -935,6 +1024,7 @@ footer {
 <footer>
 
   <div class="container footer-inner">
+
 
     <div>
 
@@ -998,6 +1088,7 @@ footer {
       </li>
 
     </ul>
+
 
   </div>
 
