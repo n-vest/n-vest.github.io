@@ -1,1 +1,1509 @@
-under construction
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Research | Nicholas A. Vest</title>
+
+<meta
+  name="description"
+  content="Research by Nicholas A. Vest on mathematical cognition, representation, learning, and human-AI interaction."
+>
+
+<meta name="theme-color" content="#fbfbfa">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #111315;
+  --ink-mid: #41464b;
+  --ink-soft: #73787d;
+
+  --paper: #fbfbfa;
+  --rule: #dededb;
+
+  --abstract: #56863b;
+  --representation: #7334a6;
+  --ai: #637f9e;
+
+  --max: 1180px;
+  --gutter: clamp(1.4rem, 4vw, 3.5rem);
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--ink-soft);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.nav-name {
+  font-size: 0.87rem;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.nav-name:hover {
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--ink);
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+
+/* =========================================================
+   PAGE INTRO
+   ========================================================= */
+
+.page-hero {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.eyebrow {
+  margin-bottom: 1.5rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  max-width: 1000px;
+
+  font-size: clamp(3.4rem, 7vw, 6.5rem);
+  line-height: 0.98;
+
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.page-intro {
+  max-width: 830px;
+
+  margin-top: 2.5rem;
+
+  color: var(--ink-mid);
+
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  line-height: 1.6;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* =========================================================
+   RESEARCH MAP
+   ========================================================= */
+
+.research-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: clamp(4rem, 7vw, 6rem);
+
+  border-top: 1px solid var(--rule);
+}
+
+.map-item {
+  position: relative;
+
+  padding: 2rem 2.3rem 0 0;
+
+  text-decoration: none;
+}
+
+.map-item + .map-item {
+  padding-left: 2.3rem;
+  border-left: 1px solid var(--rule);
+}
+
+.map-item::before {
+  content: "";
+
+  position: absolute;
+  top: -2px;
+  left: 0;
+
+  width: 42px;
+  height: 3px;
+
+  background: var(--accent);
+}
+
+.map-number {
+  margin-bottom: 1.5rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.map-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+.map-arrow {
+  display: inline-block;
+
+  margin-top: 0.75rem;
+
+  color: var(--ink-soft);
+
+  transition: transform 0.15s ease;
+}
+
+.map-item:hover {
+  color: var(--ink);
+}
+
+.map-item:hover .map-arrow {
+  transform: translateY(3px);
+}
+
+.map-abstract {
+  --accent: var(--abstract);
+}
+
+.map-representation {
+  --accent: var(--representation);
+}
+
+.map-ai {
+  --accent: var(--ai);
+}
+
+
+/* =========================================================
+   RESEARCH SECTIONS
+   ========================================================= */
+
+.research-section {
+  border-top: 1px solid var(--rule);
+
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+.research-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 0.34fr)
+    minmax(0, 1fr);
+
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.research-side {
+  position: relative;
+}
+
+.research-number {
+  color: var(--accent);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+}
+
+.research-short-title {
+  max-width: 180px;
+
+  margin-top: 1rem;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+.research-content {
+  max-width: 800px;
+}
+
+.research-question {
+  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+  line-height: 1.1;
+
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.research-lead {
+  margin-top: 2rem;
+
+  color: var(--ink-mid);
+
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.abstract-section {
+  --accent: var(--abstract);
+}
+
+.representation-section {
+  --accent: var(--representation);
+}
+
+.ai-section {
+  --accent: var(--ai);
+}
+
+
+/* =========================================================
+   TOPICS
+   ========================================================= */
+
+.topics {
+  margin-top: 3.5rem;
+
+  border-top: 1px solid var(--rule);
+}
+
+.topic {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.35fr) 1fr;
+
+  gap: 2rem;
+
+  padding-block: 2rem;
+
+  border-bottom: 1px solid var(--rule);
+}
+
+.topic h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+
+  font-weight: 600;
+}
+
+.topic p {
+  color: var(--ink-mid);
+
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SELECTED PUBLICATIONS
+   ========================================================= */
+
+.selected-pubs {
+  margin-top: 3.5rem;
+}
+
+.small-label {
+  margin-bottom: 1.25rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.publication {
+  padding-block: 1rem;
+
+  border-top: 1px solid var(--rule);
+
+  color: var(--ink-mid);
+
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.publication:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.publication strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.publication a {
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   FUTURE / INTEGRATION
+   ========================================================= */
+
+.integration {
+  border-top: 1px solid var(--rule);
+
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.integration-inner {
+  max-width: 950px;
+}
+
+.integration h2 {
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  line-height: 1.05;
+
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.integration-lead {
+  max-width: 790px;
+
+  margin-top: 2rem;
+
+  color: var(--ink-mid);
+
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.integration-line {
+  display: flex;
+  align-items: center;
+
+  max-width: 700px;
+
+  margin-top: 3.5rem;
+}
+
+.integration-node {
+  width: 12px;
+  height: 12px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+}
+
+.node-abstract {
+  background: var(--abstract);
+}
+
+.node-representation {
+  background: var(--representation);
+}
+
+.node-ai {
+  background: var(--ai);
+}
+
+.integration-rule {
+  height: 1px;
+
+  flex: 1;
+
+  background: var(--rule);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+  border-top: 1px solid var(--rule);
+
+  padding-block: 4rem;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 3rem;
+}
+
+.cta-text {
+  max-width: 650px;
+
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+}
+
+.cta-links {
+  display: flex;
+  gap: 1.5rem;
+
+  white-space: nowrap;
+}
+
+.cta-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 3rem;
+
+  padding-block: 3rem;
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-description {
+  margin-top: 0.25rem;
+
+  color: var(--ink-soft);
+
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1rem 1.5rem;
+
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--ink-mid);
+
+  font-size: 0.85rem;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .research-map {
+    grid-template-columns: 1fr;
+  }
+
+  .map-item {
+    padding: 2rem 0;
+
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .map-item + .map-item {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .research-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+
+  .research-short-title {
+    max-width: none;
+  }
+
+  .topic {
+    grid-template-columns: 1fr;
+
+    gap: 0.75rem;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .page-hero {
+    padding-block: 4rem;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .nav-name {
+    font-size: 0.76rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     NAVIGATION
+     ======================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a
+      class="nav-name"
+      href="https://nicholasvest.com/"
+    >
+      Nicholas A. Vest
+    </a>
+
+
+    <ul class="nav-links">
+
+      <li>
+        <a
+          class="active"
+          href="https://nicholasvest.com/research.html"
+        >
+          Research
+        </a>
+      </li>
+
+      <li>
+        <a href="https://nicholasvest.com/portfolio.html">
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV ↗
+        </a>
+      </li>
+
+      <li>
+        <a href="https://nicholasvest.com/personal.html">
+          Personal
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =======================================================
+     INTRODUCTION
+     ======================================================= -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      Research
+    </div>
+
+    <h1>
+      Mathematical thinking<br>
+      is representational.
+    </h1>
+
+    <p class="page-intro">
+      I study how learners represent mathematical ideas,
+      how external representations shape their reasoning,
+      and how interactions with AI can reveal and transform
+      mathematical understanding.
+    </p>
+
+
+    <div class="research-map">
+
+
+      <a
+        class="map-item map-abstract"
+        href="#internal"
+      >
+
+        <div class="map-number">
+          01
+        </div>
+
+        <div class="map-title">
+          Understanding Abstract Concepts
+        </div>
+
+        <span class="map-arrow">↓</span>
+
+      </a>
+
+
+      <a
+        class="map-item map-representation"
+        href="#external"
+      >
+
+        <div class="map-number">
+          02
+        </div>
+
+        <div class="map-title">
+          Encoding External Representations
+        </div>
+
+        <span class="map-arrow">↓</span>
+
+      </a>
+
+
+      <a
+        class="map-item map-ai"
+        href="#ai"
+      >
+
+        <div class="map-number">
+          03
+        </div>
+
+        <div class="map-title">
+          Human–AI Interactions
+        </div>
+
+        <span class="map-arrow">↓</span>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     01 — INTERNAL REPRESENTATIONS
+     ======================================================= -->
+
+<section
+  class="research-section abstract-section"
+  id="internal"
+>
+
+  <div class="container research-grid">
+
+
+    <div class="research-side">
+
+      <div class="research-number">
+        01
+      </div>
+
+      <div class="research-short-title">
+        Understanding Abstract Concepts
+      </div>
+
+    </div>
+
+
+    <div class="research-content">
+
+      <h2 class="research-question">
+        How do learners represent abstract mathematical concepts?
+      </h2>
+
+      <p class="research-lead">
+        Learners can represent the same mathematical concept
+        in multiple ways. I use zero and negative numbers as
+        model systems for understanding how mathematical
+        representations emerge across development, how they
+        vary across individuals and contexts, and how those
+        representations shape problem solving.
+      </p>
+
+
+      <div class="topics">
+
+
+        <div class="topic">
+
+          <h3>
+            Zero as a reference point
+          </h3>
+
+          <p>
+            Children initially understand zero in terms of
+            collections, where it represents absence. My work
+            examines the development of a spatial conception
+            of zero as a reference point between positive and
+            negative numbers—and how this conceptual shift
+            relates to integer reasoning.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Negative number representations
+          </h3>
+
+          <p>
+            My research challenges the idea that learners
+            converge on a single mature representation of
+            negative numbers. Across developmental,
+            experimental, and large-scale classroom studies,
+            I find substantial variability in how learners
+            represent negative magnitudes.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Representational dynamics
+          </h3>
+
+          <p>
+            This work motivates a broader account of
+            mathematical cognition in which representations
+            are flexible, context-dependent, and dynamic.
+            Rather than asking only which representation a
+            learner possesses, I examine when different
+            representations emerge and what determines their
+            recruitment during problem solving.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="selected-pubs">
+
+        <div class="small-label">
+          Selected Publications
+        </div>
+
+
+        <div class="publication">
+
+          <strong>Vest, N. A., &amp; Alibali, M. W. (2026).</strong>
+
+          The mental representation of negative integer
+          magnitude over development and across contexts.
+
+          <em>Psychonomic Bulletin &amp; Review.</em>
+
+          <a
+            href="https://doi.org/10.3758/s13423-026-02977-6"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
+
+
+        <div class="publication">
+
+          <strong>Vest, N. A., &amp; Alibali, M. W. (2024).</strong>
+
+          Is zero more than nothing? Relations between
+          concepts of zero and integer understanding.
+
+          <em>Journal of Experimental Child Psychology.</em>
+
+          <a
+            href="https://doi.org/10.1016/j.jecp.2024.106041"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     02 — EXTERNAL REPRESENTATIONS
+     ======================================================= -->
+
+<section
+  class="research-section representation-section"
+  id="external"
+>
+
+  <div class="container research-grid">
+
+
+    <div class="research-side">
+
+      <div class="research-number">
+        02
+      </div>
+
+      <div class="research-short-title">
+        Encoding External Representations
+      </div>
+
+    </div>
+
+
+    <div class="research-content">
+
+      <h2 class="research-question">
+        How do external representations shape mathematical reasoning?
+      </h2>
+
+      <p class="research-lead">
+        Learners' reasoning depends not only on what they know,
+        but also on which aspects of mathematical structure
+        their environments make salient. I study how patterns,
+        diagrams, and other external representations direct
+        attention toward mathematical relationships and shape
+        the strategies learners use.
+      </p>
+
+
+      <div class="topics">
+
+
+        <div class="topic">
+
+          <h3>
+            Seeing structure in patterns
+          </h3>
+
+          <p>
+            Pattern learning provides a window into how learners
+            identify mathematical structure. My work examines
+            how attention to repeating units and systematic
+            change supports pattern extension, generalization,
+            and broader mathematical knowledge.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Directing attention
+          </h3>
+
+          <p>
+            Instructional supports do not influence learning
+            uniformly. Across experimental studies, I have
+            examined how gesture, imitation, verbal direction,
+            and perceptual highlighting affect what children
+            attend to and which strategies they recruit.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Diagrams and algebraic reasoning
+          </h3>
+
+          <p>
+            I also study how diagrams make relational structure
+            visible during algebraic problem solving. Work with
+            intelligent tutoring systems examines how
+            diagrammatic scaffolding and self-explanation can
+            shape students' strategies, efficiency, and transfer.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="selected-pubs">
+
+        <div class="small-label">
+          Selected Publications
+        </div>
+
+
+        <div class="publication">
+
+          <strong>
+            Vest, N. A., Anthony, L. E., Callery, K.,
+            Shack, A. P., Becerra-Lopez, C., &amp;
+            Alibali, M. W. (2025).
+          </strong>
+
+          Does focusing on the unit of change help children
+          learn growing pattern skills?
+
+          <em>Journal of Cognition and Development.</em>
+
+          <a
+            href="https://doi.org/10.1080/15248372.2025.2484221"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
+
+
+        <div class="publication">
+
+          <strong>
+            Vest, N. A., Fagan, S. E., &amp; Fyfe, E. R. (2022).
+          </strong>
+
+          The role of gesture and mimicry for children's
+          pattern learning.
+
+          <em>Cognitive Development.</em>
+
+          <a
+            href="https://doi.org/10.1016/j.cogdev.2022.101196"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
+
+
+        <div class="publication">
+
+          <strong>
+            Borriello, G., Grenell, A., Vest, N. A.,
+            Moore, K., &amp; Fyfe, E. R. (2023).
+          </strong>
+
+          Links between patterning and mathematics skills
+          across childhood and adulthood.
+
+          <em>Child Development.</em>
+
+          <a
+            href="https://doi.org/10.1111/cdev.13882"
+            target="_blank"
+            rel="noopener"
+          >
+            DOI ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     03 — HUMAN–AI INTERACTION
+     ======================================================= -->
+
+<section
+  class="research-section ai-section"
+  id="ai"
+>
+
+  <div class="container research-grid">
+
+
+    <div class="research-side">
+
+      <div class="research-number">
+        03
+      </div>
+
+      <div class="research-short-title">
+        Human–AI Interactions
+      </div>
+
+    </div>
+
+
+    <div class="research-content">
+
+      <h2 class="research-question">
+        How can AI provide new windows into mathematical reasoning and learning?
+      </h2>
+
+      <p class="research-lead">
+        AI is both a new source of evidence about learners'
+        mathematical thinking and an increasingly important
+        part of the environments in which learning occurs.
+        My current work examines both possibilities through
+        AI-enabled measurement, learning analytics, and the
+        study of human–AI interaction in authentic educational
+        settings.
+      </p>
+
+
+      <div class="topics">
+
+
+        <div class="topic">
+
+          <h3>
+            AI-enabled measurement
+          </h3>
+
+          <p>
+            In collaboration with EdLight, I use longitudinal
+            data from authentic, standards-aligned mathematics
+            tasks to model students' developing knowledge.
+            This work asks whether AI-enabled data can reveal
+            patterns of mastery that are difficult to infer
+            from individual responses or simple performance
+            summaries.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Student–AI interaction
+          </h3>
+
+          <p>
+            Through a research-practice-industry partnership
+            involving the University of Florida,
+            Miami-Dade County Public Schools, and Google,
+            I study how high-school students interact with
+            generative AI during mathematics learning.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>
+            Learning from interaction traces
+          </h3>
+
+          <p>
+            I use learning analytics and LLM-assisted methods
+            to characterize what students ask AI to do,
+            the support AI provides, and how students engage
+            with that support. This creates new opportunities
+            to connect human–AI interaction with mathematical
+            reasoning and learning over time.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="selected-pubs">
+
+        <div class="small-label">
+          Current Work
+        </div>
+
+
+        <div class="publication">
+
+          <strong>
+            Human–AI interaction in high school mathematics.
+          </strong>
+
+          Examining how students use generative AI,
+          how they engage with AI-generated mathematical
+          support, and how patterns of interaction relate
+          to learning.
+
+        </div>
+
+
+        <div class="publication">
+
+          <strong>
+            Longitudinal measurement of mathematical mastery.
+          </strong>
+
+          Using AI-enabled student work and Bayesian Knowledge
+          Tracing to estimate developing mathematical knowledge
+          across authentic classroom tasks.
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     INTEGRATION / FUTURE
+     ======================================================= -->
+
+<section class="integration">
+
+  <div class="container">
+
+    <div class="integration-inner">
+
+      <div class="eyebrow">
+        Looking Forward
+      </div>
+
+      <h2>
+        Connecting minds,
+        representations, and AI.
+      </h2>
+
+      <p class="integration-lead">
+        My current research brings these three strands together.
+        I am particularly interested in how the external
+        representations AI provides interact with the internal
+        representations learners recruit—and in distinguishing
+        AI support that improves immediate performance from
+        interactions that produce durable changes in learners'
+        own mathematical reasoning.
+      </p>
+
+
+      <div
+        class="integration-line"
+        aria-hidden="true"
+      >
+
+        <span class="integration-node node-abstract"></span>
+
+        <span class="integration-rule"></span>
+
+        <span class="integration-node node-representation"></span>
+
+        <span class="integration-rule"></span>
+
+        <span class="integration-node node-ai"></span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CV / SCHOLAR
+     ======================================================= -->
+
+<section class="cta">
+
+  <div class="container cta-inner">
+
+    <div class="cta-text">
+      For publications, presentations, and ongoing work,
+      see my CV or Google Scholar profile.
+    </div>
+
+
+    <div class="cta-links">
+
+      <a
+        href="https://nicholasvest.com/cv_navest.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        CV ↗
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
+        target="_blank"
+        rel="noopener"
+      >
+        Scholar ↗
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+
+      <div class="footer-name">
+        Nicholas A. Vest
+      </div>
+
+      <div class="footer-description">
+        Mathematical Cognition · Learning · Educational Technology
+      </div>
+
+    </div>
+
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="mailto:vestnicholas@ufl.edu">
+          Email
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
+          target="_blank"
+          rel="noopener"
+        >
+          Scholar
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://github.com/n-vest"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.linkedin.com/in/nicholas-vest/"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://nicholasvest.com/cv_navest.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
