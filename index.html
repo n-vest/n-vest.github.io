@@ -142,6 +142,23 @@ a:hover {
 
 
 /* =========================================================
+   SHARED TWO-COLUMN GRID
+   ========================================================= */
+
+.hero-grid,
+.research-teaser-grid,
+.about-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(320px, 0.85fr);
+
+  gap: clamp(3rem, 5vw, 5.5rem);
+}
+
+
+/* =========================================================
    HERO
    ========================================================= */
 
@@ -150,14 +167,6 @@ a:hover {
 }
 
 .hero-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(360px, 0.85fr);
-
-  gap: clamp(3rem, 5vw, 5.5rem);
-
   align-items: center;
 }
 
@@ -283,14 +292,6 @@ a:hover {
    ========================================================= */
 
 .research-teaser-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(320px, 0.65fr);
-
-  gap: clamp(3rem, 8vw, 8rem);
-
   align-items: end;
 }
 
@@ -334,19 +335,11 @@ a:hover {
    ========================================================= */
 
 .about-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.4fr)
-    minmax(300px, 0.6fr);
-
-  gap: clamp(4rem, 8vw, 8rem);
-
   align-items: start;
 }
 
 .about-copy {
-  max-width: 760px;
+  max-width: none;
 }
 
 .about-copy p {
@@ -463,10 +456,12 @@ footer {
 
 @media (max-width: 1100px) {
 
-  .hero-grid {
+  .hero-grid,
+  .research-teaser-grid,
+  .about-grid {
     grid-template-columns:
       minmax(0, 1.2fr)
-      minmax(330px, 0.8fr);
+      minmax(300px, 0.8fr);
 
     gap: 3rem;
   }
@@ -480,9 +475,13 @@ footer {
 
 @media (max-width: 900px) {
 
-  .hero-grid {
+  .hero-grid,
+  .research-teaser-grid,
+  .about-grid {
     grid-template-columns: 1fr;
+  }
 
+  .hero-grid {
     gap: 3rem;
   }
 
@@ -497,8 +496,6 @@ footer {
   }
 
   .research-teaser-grid {
-    grid-template-columns: 1fr;
-
     gap: 1.75rem;
   }
 
@@ -509,8 +506,6 @@ footer {
   }
 
   .about-grid {
-    grid-template-columns: 1fr;
-
     gap: 3.5rem;
   }
 
