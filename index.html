@@ -531,7 +531,12 @@ footer {
     white-space: normal;
   }
 
-  /* Mobile-only portrait treatment */
+  /*
+     Mobile portrait:
+     keep the compact 2:1 banner, but anchor the crop
+     higher in the source image so the full head remains
+     comfortably inside the frame.
+  */
   .hero-image {
     max-width: none;
   }
@@ -539,7 +544,7 @@ footer {
   .hero-image img {
     aspect-ratio: 2 / 1;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: center 22%;
   }
 
   .footer-inner {
