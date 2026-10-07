@@ -525,17 +525,21 @@ footer {
     padding-block: 3.5rem;
   }
 
+  /*
+     Keep the name on one line on mobile.
+     10.5vw allows it to remain large without wrapping.
+  */
   .hero h1 {
-    font-size: clamp(3rem, 15vw, 4.5rem);
-
-    white-space: normal;
+    font-size: clamp(2.5rem, 10.5vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    white-space: nowrap;
   }
 
   /*
      Mobile portrait:
-     keep the compact 2:1 banner, but anchor the crop
-     higher in the source image so the full head remains
-     comfortably inside the frame.
+     retain the 2:1 banner and move the crop slightly
+     lower in the source image to reveal more shirt/chest.
   */
   .hero-image {
     max-width: none;
