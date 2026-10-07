@@ -617,7 +617,6 @@ footer {
 
   .mila-photo img {
     aspect-ratio: 4 / 3;
-
     object-position: center 38%;
   }
 
@@ -655,9 +654,17 @@ footer {
     margin-top: 2.25rem;
   }
 
+  /*
+     Give every mobile artist cell identical horizontal
+     padding. This removes the desktop first-cell exception
+     that was shifting Charli xcx to the left.
+  */
   .artist,
-  .artist:nth-child(3) {
+  .artist + .artist {
     min-height: 100px;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
@@ -731,11 +738,11 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .artist {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-
+  .artist,
+  .artist + .artist {
     min-height: 95px;
+
+    padding: 1.2rem 1rem;
   }
 
 }
