@@ -1,982 +1,410 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nicholas A. Vest | Mathematical Cognition & Learning Sciences</title>
-
-<meta
-  name="description"
-  content="Nicholas A. Vest is a developmental psychologist and cognitive scientist studying how learners build mathematical knowledge, how representations and learning environments shape reasoning, and how technology can support learning."
->
-
-<meta name="theme-color" content="#fbfbfa">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
-
-<style>
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --ink: #111315;
-  --ink-mid: #41464b;
-  --ink-soft: #73787d;
-
-  --paper: #fbfbfa;
-  --rule: #dededb;
-
-  --max: 1380px;
-  --gutter: clamp(1.25rem, 3vw, 2.75rem);
-
-  --sans: "Inter", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.6;
-
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-a:hover {
-  color: var(--ink-soft);
-}
-
-.container {
-  width: 100%;
-  max-width: var(--max);
-
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.site-header {
-  border-bottom: 1px solid var(--rule);
-}
-
-.nav {
-  min-height: 78px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 2rem;
-}
-
-.nav-name {
-  font-size: 0.87rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-
-  text-decoration: none;
-}
-
-.nav-name:hover {
-  color: var(--ink);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: var(--ink);
-}
-
-
-/* =========================================================
-   SHARED TWO-COLUMN GRID
-   ========================================================= */
-
-.hero-grid,
-.research-teaser-grid,
-.about-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.35fr)
-    minmax(320px, 0.85fr);
-
-  gap: clamp(3rem, 5vw, 5.5rem);
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-  padding-block: clamp(4rem, 7vw, 6.5rem);
-}
-
-.hero-grid {
-  align-items: center;
-}
-
-.eyebrow {
-  margin-bottom: 1.2rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.75rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  margin-bottom: 1.7rem;
-
-  font-size: clamp(3.3rem, 6vw, 5.7rem);
-  line-height: 0.98;
-
-  letter-spacing: -0.065em;
-  font-weight: 600;
-
-  white-space: nowrap;
-}
-
-.hero-statement {
-  max-width: 760px;
-
-  color: var(--ink);
-
-  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
-  line-height: 1.3;
-
-  letter-spacing: -0.025em;
-}
-
-.hero-sub {
-  max-width: 680px;
-
-  margin-top: 1.4rem;
-
-  color: var(--ink-mid);
-
-  font-size: 1.02rem;
-  line-height: 1.7;
-}
-
-.hero-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.5rem 1.35rem;
-
-  margin-top: 2rem;
-}
-
-.hero-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-}
-
-.hero-links a:hover {
-  color: var(--ink);
-}
-
-.hero-image {
-  position: relative;
-}
-
-.hero-image img {
-  width: 100%;
-
-  aspect-ratio: 4 / 5;
-
-  object-fit: cover;
-  object-position: center 24%;
-
-  border-radius: 2px;
-}
-
-
-/* =========================================================
-   SECTION BASICS
-   ========================================================= */
-
-.section {
-  padding-block: clamp(4.5rem, 7vw, 6.5rem);
-
-  border-top: 1px solid var(--rule);
-}
-
-.section-label {
-  margin-bottom: 1.4rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.74rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.section-heading {
-  max-width: 900px;
-
-  font-size: clamp(2.2rem, 4.4vw, 4rem);
-  line-height: 1.08;
-
-  letter-spacing: -0.045em;
-  font-weight: 500;
-}
-
-
-/* =========================================================
-   RESEARCH TEASER
-   ========================================================= */
-
-.research-teaser-grid {
-  align-items: end;
-}
-
-.research-teaser .section-heading {
-  max-width: 780px;
-}
-
-.research-teaser-copy {
-  max-width: 540px;
-
-  padding-bottom: 0.35rem;
-}
-
-.research-teaser-copy p {
-  color: var(--ink-mid);
-
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.text-link {
-  display: inline-block;
-
-  margin-top: 1.5rem;
-
-  color: var(--ink);
-
-  font-size: 0.9rem;
-  font-weight: 600;
-
-  text-decoration: none;
-}
-
-.text-link:hover {
-  color: var(--ink-soft);
-}
-
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-.about-grid {
-  align-items: start;
-}
-
-.about-copy {
-  max-width: none;
-}
-
-.about-copy p {
-  margin-bottom: 1.25rem;
-
-  color: var(--ink-mid);
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.about-copy p:first-child {
-  color: var(--ink);
-
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
-  line-height: 1.55;
-}
-
-.about-copy p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* =========================================================
-   EDUCATION
-   ========================================================= */
-
-.education {
-  border-top: 1px solid var(--rule);
-}
-
-.edu-item {
-  padding-block: 1.25rem;
-
-  border-bottom: 1px solid var(--rule);
-}
-
-.edu-degree {
-  font-size: 0.96rem;
-  font-weight: 600;
-
-  line-height: 1.45;
-}
-
-.edu-year {
-  color: var(--ink-soft);
-
-  font-weight: 400;
-}
-
-.edu-school {
-  margin-top: 0.25rem;
-
-  color: var(--ink-mid);
-
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  border-top: 1px solid var(--rule);
-}
-
-.footer-inner {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-end;
-
-  gap: 3rem;
-
-  padding-block: 3rem;
-}
-
-.footer-name {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.footer-description {
-  margin-top: 0.25rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.85rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 1rem 1.5rem;
-
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.85rem;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-  .hero-grid,
-  .research-teaser-grid,
-  .about-grid {
-    grid-template-columns:
-      minmax(0, 1.2fr)
-      minmax(300px, 0.8fr);
-
-    gap: 3rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.2rem, 6.5vw, 5rem);
-  }
-
-}
-
-
-@media (max-width: 900px) {
-
-  .hero-grid,
-  .research-teaser-grid,
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-grid {
-    gap: 3rem;
-  }
-
-  .hero-image {
-    max-width: 650px;
-  }
-
-  .hero-image img {
-    aspect-ratio: 16 / 10;
-    object-position: center 20%;
-  }
-
-  .research-teaser-grid {
-    gap: 1.75rem;
-  }
-
-  .research-teaser-copy {
-    max-width: 650px;
-
-    padding-bottom: 0;
-  }
-
-  .about-grid {
-    gap: 3.5rem;
-  }
-
-}
-
-
-@media (max-width: 700px) {
-
-  .nav {
-    min-height: 68px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .hero {
-    padding-block: 3.5rem;
-  }
-
-  /*
-     Keep the name on one line on mobile.
-     10.5vw allows it to remain large without wrapping.
-  */
-  .hero h1 {
-    font-size: clamp(2.5rem, 10.5vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -0.06em;
-    white-space: nowrap;
-  }
-
-  /*
-     Mobile portrait:
-     retain the 2:1 banner and move the crop slightly
-     lower in the source image to reveal more shirt/chest.
-  */
-  .hero-image {
-    max-width: none;
-  }
-
-  .hero-image img {
-    aspect-ratio: 2 / 1;
-    object-fit: cover;
-    object-position: center 28%;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-}
-
-
-@media (max-width: 500px) {
-
-  /* Keep navigation on one compact row */
-  .nav {
-    min-height: 64px;
-
-    flex-direction: row;
-    align-items: center;
-
-    gap: 1rem;
-
-    padding-block: 0;
-  }
-
-  .nav-name {
-    flex-shrink: 0;
-
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-  }
-
-  .nav-links {
-    width: auto;
-
-    justify-content: flex-end;
-
-    gap: 0.75rem;
-
-    margin-left: auto;
-  }
-
-  .nav-links a {
-    font-size: 0.72rem;
-  }
-
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Nicholas A. Vest is a developmental psychologist studying mathematical cognition, cognitive development, and learning with AI.">
+  <title>Nicholas A. Vest | Mathematical Cognition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202124;
+      --body: #35383b;
+      --muted: #686d71;
+      --line: #e8e8e8;
+      --width: 940px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: #fff; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      color: var(--ink);
+      font: 400 15px/1.65 Inter, system-ui, -apple-system,
+            BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: #555; }
+
+    a:focus-visible {
+      outline: 2px solid #222;
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(calc(100% - 56px), var(--width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .wordmark {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .095em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 27px;
+    }
+
+    .nav a {
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1 0 auto;
+      padding-block: 32px 34px;
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      column-gap: 34px;
+      align-items: start;
+    }
+
+    .portrait {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 252 / 306;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .education { margin-top: 22px; }
+
+    .section-heading {
+      font-size: 11px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .degree-entry { margin: 0 0 15px; }
+
+    .degree-entry:last-child { margin-bottom: 0; }
+
+    .degree {
+      font-size: 12px;
+      line-height: 1.48;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .school {
+      margin-top: 3px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .affiliation {
+      margin: 6px 0 10px;
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: .06em;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: clamp(34px, 3.7vw, 43px);
+      font-weight: 700;
+      letter-spacing: -.045em;
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    .statement {
+      font-size: 19px;
+      letter-spacing: -.012em;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin: 0 0 26px;
+    }
+
+    .profiles a {
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #b8bbbd;
+      padding-bottom: 1px;
+    }
+
+    .profiles a:hover {
+      border-color: var(--ink);
+    }
+
+    .bio p {
+      margin: 0 0 13px;
+      color: var(--body);
+    }
+
+    .bio p:last-child { margin-bottom: 0; }
+
+    .year-group { white-space: nowrap; }
+
+    .separator {
+      padding: 0 .08em;
+      color: #888;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      min-height: 59px;
+      display: flex;
+      align-items: center;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 40px), var(--width));
+      }
+
+      .profile-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+        column-gap: 25px;
+      }
+
+      .statement { font-size: 17px; }
+
+      h1 { font-size: 35px; }
+    }
+
+    @media (max-width: 570px) {
+      .header-inner {
+        min-height: 54px;
+        gap: 10px;
+        flex-wrap: wrap;
+        padding-block: 12px;
+      }
+
+      .nav { gap: 18px; }
+
+      .nav a { font-size: 12px; }
+
+      main { padding-block: 26px 32px; }
+
+      .profile-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .sidebar { display: contents; }
+
+      .portrait {
+        order: 0;
+        width: 155px;
+        aspect-ratio: 252 / 306;
+      }
+
+      .content { order: 1; }
+
+      .education {
+        order: 2;
+        margin-top: 0;
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+
+      .affiliation {
+        margin-top: 0;
+        font-size: 10px;
+      }
+
+      h1 { font-size: 34px; }
+
+      .statement { font-size: 18px; }
+
+      .profiles { margin-bottom: 22px; }
+
+      .degree { white-space: normal; }
+    }
+
+    @media print {
+      .container { max-width: 940px; }
+    }
+  </style>
 </head>
 
-
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="https://nicholasvest.com/">
+        NICHOLAS A. VEST
+      </a>
 
-
-<!-- =======================================================
-     NAVIGATION
-     ======================================================= -->
-
-<header class="site-header">
-
-  <div class="container nav">
-
-    <a
-      class="nav-name"
-      href="https://nicholasvest.com/"
-    >
-      Nicholas A. Vest
-    </a>
-
-
-    <ul class="nav-links">
-
-      <li>
-        <a href="https://nicholasvest.com/research.html">
-          Research
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV ↗
-        </a>
-      </li>
-
-      <li>
-        <a href="https://nicholasvest.com/personal.html">
-          Personal
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-
-</header>
-
-
-<main id="top">
-
-
-<!-- =======================================================
-     HERO
-     ======================================================= -->
-
-<section class="hero">
-
-  <div class="container hero-grid">
-
-
-    <div class="hero-copy">
-
-      <div class="eyebrow">
-        Postdoctoral Research Scientist · University of Florida
-      </div>
-
-
-      <h1>
-        Nicholas A. Vest
-      </h1>
-
-
-      <p class="hero-statement">
-        I study how learners build and adapt representations of mathematical ideas and how learning environments shape their reasoning.
-      </p>
-
-
-      <p class="hero-sub">
-        My work integrates developmental psychology, cognitive science, and the learning sciences to understand and support mathematical thinking.
-      </p>
-
-
-      <div class="hero-links">
-
-        <a href="mailto:vestnicholas@ufl.edu">
-          Email
-        </a>
-
-        <a
-          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
-          target="_blank"
-          rel="noopener"
-        >
-          Scholar ↗
-        </a>
-
-        <a
-          href="https://github.com/n-vest"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub ↗
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/nicholas-vest/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn ↗
-        </a>
-
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV ↗
-        </a>
-
-      </div>
-
+      <nav class="nav" aria-label="Main navigation">
+        <a href="https://nicholasvest.com/research.html">Research</a>
+        <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
+        <a href="https://nicholasvest.com/personal.html">Personal</a>
+      </nav>
     </div>
+  </header>
 
+  <main class="container">
+    <div class="profile-layout">
 
-    <div class="hero-image">
-
-      <img
-        src="vest.png"
-        alt="Portrait of Nicholas A. Vest"
-      >
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     RESEARCH TEASER
-     ======================================================= -->
-
-<section class="section research-teaser">
-
-  <div class="container">
-
-    <div class="section-label">
-      Research
-    </div>
-
-
-    <div class="research-teaser-grid">
-
-
-      <h2 class="section-heading">
-        How do people make sense of mathematics?
-      </h2>
-
-
-      <div class="research-teaser-copy">
-
-        <p>
-          I approach this question from three directions: how mathematical thinking changes across development, how learning environments shape reasoning, and how AI can help us understand and support these processes.
-        </p>
-
-
-        <a
-          class="text-link"
-          href="https://nicholasvest.com/research.html"
+      <aside class="sidebar" aria-label="Portrait and education">
+        <img
+          class="portrait"
+          src="https://nicholasvest.com/vest.png"
+          alt="Nicholas A. Vest standing in front of a colorful mural"
+          width="600"
+          height="728"
+          fetchpriority="high"
         >
-          Explore my research →
-        </a>
 
-      </div>
+        <section class="education" aria-labelledby="education-heading">
+          <h2 class="section-heading" id="education-heading">
+            Education
+          </h2>
 
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     ABOUT
-     ======================================================= -->
-
-<section
-  class="section"
-  id="about"
->
-
-  <div class="container">
-
-
-    <div class="section-label">
-      About
-    </div>
-
-
-    <div class="about-grid">
-
-
-      <div class="about-copy">
-
-        <p>
-          I am a postdoctoral researcher in the
-          <a href="https://education.ufl.edu/school-teaching-learning/" target="_blank" rel="noopener">School of Teaching and Learning</a>
-          at the University of Florida, where I conduct research on mathematical thinking and learning.
-        </p>
-
-        <p>
-          My work combines controlled experiments with computational and data-intensive approaches. I use experimental designs to test how instructional supports affect learning, computational models to investigate cognitive processes, and learning analytics with large-scale educational data to study learning in authentic contexts.
-        </p>
-
-        <p>
-          I earned my Ph.D. in Developmental Psychology in the
-          <a href="https://psych.wisc.edu/" target="_blank" rel="noopener">Department of Psychology</a>
-          at the University of Wisconsin-Madison, where I was a member of the
-          <a href="https://alibali.psych.wisc.edu/" target="_blank" rel="noopener">Cognitive Development and Communication Lab</a>.
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <div class="section-label">
-          Education
-        </div>
-
-
-        <div class="education">
-
-
-          <div class="edu-item">
-
-            <div class="edu-degree">
+          <div class="degree-entry">
+            <div class="degree">
               Ph.D. in Developmental Psychology
-              <span class="edu-year">· 2025</span>
+              <span class="year-group">
+                <span class="separator" aria-hidden="true">·</span> 2025
+              </span>
             </div>
-
-            <div class="edu-school">
-              University of Wisconsin-Madison
-            </div>
-
+            <div class="school">University of Wisconsin–Madison</div>
           </div>
 
-
-          <div class="edu-item">
-
-            <div class="edu-degree">
+          <div class="degree-entry">
+            <div class="degree">
               M.S. in Developmental Psychology
-              <span class="edu-year">· 2021</span>
+              <span class="year-group">
+                <span class="separator" aria-hidden="true">·</span> 2021
+              </span>
             </div>
-
-            <div class="edu-school">
-              University of Wisconsin-Madison
-            </div>
-
+            <div class="school">University of Wisconsin–Madison</div>
           </div>
 
-
-          <div class="edu-item">
-
-            <div class="edu-degree">
+          <div class="degree-entry">
+            <div class="degree">
               B.S. in Psychology
-              <span class="edu-year">· 2016</span>
+              <span class="year-group">
+                <span class="separator" aria-hidden="true">·</span> 2016
+              </span>
             </div>
-
-            <div class="edu-school">
-              Indiana University Bloomington
-            </div>
-
+            <div class="school">Indiana University Bloomington</div>
           </div>
+        </section>
+      </aside>
 
+      <div class="content">
+        <p class="affiliation">
+          Postdoctoral Associate
+          <span class="separator" aria-hidden="true">·</span>
+          University of Florida
+        </p>
 
-        </div>
+        <h1>Nicholas A. Vest</h1>
 
+        <p class="statement">
+          I study how learners build and adapt representations of
+          mathematical ideas and how learning environments shape
+          their reasoning.
+        </p>
+
+        <nav class="profiles" aria-label="Academic and professional profiles">
+          <a href="mailto:vestnicholas@ufl.edu">Email</a>
+          <a href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a>
+          <a href="https://osf.io/jzfa8/">OSF</a>
+          <a href="https://github.com/n-vest">GitHub</a>
+          <a href="https://www.linkedin.com/in/nicholas-vest/">LinkedIn</a>
+        </nav>
+
+        <section class="bio" aria-label="About">
+          <p>
+            I am a postdoctoral researcher in the
+            <a href="https://education.ufl.edu/school-teaching-learning/">School of Teaching and Learning</a>
+            at the University of Florida, where I conduct research
+            on mathematical thinking and learning.
+          </p>
+
+          <p>
+            My work combines controlled experiments with computational
+            and data-intensive approaches. I use experimental designs
+            to test how instructional supports affect learning,
+            computational models to investigate cognitive processes,
+            and learning analytics with large-scale educational data
+            to study learning in authentic contexts.
+          </p>
+
+          <p>
+            I earned my Ph.D. in Developmental Psychology in the
+            <a href="https://psych.wisc.edu/">Department of Psychology</a>
+            at the University of Wisconsin-Madison, where I was a
+            member of the
+            <a href="https://alibali.psych.wisc.edu/">Cognitive Development and Communication Lab</a>.
+            Before beginning my doctoral studies, I was a lab manager
+            in the
+            <a href="https://lead.lab.indiana.edu/index.html">Learning, Education, and Development Lab</a>
+            at Indiana University.
+          </p>
+        </section>
       </div>
-
-
     </div>
+  </main>
 
-  </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
-
-<footer>
-
-  <div class="container footer-inner">
-
-
-    <div>
-
-      <div class="footer-name">
-        Nicholas A. Vest
-      </div>
-
-      <div class="footer-description">
-        Mathematical Cognition · Cognitive Development · Learning Sciences
-      </div>
-
+  <footer>
+    <div class="container footer-inner">
+      <span class="copyright">© Nicholas A. Vest</span>
     </div>
-
-
-    <ul class="footer-links">
-
-      <li>
-        <a href="mailto:vestnicholas@ufl.edu">
-          Email
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
-          target="_blank"
-          rel="noopener"
-        >
-          Scholar
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://github.com/n-vest"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://www.linkedin.com/in/nicholas-vest/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV
-        </a>
-      </li>
-
-    </ul>
-
-
-  </div>
-
-</footer>
-
-
+  </footer>
 </body>
 </html>
