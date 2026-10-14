@@ -1,75 +1,45 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Outside the lab: running, exploring, Mila, and music. The personal page of Nicholas A. Vest.">
 <title>Personal | Nicholas A. Vest</title>
-
-<meta
-  name="description"
-  content="A little more about Nicholas A. Vest outside of research."
->
-
-<meta name="theme-color" content="#fbfbfa">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --ink: #202124;
+  --body: #35383b;
+  --muted: #686d71;
+  --line: #e8e8e8;
+  --width: 940px;
 }
 
-:root {
-  --ink: #111315;
-  --ink-mid: #41464b;
-  --ink-soft: #73787d;
-
-  --paper: #fbfbfa;
-  --rule: #dededb;
-
-  --spotify: #1ed760;
-  --spotify-dark: #121212;
-  --spotify-mid: #242424;
-
-  --max: 1380px;
-  --gutter: clamp(1.25rem, 3vw, 2.75rem);
-
-  --sans: "Inter", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+* {
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  background: #fff;
 }
 
 body {
-  background: var(--paper);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
   color: var(--ink);
-
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.6;
-
+  font: 400 15px/1.65 Inter, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
-}
-
-img {
-  display: block;
-  max-width: 100%;
 }
 
 a {
@@ -79,789 +49,428 @@ a {
 }
 
 a:hover {
-  color: var(--ink-soft);
+  color: #555;
+}
+
+a:focus-visible {
+  outline: 2px solid #222;
+  outline-offset: 4px;
 }
 
 .container {
-  width: 100%;
-  max-width: var(--max);
-
+  width: min(calc(100% - 56px), var(--width));
   margin-inline: auto;
-  padding-inline: var(--gutter);
 }
 
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/* Navigation */
 
 .site-header {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wordmark {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .095em;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav {
-  min-height: 78px;
-
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 2rem;
+  gap: 27px;
 }
 
-.nav-name {
-  font-size: 0.87rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-
-  text-decoration: none;
-}
-
-.nav-name:hover {
-  color: var(--ink);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.9rem;
+.nav a {
+  font-size: 13px;
   font-weight: 500;
-
   text-decoration: none;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--ink);
+/* Main content */
+
+main {
+  flex: 1 0 auto;
+  padding-block: 34px 40px;
 }
 
-
-/* =========================================================
-   INTRO
-   ========================================================= */
+/* Introduction */
 
 .intro {
-  padding-top: clamp(3.75rem, 6vw, 5.5rem);
-  padding-bottom: clamp(3rem, 5vw, 4rem);
-}
-
-.eyebrow {
-  margin-bottom: 1rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  margin: 0 0 30px;
 }
 
 .intro h1 {
-  max-width: 900px;
+  font-size: clamp(29px, 3vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
 
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1;
+.intro p {
+  color: var(--body);
+  margin: 0;
+  max-width: 100%;
+  font-size: 16px;
+}
 
-  letter-spacing: -0.055em;
+/* Personal sections */
+
+.section {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 34px;
+  padding: 27px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+
+.section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.section .running {
+  aspect-ratio: 4 / 3;
+}
+
+.section .mila {
+  aspect-ratio: 4 / 3;
+  object-position: center 45%;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -.035em;
+  margin: 0 0 12px;
   font-weight: 600;
 }
 
-.intro-text {
-  max-width: 750px;
-
-  margin-top: 1.5rem;
-
-  color: var(--ink-mid);
-
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  line-height: 1.7;
+.section-copy p:not(.eyebrow) {
+  margin: 0 0 12px;
+  color: var(--body);
 }
 
-
-/* =========================================================
-   ACTIVE
-   ========================================================= */
-
-.active-section {
-  padding-bottom: clamp(4rem, 6vw, 5.5rem);
+.section-copy p:last-child {
+  margin-bottom: 0;
 }
 
-.active-grid {
-  display: grid;
+/* Spotify-inspired music section */
 
-  grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(300px, 0.8fr);
-
-  gap: clamp(2.5rem, 5vw, 5rem);
-
-  align-items: center;
-}
-
-.active-photo img {
-  width: 100%;
-
-  aspect-ratio: 16 / 10;
-
-  object-fit: cover;
-  object-position: center 46%;
-}
-
-.active-copy {
-  max-width: 500px;
-}
-
-.small-label {
-  margin-bottom: 0.9rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.7rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.active-copy h2,
-.mila-copy h2 {
-  margin-bottom: 1rem;
-
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
-  line-height: 1.12;
-
-  letter-spacing: -0.035em;
-  font-weight: 500;
-}
-
-.active-copy p,
-.mila-copy p {
-  color: var(--ink-mid);
-
-  font-size: 0.97rem;
-  line-height: 1.75;
-}
-
-.active-copy p + p {
-  margin-top: 0.9rem;
-}
-
-
-/* =========================================================
-   MILA
-   ========================================================= */
-
-.mila-section {
-  padding-block: clamp(3.5rem, 5vw, 4.5rem);
-
-  border-top: 1px solid var(--rule);
-}
-
-.mila-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(220px, 0.42fr)
-    minmax(0, 1fr);
-
-  gap: clamp(2.5rem, 6vw, 6rem);
-
-  align-items: center;
-}
-
-.mila-photo {
-  max-width: 350px;
-}
-
-.mila-photo img {
-  width: 100%;
-
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-}
-
-.mila-copy {
-  max-width: 620px;
-}
-
-
-/* =========================================================
-   MUSIC
-   ========================================================= */
-
-.music-section {
-  margin-top: clamp(1rem, 2vw, 2rem);
-
-  background: var(--spotify-dark);
-  color: #ffffff;
+.music {
+  background: #121212;
+  color: #fff;
+  padding: 35px 34px 40px;
+  margin-top: 0;
 }
 
 .music-inner {
-  padding-top: clamp(3.5rem, 6vw, 5rem);
-  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+  width: 100%;
+  margin-inline: auto;
 }
 
-.music-top {
+.music-accent {
+  width: 36px;
+  height: 3px;
+  background: #1ed760;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+
+.music .eyebrow {
+  color: #1ed760;
+  font-size: 11px;
+  letter-spacing: .15em;
+  margin: 0 0 17px;
+}
+
+.music-intro {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(300px, 0.7fr);
-
-  gap: clamp(3rem, 7vw, 7rem);
-
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
   align-items: end;
 }
 
-.music-label {
-  margin-bottom: 1rem;
-
-  color: var(--spotify);
-
-  font-size: 0.7rem;
+.music h2 {
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
   font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+  max-width: 530px;
 }
 
-.music-title {
-  max-width: 720px;
-
-  font-size: clamp(2.6rem, 5vw, 4.8rem);
-  line-height: 0.98;
-
-  letter-spacing: -0.055em;
-  font-weight: 600;
-}
-
-.music-copy {
-  max-width: 520px;
-
-  color: #b3b3b3;
-
-  font-size: 0.98rem;
+.music-description {
+  color: #b7b7b7;
+  font-size: 15px;
   line-height: 1.75;
+  margin: 0 0 3px;
 }
 
+/* Music genres */
 
-/* =========================================================
-   GENRES
-   ========================================================= */
-
-.genres {
+.genre-list {
   display: flex;
   flex-wrap: wrap;
-
-  gap: 0.6rem;
-
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+  gap: 9px;
+  list-style: none;
+  padding: 0;
+  margin: 38px 0 30px;
 }
 
-.genre {
-  padding: 0.55rem 0.9rem;
-
-  background: var(--spotify-mid);
+.genre-list li {
+  font-size: 12px;
+  line-height: 1.4;
   border: 1px solid #343434;
   border-radius: 999px;
-
-  color: #eeeeee;
-
-  font-size: 0.78rem;
+  padding: 9px 15px;
+  background: #252525;
+  color: #e7e7e7;
   font-weight: 500;
 }
 
-.genre.primary {
-  background: var(--spotify);
-  border-color: var(--spotify);
-
-  color: #0c351b;
-
+.genre-list li:first-child,
+.genre-list li:nth-child(2) {
+  border-color: #1ed760;
+  background: #1ed760;
+  color: #111;
   font-weight: 700;
 }
 
+/* Artists on repeat */
 
-/* =========================================================
-   ARTISTS
-   ========================================================= */
-
-.artists {
+.artist-grid {
   display: grid;
-
-  grid-template-columns: repeat(6, 1fr);
-
-  margin-top: 2.5rem;
-
-  border-top: 1px solid #333333;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #333;
 }
 
-.artist {
-  min-height: 110px;
-
-  padding: 1.35rem 1rem 1rem 0;
-
-  border-right: 1px solid #333333;
-}
-
-.artist + .artist {
-  padding-left: 1rem;
-}
-
-.artist:last-child {
-  border-right: 0;
-}
-
-.artist-number {
-  margin-bottom: 0.65rem;
-
-  color: var(--spotify);
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-}
-
-.artist-name {
-  color: #ffffff;
-
-  font-size: 0.88rem;
+.artist-grid li {
+  min-height: 94px;
+  padding: 18px 12px 8px 0;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.45;
+  color: #f5f5f5;
 }
 
-
-/* =========================================================
-   MUSIC DECORATION
-   ========================================================= */
-
-.music-rule {
-  width: 44px;
-  height: 4px;
-
-  margin-bottom: 1.25rem;
-
-  background: var(--spotify);
-
-  border-radius: 999px;
+.artist-grid li + li {
+  border-left: 1px solid #333;
+  padding-left: 12px;
 }
 
+.artist-grid .number {
+  display: block;
+  color: #1ed760;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  margin-bottom: 10px;
+}
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* Footer */
 
 footer {
-  background: var(--paper);
-
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--line);
 }
 
 .footer-inner {
+  min-height: 59px;
   display: flex;
-
-  justify-content: space-between;
-  align-items: flex-end;
-
-  gap: 3rem;
-
-  padding-block: 3rem;
+  align-items: center;
 }
 
-.footer-name {
-  font-size: 1rem;
-  font-weight: 600;
+.copyright {
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.footer-description {
-  margin-top: 0.25rem;
+/* Tablet */
 
-  color: var(--ink-soft);
-
-  font-size: 0.85rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 1rem 1.5rem;
-
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.85rem;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-  .artists {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 720px) {
+  .container {
+    width: min(calc(100% - 40px), var(--width));
   }
 
-  .artist:nth-child(3) {
-    border-right: 0;
+  .section {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 24px;
   }
 
-  .artist:nth-child(-n+3) {
-    border-bottom: 1px solid #333333;
+  .music {
+    padding: 30px 24px 34px;
   }
 
-}
-
-
-@media (max-width: 850px) {
-
-  .active-grid,
-  .mila-grid,
-  .music-top {
+  .music-intro {
     grid-template-columns: 1fr;
-
-    gap: 2rem;
+    gap: 20px;
   }
 
-  .active-copy,
-  .mila-copy,
-  .music-copy {
-    max-width: 700px;
+  .music h2 {
+    max-width: 620px;
   }
 
-  .mila-photo {
-    max-width: 400px;
+  .artist-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .artist-grid li:nth-child(4) {
+    border-left: 0;
+  }
+
+  .artist-grid li:nth-child(n+4) {
+    border-top: 1px solid #333;
+  }
 }
 
+/* Mobile */
 
-@media (max-width: 700px) {
+@media (max-width: 570px) {
+  .header-inner {
+    min-height: 54px;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-block: 12px;
+  }
 
   .nav {
-    min-height: 68px;
+    gap: 18px;
   }
 
-  .nav-links {
-    gap: 1rem;
+  .nav a {
+    font-size: 12px;
   }
 
-  /* Tighter intro on mobile */
+  main {
+    padding-block: 25px 32px;
+  }
+
   .intro {
-    padding-top: 3.25rem;
-    padding-bottom: 2.75rem;
+    margin-bottom: 23px;
   }
 
-  .intro h1 {
-    font-size: clamp(3rem, 13vw, 4.5rem);
-    line-height: 0.98;
+  .section {
+    display: block;
+    padding-block: 23px;
   }
 
-  .intro-text {
-    margin-top: 1.4rem;
-
-    font-size: 1.05rem;
-    line-height: 1.65;
+  .section img {
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 18px;
   }
 
-  /* Active section */
-  .active-section {
-    padding-bottom: 4rem;
+  .section h2 {
+    font-size: 21px;
   }
-
-  .active-grid {
-    gap: 2rem;
-  }
-
-  .active-photo img {
-    aspect-ratio: 4 / 3;
-    object-position: center 46%;
-  }
-
-  .active-copy h2,
-  .mila-copy h2 {
-    font-size: clamp(1.9rem, 8vw, 2.4rem);
-  }
-
-  /* Mila */
-  .mila-section {
-    padding-block: 4rem;
-  }
-
-  .mila-grid {
-    gap: 2rem;
-  }
-
-  .mila-photo {
-    max-width: 100%;
-  }
-
-  .mila-photo img {
-    aspect-ratio: 4 / 3;
-    object-position: center 38%;
-  }
-
-  /* Music */
-  .music-section {
-    margin-top: 0;
-  }
-
-  .music-inner {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  .music-top {
-    gap: 1.75rem;
-  }
-
-  .music-title {
-    font-size: clamp(2.8rem, 12vw, 4rem);
-    line-height: 0.98;
-  }
-
-  .music-copy {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .genres {
-    margin-top: 2.5rem;
-  }
-
-  .artists {
-    grid-template-columns: repeat(2, 1fr);
-
-    margin-top: 2.25rem;
-  }
-
-  /*
-     Give every mobile artist cell identical horizontal
-     padding. This removes the desktop first-cell exception
-     that was shifting Charli xcx to the left.
-  */
-  .artist,
-  .artist + .artist {
-    min-height: 100px;
-
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-  }
-
-  .artist:nth-child(even) {
-    border-right: 0;
-  }
-
-  .artist:nth-last-child(-n+2) {
-    border-bottom: 0;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
 }
 
-
-@media (max-width: 500px) {
-
-  /* Match homepage + research mobile navigation */
-  .nav {
-    min-height: 64px;
-
-    flex-direction: row;
-    align-items: center;
-
-    gap: 1rem;
-
-    padding-block: 0;
+@media (max-width: 420px) {
+  .music {
+    padding: 26px 18px 30px;
   }
 
-  .nav-name {
-    flex-shrink: 0;
-
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+  .music h2 {
+    font-size: 36px;
   }
 
-  .nav-links {
-    width: auto;
-
-    justify-content: flex-end;
-
-    gap: 0.75rem;
-
-    margin-left: auto;
+  .genre-list {
+    margin-top: 27px;
   }
 
-  .nav-links a {
-    font-size: 0.72rem;
+  .artist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Keep genre tags compact */
-  .genres {
-    gap: 0.5rem;
+  .artist-grid li:nth-child(odd) {
+    border-left: 0;
   }
 
-  .genre {
-    padding: 0.48rem 0.72rem;
-
-    font-size: 0.72rem;
+  .artist-grid li:nth-child(even) {
+    border-left: 1px solid #333;
+    padding-left: 12px;
   }
 
-  /* Preserve two-column artist grid on phones */
-  .artists {
-    grid-template-columns: 1fr 1fr;
+  .artist-grid li:nth-child(n+3) {
+    border-top: 1px solid #333;
   }
-
-  .artist,
-  .artist + .artist {
-    min-height: 95px;
-
-    padding: 1.2rem 1rem;
-  }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =======================================================
-     NAVIGATION
-     ======================================================= -->
-
 <header class="site-header">
-
-  <div class="container nav">
-
-    <a
-      class="nav-name"
-      href="https://nicholasvest.com/"
-    >
-      Nicholas A. Vest
+  <div class="container header-inner">
+    <a class="wordmark" href="https://nicholasvest.com/">
+      NICHOLAS A. VEST
     </a>
 
-
-    <ul class="nav-links">
-
-      <li>
-        <a href="https://nicholasvest.com/research.html">
-          Research
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV ↗
-        </a>
-      </li>
-
-      <li>
-        <a
-          class="active"
-          href="https://nicholasvest.com/personal.html"
-        >
-          Personal
-        </a>
-      </li>
-
-    </ul>
-
+    <nav class="nav" aria-label="Main navigation">
+      <a href="https://nicholasvest.com/research.html">Research</a>
+      <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
+      <a href="https://nicholasvest.com/personal.html" aria-current="page">
+        Personal
+      </a>
+    </nav>
   </div>
-
 </header>
 
+<main class="container">
 
-<main>
+  <!-- Introduction -->
 
-
-<!-- =======================================================
-     INTRO
-     ======================================================= -->
-
-<section class="intro">
-
-  <div class="container">
-
-    <div class="eyebrow">
-      Outside the Lab
-    </div>
-
-    <h1>
-      When I'm not working...
-    </h1>
-
-    <p class="intro-text">
-      I'm usually doing something active, looking for somewhere
-      new to explore, listening to music, or hanging out with Mila.
+  <header class="intro">
+    <h1>Outside the lab</h1>
+    <p>
+      When I'm not working, I'm usually doing something active,
+      looking for somewhere new to explore, listening to music,
+      or hanging out with Mila.
     </p>
+  </header>
 
-  </div>
+  <!-- Staying Active -->
 
-</section>
+  <section class="section" aria-labelledby="active-title">
 
+    <img
+      class="running"
+      src="personal_running.jpg"
+      alt="Running with friends outdoors"
+      width="1600"
+      height="1200"
+    >
 
+    <div class="section-copy">
+      <p class="eyebrow">Staying active</p>
 
-<!-- =======================================================
-     ACTIVE
-     ======================================================= -->
-
-<section class="active-section">
-
-  <div class="container active-grid">
-
-
-    <div class="active-photo">
-
-      <img
-        src="runclub.JPG"
-        alt="Nick with friends at run club"
-      >
-
-    </div>
-
-
-    <div class="active-copy">
-
-      <div class="small-label">
-        Staying Active
-      </div>
-
-      <h2>
-        I like to keep moving.
-      </h2>
+      <h2 id="active-title">I like to keep moving.</h2>
 
       <p>
         Run clubs and F45 are regular parts of my week.
@@ -874,309 +483,111 @@ footer {
         ways to explore a place are running through it with
         other people or finding a new trail with Mila.
       </p>
-
     </div>
+  </section>
 
+  <!-- Mila -->
 
-  </div>
+  <section class="section" aria-labelledby="mila-title">
 
-</section>
+    <img
+      class="mila"
+      src="personal_mila.jpg"
+      alt="Mila, a black-and-white border collie"
+      width="970"
+      height="1290"
+      loading="lazy"
+    >
 
+    <div class="section-copy">
+      <p class="eyebrow">Mila</p>
 
-
-<!-- =======================================================
-     MILA
-     ======================================================= -->
-
-<section class="mila-section">
-
-  <div class="container mila-grid">
-
-
-    <div class="mila-photo">
-
-      <img
-        src="mila.png"
-        alt="Mila, Nick's border collie"
-      >
-
-    </div>
-
-
-    <div class="mila-copy">
-
-      <div class="small-label">
-        Mila
-      </div>
-
-      <h2>
-        My favorite adventure buddy.
-      </h2>
+      <h2 id="mila-title">My favorite adventure buddy.</h2>
 
       <p>
-        Mila is my border collie and has been with me through
-        graduate school, moves, and plenty of adventures in
-        between. She's happiest outside exploring, which works
-        out pretty well for both of us.
+        Mila is my border collie and has been with me
+        through graduate school, moves, and plenty of
+        adventures in between. She's happiest outside
+        exploring, which works out pretty well for
+        both of us.
       </p>
-
     </div>
+  </section>
 
+  <!-- Music -->
 
-  </div>
+  <section class="music" aria-labelledby="music-title">
 
-</section>
+    <div class="music-inner">
 
+      <div class="music-accent" aria-hidden="true"></div>
 
+      <p class="eyebrow">On repeat</p>
 
-<!-- =======================================================
-     MUSIC
-     ======================================================= -->
+      <div class="music-intro">
 
-<section class="music-section">
-
-  <div class="container music-inner">
-
-
-    <div class="music-top">
-
-
-      <div>
-
-        <div class="music-rule"></div>
-
-        <div class="music-label">
-          On Repeat
-        </div>
-
-        <h2 class="music-title">
+        <h2 id="music-title">
           Always listening<br>
           to something.
         </h2>
 
+        <p class="music-description">
+          My taste is rooted in pop, especially art pop and
+          hyperpop, but it wanders pretty freely into
+          R&amp;B, indie, psychedelic music, and country.
+          I'm always looking for new artists and a good
+          live show.
+        </p>
+
       </div>
 
+      <ul class="genre-list" aria-label="Favorite music genres">
+        <li>Pop</li>
+        <li>Art Pop</li>
+        <li>Hyperpop</li>
+        <li>R&amp;B</li>
+        <li>Indie</li>
+        <li>Neo-Psychedelic</li>
+        <li>Country</li>
+      </ul>
 
-      <p class="music-copy">
-        My taste is rooted in pop, especially art pop and
-        hyperpop, but it wanders pretty freely into R&amp;B,
-        indie, psychedelic music, and country. I'm always
-        looking for new artists and a good live show.
-      </p>
-
-
-    </div>
-
-
-
-    <!-- GENRES -->
-
-    <div class="genres">
-
-      <span class="genre primary">
-        Pop
-      </span>
-
-      <span class="genre primary">
-        Art Pop
-      </span>
-
-      <span class="genre">
-        Hyperpop
-      </span>
-
-      <span class="genre">
-        R&amp;B
-      </span>
-
-      <span class="genre">
-        Indie
-      </span>
-
-      <span class="genre">
-        Neo-Psychedelic
-      </span>
-
-      <span class="genre">
-        Country
-      </span>
-
-    </div>
-
-
-
-    <!-- FAVORITE ARTISTS -->
-
-    <div class="artists">
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          01
-        </div>
-
-        <div class="artist-name">
+      <ol class="artist-grid" aria-label="Artists on repeat">
+        <li>
+          <span class="number">01</span>
           Charli xcx
-        </div>
-
-      </div>
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          02
-        </div>
-
-        <div class="artist-name">
+        </li>
+        <li>
+          <span class="number">02</span>
           Kacey Musgraves
-        </div>
-
-      </div>
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          03
-        </div>
-
-        <div class="artist-name">
+        </li>
+        <li>
+          <span class="number">03</span>
           Ariana Grande
-        </div>
-
-      </div>
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          04
-        </div>
-
-        <div class="artist-name">
+        </li>
+        <li>
+          <span class="number">04</span>
           Tove Lo
-        </div>
-
-      </div>
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          05
-        </div>
-
-        <div class="artist-name">
+        </li>
+        <li>
+          <span class="number">05</span>
           SZA
-        </div>
-
-      </div>
-
-
-      <div class="artist">
-
-        <div class="artist-number">
-          06
-        </div>
-
-        <div class="artist-name">
+        </li>
+        <li>
+          <span class="number">06</span>
           Carly Rae Jepsen
-        </div>
-
-      </div>
-
+        </li>
+      </ol>
 
     </div>
-
-
-  </div>
-
-</section>
-
+  </section>
 
 </main>
 
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
-
 <footer>
-
   <div class="container footer-inner">
-
-
-    <div>
-
-      <div class="footer-name">
-        Nicholas A. Vest
-      </div>
-
-      <div class="footer-description">
-        Mathematical Cognition · Cognitive Development · Learning Sciences
-      </div>
-
-    </div>
-
-
-    <ul class="footer-links">
-
-      <li>
-        <a href="mailto:vestnicholas@ufl.edu">
-          Email
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
-          target="_blank"
-          rel="noopener"
-        >
-          Scholar
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://github.com/n-vest"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://www.linkedin.com/in/nicholas-vest/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV
-        </a>
-      </li>
-
-    </ul>
-
-
+    <span class="copyright">© Nicholas A. Vest</span>
   </div>
-
 </footer>
-
 
 </body>
 </html>
