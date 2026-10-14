@@ -1,1374 +1,300 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Research by Nicholas A. Vest on mathematical cognition, representations, learning, and human-AI interaction.">
 <title>Research | Nicholas A. Vest</title>
-
-<meta
-  name="description"
-  content="Research by Nicholas A. Vest on mathematical cognition, representation, learning, and human-AI interaction."
->
-
-<meta name="theme-color" content="#fbfbfa">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --ink: #111315;
-  --ink-mid: #41464b;
-  --ink-soft: #73787d;
-
-  --paper: #fbfbfa;
-  --rule: #dededb;
-
-  --abstract: #56863b;
-  --representation: #7334a6;
-  --ai: #637f9e;
-
-  --max: 1380px;
-  --gutter: clamp(1.25rem, 3vw, 2.75rem);
-
-  --sans: "Inter", -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
+  --ink: #202124;
+  --body: #35383b;
+  --muted: #686d71;
+  --line: #e8e8e8;
+  --width: 940px;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { background: #fff; scroll-behavior: smooth; }
 body {
-  background: var(--paper);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
   color: var(--ink);
-
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.6;
-
+  font: 400 15px/1.65 Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-a:hover {
-  color: var(--ink-soft);
-}
-
-.container {
-  width: 100%;
-  max-width: var(--max);
-
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.site-header {
-  border-bottom: 1px solid var(--rule);
-}
-
-.nav {
-  min-height: 78px;
-
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #555; }
+a:focus-visible { outline: 2px solid #222; outline-offset: 4px; }
+.container { width: min(calc(100% - 56px), var(--width)); margin-inline: auto; }
+.site-header { border-bottom: 1px solid var(--line); }
+.header-inner {
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 2rem;
+  gap: 20px;
 }
-
-.nav-name {
-  font-size: 0.87rem;
+.wordmark {
+  font-size: 12px;
   font-weight: 700;
-
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-
+  letter-spacing: .095em;
   text-decoration: none;
+  white-space: nowrap;
 }
-
-.nav-name:hover {
-  color: var(--ink);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--ink);
-}
-
-
-/* =========================================================
-   PAGE INTRO
-   ========================================================= */
-
-.page-hero {
-  padding-block: clamp(4.5rem, 7vw, 6.5rem);
-}
-
-.eyebrow {
-  margin-bottom: 1.2rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.75rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.page-hero h1 {
-  max-width: 1050px;
-
-  font-size: clamp(3.2rem, 5.5vw, 5.4rem);
-  line-height: 1;
-
-  letter-spacing: -0.055em;
-  font-weight: 600;
-}
-
-.page-intro {
-  max-width: 850px;
-
-  margin-top: 2rem;
-
-  color: var(--ink-mid);
-
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   RESEARCH MAP
-   ========================================================= */
-
-.research-map {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  margin-top: 4rem;
-
-  border-top: 1px solid var(--rule);
-}
-
-.map-item {
-  position: relative;
-
-  padding: 1.75rem 2.25rem 1.75rem 0;
-
-  text-decoration: none;
-}
-
-.map-item + .map-item {
-  padding-left: 2.25rem;
-
-  border-left: 1px solid var(--rule);
-}
-
-.map-item::before {
-  content: "";
-
-  position: absolute;
-
-  top: -2px;
-  left: 0;
-
-  width: 42px;
-  height: 3px;
-
-  background: var(--accent);
-}
-
-.map-number {
-  margin-bottom: 1.1rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.73rem;
-  font-weight: 600;
-}
-
-.map-title {
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  line-height: 1.3;
-
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
-.map-abstract {
-  --accent: var(--abstract);
-}
-
-.map-representation {
-  --accent: var(--representation);
-}
-
-.map-ai {
-  --accent: var(--ai);
-}
-
-
-/* =========================================================
-   RESEARCH SECTIONS
-   ========================================================= */
-
+.nav { display: flex; gap: 27px; }
+.nav a { font-size: 13px; font-weight: 500; text-decoration: none; }
+main { flex: 1 0 auto; padding-block: 24px 42px; }
 .research-section {
-  padding-block: clamp(4.5rem, 7vw, 6.5rem);
-
-  border-top: 1px solid var(--rule);
-
-  scroll-margin-top: 2rem;
-}
-
-.research-grid {
   display: grid;
-
-  grid-template-columns:
-    minmax(180px, 0.28fr)
-    minmax(0, 1fr);
-
-  gap: clamp(3rem, 7vw, 7rem);
-
-  align-items: start;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 30px;
+  padding-block: 36px 40px;
+  border-bottom: 1px solid var(--line);
 }
-
-.research-number {
-  color: var(--accent);
-
-  font-size: 0.78rem;
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
+.research-section:first-child { padding-top: 16px; }
+.section-label { padding-top: 3px; }
+.section-number {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
 }
-
-.research-short-title {
-  max-width: 210px;
-
-  margin-top: 0.8rem;
-
-  font-size: 0.78rem;
-  font-weight: 700;
-
+.section-name {
+  margin: 8px 0 0;
+  font-size: 12px;
   line-height: 1.5;
-  letter-spacing: 0.08em;
-
+  font-weight: 700;
+  letter-spacing: .065em;
   text-transform: uppercase;
 }
-
-.research-content {
-  max-width: 920px;
+.section-body h2 {
+  margin: 0 0 13px;
+  max-width: 650px;
+  font-size: clamp(23px, 2.6vw, 30px);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -.035em;
 }
-
-.research-question {
-  max-width: 900px;
-
-  font-size: clamp(2rem, 3.3vw, 3.25rem);
-  line-height: 1.1;
-
-  letter-spacing: -0.04em;
-  font-weight: 500;
-}
-
-.research-lead {
-  max-width: 760px;
-
-  margin-top: 1.5rem;
-
-  color: var(--ink-mid);
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.abstract-section {
-  --accent: var(--abstract);
-}
-
-.representation-section {
-  --accent: var(--representation);
-}
-
-.ai-section {
-  --accent: var(--ai);
-}
-
-
-/* =========================================================
-   FOCUS AREAS
-   ========================================================= */
-
+.lead { margin: 0; color: var(--body); max-width: 680px; }
 .focus-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 2rem;
-
-  margin-top: 3rem;
-  padding-top: 1.75rem;
-
-  border-top: 1px solid var(--rule);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
 }
-
-.focus-item h3 {
-  margin-bottom: 0.6rem;
-
-  font-size: 0.93rem;
-  font-weight: 600;
-}
-
-.focus-item p {
-  color: var(--ink-mid);
-
-  font-size: 0.88rem;
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   REPRESENTATIVE WORK
-   ========================================================= */
-
-.work {
-  margin-top: 3rem;
-}
-
-.small-label {
-  margin-bottom: 0.9rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.7rem;
+.focus-item h3 { margin: 0 0 6px; font-size: 13px; font-weight: 600; }
+.focus-item p { margin: 0; color: var(--body); font-size: 12px; line-height: 1.6; }
+.work { margin-top: 26px; }
+.work-label {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 11px;
   font-weight: 700;
-
-  letter-spacing: 0.12em;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
-
 .work-item {
-  padding-block: 0.85rem;
-
-  border-top: 1px solid var(--rule);
-
-  color: var(--ink-mid);
-
-  font-size: 0.86rem;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
   line-height: 1.65;
+  color: var(--body);
 }
-
-.work-item:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-
-.work-item strong {
-  color: var(--ink);
-
-  font-weight: 600;
-}
-
-.work-item a {
-  color: var(--ink);
-
-  white-space: nowrap;
-}
-
-
-/* =========================================================
-   CTA
-   ========================================================= */
-
-.cta {
-  padding-block: 3.5rem;
-
-  border-top: 1px solid var(--rule);
-}
-
-.cta-inner {
+.work-item strong { color: var(--ink); font-weight: 600; }
+.work-item a { white-space: nowrap; }
+.closing {
   display: flex;
-
+  justify-content: space-between;
+  gap: 20px;
   align-items: center;
-  justify-content: space-between;
-
-  gap: 3rem;
+  padding-top: 28px;
 }
-
-.cta-text {
-  max-width: 650px;
-
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  line-height: 1.5;
-
-  letter-spacing: -0.015em;
+.closing p { margin: 0; font-size: 13px; color: var(--body); }
+.closing-links { display: flex; gap: 20px; white-space: nowrap; }
+.closing-links a { font-size: 13px; font-weight: 500; }
+footer { border-top: 1px solid var(--line); }
+.footer-inner { min-height: 59px; display: flex; align-items: center; }
+.copyright { font-size: 12px; color: var(--muted); }
+@media (max-width: 720px) {
+  .container { width: min(calc(100% - 40px), var(--width)); }
+  .research-section { grid-template-columns: 160px minmax(0, 1fr); gap: 22px; }
+  .focus-grid { grid-template-columns: 1fr; gap: 14px; }
 }
-
-.cta-links {
-  display: flex;
-
-  gap: 1.5rem;
-
-  white-space: nowrap;
+@media (max-width: 570px) {
+  .header-inner { min-height: 54px; gap: 10px; flex-wrap: wrap; padding-block: 12px; }
+  .nav { gap: 18px; }
+  .nav a { font-size: 12px; }
+  main { padding-block: 12px 30px; }
+  .research-section { display: block; padding-block: 28px 30px; }
+  .research-section:first-child { padding-top: 14px; }
+  .section-label { margin-bottom: 15px; }
+  .section-name { margin-top: 4px; }
+  .section-body h2 { font-size: 24px; }
+  .focus-grid { margin-top: 22px; }
+  .closing { align-items: flex-start; flex-direction: column; gap: 12px; }
 }
-
-.cta-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  border-top: 1px solid var(--rule);
-}
-
-.footer-inner {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-end;
-
-  gap: 3rem;
-
-  padding-block: 3rem;
-}
-
-.footer-name {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.footer-description {
-  margin-top: 0.25rem;
-
-  color: var(--ink-soft);
-
-  font-size: 0.85rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 1rem 1.5rem;
-
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--ink-mid);
-
-  font-size: 0.85rem;
-
-  text-decoration: none;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-  .research-map {
-    grid-template-columns: 1fr;
-  }
-
-  .map-item {
-    padding: 1.5rem 0;
-
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .map-item + .map-item {
-    padding-left: 0;
-
-    border-left: 0;
-  }
-
-  .research-grid {
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-  }
-
-  .research-short-title {
-    max-width: none;
-  }
-
-  .focus-grid {
-    grid-template-columns: 1fr;
-
-    gap: 1.5rem;
-  }
-
-}
-
-
-@media (max-width: 700px) {
-
-  .nav {
-    min-height: 68px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  /* Tighter mobile intro */
-  .page-hero {
-    padding-block: 3.5rem;
-  }
-
-  .page-hero h1 {
-    font-size: clamp(3rem, 13vw, 4.5rem);
-    line-height: 0.98;
-  }
-
-  .page-intro {
-    margin-top: 1.75rem;
-
-    font-size: 1.05rem;
-    line-height: 1.65;
-  }
-
-  /* Compact mobile research map */
-  .research-map {
-    margin-top: 3rem;
-  }
-
-  .map-item {
-    padding-block: 1.35rem;
-  }
-
-  .map-number {
-    margin-bottom: 0.55rem;
-  }
-
-  .map-title {
-    font-size: 1rem;
-  }
-
-  /* More compact research sections */
-  .research-section {
-    padding-block: 4rem;
-  }
-
-  .research-grid {
-    gap: 1.5rem;
-  }
-
-  .research-short-title {
-    margin-top: 0.45rem;
-  }
-
-  .research-question {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-    line-height: 1.08;
-  }
-
-  .research-lead {
-    margin-top: 1.25rem;
-
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .focus-grid {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-
-    gap: 1.5rem;
-  }
-
-  .focus-item + .focus-item {
-    padding-top: 1.5rem;
-
-    border-top: 1px solid var(--rule);
-  }
-
-  .work {
-    margin-top: 2.5rem;
-  }
-
-  .cta-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 1.5rem;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-}
-
-
-@media (max-width: 500px) {
-
-  /* Match homepage mobile navigation */
-  .nav {
-    min-height: 64px;
-
-    flex-direction: row;
-    align-items: center;
-
-    gap: 1rem;
-
-    padding-block: 0;
-  }
-
-  .nav-name {
-    flex-shrink: 0;
-
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-  }
-
-  .nav-links {
-    width: auto;
-
-    justify-content: flex-end;
-
-    gap: 0.75rem;
-
-    margin-left: auto;
-  }
-
-  .nav-links a {
-    font-size: 0.72rem;
-  }
-
-}
-
 </style>
 </head>
-
-
 <body>
-
-
-<!-- =======================================================
-     NAVIGATION
-     ======================================================= -->
-
 <header class="site-header">
-
-  <div class="container nav">
-
-    <a
-      class="nav-name"
-      href="https://nicholasvest.com/"
-    >
-      Nicholas A. Vest
-    </a>
-
-    <ul class="nav-links">
-
-      <li>
-        <a
-          class="active"
-          href="https://nicholasvest.com/research.html"
-        >
-          Research
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV ↗
-        </a>
-      </li>
-
-      <li>
-        <a href="https://nicholasvest.com/personal.html">
-          Personal
-        </a>
-      </li>
-
-    </ul>
-
+  <div class="container header-inner">
+    <a class="wordmark" href="https://nicholasvest.com/">NICHOLAS A. VEST</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="https://nicholasvest.com/research.html" aria-current="page">Research</a>
+      <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
+      <a href="https://nicholasvest.com/personal.html">Personal</a>
+    </nav>
   </div>
-
 </header>
 
+<main class="container">
 
-<main>
-
-
-<!-- =======================================================
-     INTRO
-     ======================================================= -->
-
-<section class="page-hero">
-
-  <div class="container">
-
-    <div class="eyebrow">
-      Research
+  <section class="research-section" id="abstract">
+    <div class="section-label">
+      <div class="section-number">01</div>
+      <h2 class="section-name">Learning &amp; Adapting Abstract Concepts</h2>
     </div>
-
-    <h1>
-      Mapping the architecture of mathematical thought.
-    </h1>
-
-    <p class="page-intro">
-      I study how learners build and adapt mathematical
-      representations, how external representations shape
-      reasoning, and how interactions with AI can reveal
-      and support mathematical learning.
-    </p>
-
-
-    <div class="research-map">
-
-
-      <a
-        class="map-item map-abstract"
-        href="#abstract"
-      >
-
-        <div class="map-number">
-          01
-        </div>
-
-        <div class="map-title">
-          Learning &amp; Adapting Abstract Concepts
-        </div>
-
-      </a>
-
-
-      <a
-        class="map-item map-representation"
-        href="#representations"
-      >
-
-        <div class="map-number">
-          02
-        </div>
-
-        <div class="map-title">
-          Encoding External Representations
-        </div>
-
-      </a>
-
-
-      <a
-        class="map-item map-ai"
-        href="#ai"
-      >
-
-        <div class="map-number">
-          03
-        </div>
-
-        <div class="map-title">
-          Human-AI Interactions
-        </div>
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     01 ABSTRACT CONCEPTS
-     ======================================================= -->
-
-<section
-  class="research-section abstract-section"
-  id="abstract"
->
-
-  <div class="container research-grid">
-
-
-    <div>
-
-      <div class="research-number">
-        01
-      </div>
-
-      <div class="research-short-title">
-        Learning &amp; Adapting Abstract Concepts
-      </div>
-
-    </div>
-
-
-    <div class="research-content">
-
-      <h2 class="research-question">
-        How do learners build and adapt representations of abstract mathematical concepts?
-      </h2>
-
-      <p class="research-lead">
-        I use zero and negative numbers as model systems for
-        studying how mathematical representations emerge across
-        development, vary across individuals and contexts, and
-        shape problem solving.
-      </p>
-
+    <div class="section-body">
+      <h2>How do learners build and adapt representations of abstract mathematical concepts?</h2>
+      <p class="lead">I use zero and negative numbers as model systems for studying how mathematical representations emerge across development, vary across individuals and contexts, and shape problem solving.</p>
 
       <div class="focus-grid">
-
         <div class="focus-item">
-
-          <h3>
-            Zero
-          </h3>
-
-          <p>
-            How learners develop a spatial conception of zero
-            as a reference point between positive and negative
-            numbers.
-          </p>
-
+          <h3>Zero</h3>
+          <p>How learners develop a spatial conception of zero as a reference point between positive and negative numbers.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Negative numbers
-          </h3>
-
-          <p>
-            How representations of negative magnitude vary
-            across development, individuals, and contexts.
-          </p>
-
+          <h3>Negative numbers</h3>
+          <p>How representations of negative magnitude vary across development, individuals, and contexts.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Flexibility
-          </h3>
-
-          <p>
-            When learners recruit different representations
-            and how those representations support mathematical
-            reasoning.
-          </p>
-
+          <h3>Flexibility</h3>
+          <p>When learners recruit different representations and how those representations support mathematical reasoning.</p>
         </div>
-
       </div>
 
-
       <div class="work">
-
-        <div class="small-label">
-          Representative Work
-        </div>
-
-
+        <div class="work-label">Representative Work</div>
         <div class="work-item">
-
-          <strong>
-            Vest &amp; Alibali (2026).
-          </strong>
-
+          <strong>Vest &amp; Alibali (2026).</strong>
           Flexibility in abstract thought: Context-dependent representations of integer magnitude.
-
           <em>Psychonomic Bulletin &amp; Review.</em>
-
-          <a
-            href="https://doi.org/10.3758/s13423-026-02977-6"
-            target="_blank"
-            rel="noopener"
-          >
-            DOI ↗
-          </a>
-
+          <a href="https://doi.org/10.3758/s13423-026-02977-6">DOI</a>
         </div>
-
-
         <div class="work-item">
-
-          <strong>
-            Vest &amp; Alibali (2024).
-          </strong>
-
-          Is zero more than nothing? Relations between
-          concepts of zero and integer understanding.
-
+          <strong>Vest &amp; Alibali (2024).</strong>
+          Is zero more than nothing? Relations between concepts of zero and integer understanding.
           <em>Journal of Experimental Child Psychology.</em>
-
-          <a
-            href="https://doi.org/10.1016/j.jecp.2024.106041"
-            target="_blank"
-            rel="noopener"
-          >
-            DOI ↗
-          </a>
-
+          <a href="https://doi.org/10.1016/j.jecp.2024.106041">DOI</a>
         </div>
-
       </div>
-
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     02 EXTERNAL REPRESENTATIONS
-     ======================================================= -->
-
-<section
-  class="research-section representation-section"
-  id="representations"
->
-
-  <div class="container research-grid">
-
-
-    <div>
-
-      <div class="research-number">
-        02
-      </div>
-
-      <div class="research-short-title">
-        Encoding External Representations
-      </div>
-
+  <section class="research-section" id="representations">
+    <div class="section-label">
+      <div class="section-number">02</div>
+      <h2 class="section-name">Encoding External Representations</h2>
     </div>
-
-
-    <div class="research-content">
-
-      <h2 class="research-question">
-        How do external representations shape mathematical reasoning?
-      </h2>
-
-      <p class="research-lead">
-        I study how patterns, diagrams, and instructional
-        representations direct learners' attention toward
-        mathematical structure and shape the strategies they use.
-      </p>
-
+    <div class="section-body">
+      <h2>How do external representations shape mathematical reasoning?</h2>
+      <p class="lead">I study how patterns, diagrams, and instructional representations direct learners' attention toward mathematical structure and shape the strategies they use.</p>
 
       <div class="focus-grid">
-
         <div class="focus-item">
-
-          <h3>
-            Patterns
-          </h3>
-
-          <p>
-            How learners identify units, regularities, and
-            systematic change in mathematical patterns.
-          </p>
-
+          <h3>Patterns</h3>
+          <p>How learners identify units, regularities, and systematic change in mathematical patterns.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Attention
-          </h3>
-
-          <p>
-            How gesture, imitation, language, and perceptual
-            cues influence what learners encode.
-          </p>
-
+          <h3>Attention</h3>
+          <p>How gesture, imitation, language, and perceptual cues influence what learners encode.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Diagrams
-          </h3>
-
-          <p>
-            How visual representations make relational
-            structure visible during mathematical problem solving.
-          </p>
-
+          <h3>Diagrams</h3>
+          <p>How visual representations make relational structure visible during mathematical problem solving.</p>
         </div>
-
       </div>
 
-
       <div class="work">
-
-        <div class="small-label">
-          Representative Work
-        </div>
-
-
+        <div class="work-label">Representative Work</div>
         <div class="work-item">
-
-          <strong>
-            Vest et al. (2025).
-          </strong>
-
-          Does focusing on the unit of change help children
-          learn growing pattern skills?
-
+          <strong>Vest et al. (2025).</strong>
+          Does focusing on the unit of change help children learn growing pattern skills?
           <em>Journal of Cognition and Development.</em>
-
-          <a
-            href="https://doi.org/10.1080/15248372.2025.2484221"
-            target="_blank"
-            rel="noopener"
-          >
-            DOI ↗
-          </a>
-
+          <a href="https://doi.org/10.1080/15248372.2025.2484221">DOI</a>
         </div>
-
-
         <div class="work-item">
-
-          <strong>
-            Vest, Fagan, &amp; Fyfe (2022).
-          </strong>
-
-          The role of gesture and mimicry for children's
-          pattern learning.
-
+          <strong>Vest, Fagan, &amp; Fyfe (2022).</strong>
+          The role of gesture and mimicry for children's pattern learning.
           <em>Cognitive Development.</em>
-
-          <a
-            href="https://doi.org/10.1016/j.cogdev.2022.101196"
-            target="_blank"
-            rel="noopener"
-          >
-            DOI ↗
-          </a>
-
+          <a href="https://doi.org/10.1016/j.cogdev.2022.101196">DOI</a>
         </div>
-
       </div>
-
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     03 HUMAN-AI INTERACTIONS
-     ======================================================= -->
-
-<section
-  class="research-section ai-section"
-  id="ai"
->
-
-  <div class="container research-grid">
-
-
-    <div>
-
-      <div class="research-number">
-        03
-      </div>
-
-      <div class="research-short-title">
-        Human-AI Interactions
-      </div>
-
+  <section class="research-section" id="ai">
+    <div class="section-label">
+      <div class="section-number">03</div>
+      <h2 class="section-name">Human-AI Interactions</h2>
     </div>
-
-
-    <div class="research-content">
-
-      <h2 class="research-question">
-        How can AI reveal and support mathematical reasoning?
-      </h2>
-
-      <p class="research-lead">
-        I study AI both as a tool for understanding learners'
-        developing knowledge and as part of the environments
-        in which mathematical learning increasingly occurs.
-      </p>
-
+    <div class="section-body">
+      <h2>How can AI reveal and support mathematical reasoning?</h2>
+      <p class="lead">I study AI both as a tool for understanding learners' developing knowledge and as part of the environments in which mathematical learning increasingly occurs.</p>
 
       <div class="focus-grid">
-
         <div class="focus-item">
-
-          <h3>
-            Measurement
-          </h3>
-
-          <p>
-            Using longitudinal student work to model developing
-            mathematical knowledge and mastery.
-          </p>
-
+          <h3>Measurement</h3>
+          <p>Using longitudinal student work to model developing mathematical knowledge and mastery.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Interaction
-          </h3>
-
-          <p>
-            Studying how students use generative AI during
-            authentic mathematics learning.
-          </p>
-
+          <h3>Interaction</h3>
+          <p>Studying how students use generative AI during authentic mathematics learning.</p>
         </div>
-
-
         <div class="focus-item">
-
-          <h3>
-            Learning analytics
-          </h3>
-
-          <p>
-            Characterizing what students ask AI to do, what
-            support AI provides, and how learners respond.
-          </p>
-
+          <h3>Learning analytics</h3>
+          <p>Characterizing what students ask AI to do, what support AI provides, and how learners respond.</p>
         </div>
-
       </div>
-
 
       <div class="work">
-
-        <div class="small-label">
-          Current Work
-        </div>
-
-
+        <div class="work-label">Current Work</div>
         <div class="work-item">
-
-          <strong>
-            Student-AI interactions in high school mathematics.
-          </strong>
-
-          Examining how students seek, interpret, and engage
-          with AI-generated mathematical support.
-
+          <strong>Student-AI interactions in high school mathematics.</strong>
+          Examining how students seek, interpret, and engage with AI-generated mathematical support.
         </div>
-
-
         <div class="work-item">
-
-          <strong>
-            Longitudinal mathematical mastery.
-          </strong>
-
-          Using AI-enabled student work and Bayesian Knowledge
-          Tracing to model developing mathematical knowledge.
-
+          <strong>Longitudinal mathematical mastery.</strong>
+          Using AI-enabled student work and Bayesian Knowledge Tracing to model developing mathematical knowledge.
         </div>
-
       </div>
-
     </div>
+  </section>
 
+  <div class="closing">
+    <p>See my CV or Google Scholar for publications, presentations, and ongoing work.</p>
+    <div class="closing-links">
+      <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
+      <a href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&amp;hl=en&amp;oi=ao">Google Scholar</a>
+    </div>
   </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     CV + SCHOLAR
-     ======================================================= -->
-
-<section class="cta">
-
-  <div class="container cta-inner">
-
-    <div class="cta-text">
-      See my CV or Google Scholar for publications,
-      presentations, and ongoing work.
-    </div>
-
-
-    <div class="cta-links">
-
-      <a
-        href="https://nicholasvest.com/cv_navest.pdf"
-        target="_blank"
-        rel="noopener"
-      >
-        CV ↗
-      </a>
-
-      <a
-        href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
-        target="_blank"
-        rel="noopener"
-      >
-        Scholar ↗
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
 </main>
 
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
-
 <footer>
-
   <div class="container footer-inner">
-
-    <div>
-
-      <div class="footer-name">
-        Nicholas A. Vest
-      </div>
-
-      <div class="footer-description">
-        Mathematical Cognition · Cognitive Development · Learning Sciences
-      </div>
-
-    </div>
-
-
-    <ul class="footer-links">
-
-      <li>
-        <a href="mailto:vestnicholas@ufl.edu">
-          Email
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://scholar.google.com/citations?user=gOyWulUAAAAJ&hl=en&oi=ao"
-          target="_blank"
-          rel="noopener"
-        >
-          Scholar
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://github.com/n-vest"
-          target="_blank"
-          rel="noopener"
-        >
-          GitHub
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://www.linkedin.com/in/nicholas-vest/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="https://nicholasvest.com/cv_navest.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          CV
-        </a>
-      </li>
-
-    </ul>
-
+    <span class="copyright">© Nicholas A. Vest</span>
   </div>
-
 </footer>
-
-
 </body>
 </html>
