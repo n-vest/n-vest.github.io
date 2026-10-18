@@ -287,7 +287,7 @@ main {
   margin: 0;
 }
 
-/* PUBLICATIONS */
+/* PUBLICATIONS AND CURRENT WORK */
 
 .work {
   margin-top: 17px;
@@ -327,6 +327,23 @@ main {
 
 .work-item a:hover {
   color: var(--accent);
+}
+
+/* PROJECT LINKS */
+
+.work-links {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.work-links a {
+  color: var(--body);
+}
+
+.work-links span {
+  margin-inline: 4px;
 }
 
 /* FOOTER */
@@ -370,13 +387,10 @@ footer {
   }
 }
 
-/* =========================================
-   IMPROVED MOBILE LAYOUT
-   ========================================= */
+/* IMPROVED MOBILE LAYOUT */
 
 @media (max-width: 570px) {
 
-  /* Header */
   .header-inner {
     min-height: 54px;
     gap: 10px;
@@ -396,12 +410,10 @@ footer {
     padding-block: 26px 34px;
   }
 
-  /* Compact research sections */
   .research-section {
     padding-block: 24px 30px;
   }
 
-  /* Reorganize mobile content */
   .research-grid {
     display: flex;
     flex-direction: column;
@@ -414,6 +426,7 @@ footer {
   }
 
   /* 1. Section label */
+
   .research-short-title {
     order: 1;
     width: 100%;
@@ -423,6 +436,7 @@ footer {
   }
 
   /* 2. Research question */
+
   .research-question {
     order: 2;
     width: 100%;
@@ -431,6 +445,7 @@ footer {
   }
 
   /* 3. Description */
+
   .research-lead {
     order: 3;
     width: 100%;
@@ -440,6 +455,7 @@ footer {
   }
 
   /* 4. Centered illustrations */
+
   .research-grid .research-illustration,
   .research-grid .research-illustration.zoomable-figure,
   .research-grid .research-illustration.ai-chat-preview {
@@ -452,17 +468,16 @@ footer {
     object-fit: contain;
   }
 
-  /* Green pattern illustration */
   .research-grid .external-illustration {
     width: min(225px, 73%);
   }
 
-  /* ChatGPT animation */
   .research-grid .ai-chat-preview {
     width: min(210px, 70%);
   }
 
   /* 5. Research themes */
+
   .focus-grid {
     order: 5;
     width: 100%;
@@ -477,7 +492,8 @@ footer {
     margin-bottom: 2px;
   }
 
-  /* 6. Publications */
+  /* 6. Publications and current work */
+
   .work {
     order: 6;
     width: 100%;
@@ -625,14 +641,17 @@ footer {
         </h2>
 
         <p class="research-lead">
-I study how symbolic and nonsymbolic representations of mathematical patterns and relationships direct learners' attention toward mathematical structure and shape the strategies they use.
+          I study how symbolic and nonsymbolic representations of mathematical
+          patterns and relationships direct learners' attention toward
+          mathematical structure and shape the strategies they use.
         </p>
 
         <div class="focus-grid">
           <div class="focus-item">
             <h3>Patterns</h3>
             <p>
-How learners identify regularities and systematic change in symbolic and nonsymbolic representations.
+              How learners identify regularities and systematic change
+              in symbolic and nonsymbolic representations.
             </p>
           </div>
 
@@ -705,7 +724,7 @@ How learners identify regularities and systematic change in symbolic and nonsymb
         <p class="research-lead">
           I study AI both as a tool for understanding learners'
           developing knowledge and as part of the environments
-          in which mathematical learning increasingly occurs.
+          in which mathematical learning occurs.
         </p>
 
         <div class="focus-grid">
@@ -738,15 +757,45 @@ How learners identify regularities and systematic change in symbolic and nonsymb
           <div class="small-label">Current Work</div>
 
           <div class="work-item">
-            <strong>Student-AI interactions in high school mathematics.</strong>
+            <strong>Student–AI interactions in high school mathematics.</strong>
             Examining how students seek, interpret, and engage
             with AI-generated mathematical support.
+
+            <div class="work-links">
+              Related coverage:
+              <a
+                href="https://www.nytimes.com/2025/05/19/technology/ai-miami-schools-google-gemini.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >The New York Times</a>
+              <span aria-hidden="true">·</span>
+              <a
+                href="https://myemail.constantcontact.com/Technically-Speaking--CS-Everyone-December-Updates.html?soid=1142144273596&amp;aid=3C0IyX_BGQM"
+                target="_blank"
+                rel="noopener noreferrer"
+              >CS Everyone newsletter</a>
+            </div>
           </div>
 
           <div class="work-item">
             <strong>Longitudinal mathematical mastery.</strong>
-            Using AI-enabled student work and Bayesian Knowledge
-            Tracing to model developing mathematical knowledge.
+            Using AI-enabled student work from
+            <a
+              href="https://www.edlight.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >EdLight</a>
+            and Bayesian Knowledge Tracing to model developing
+            mathematical knowledge.
+
+            <div class="work-links">
+              Grant announcement:
+              <a
+                href="https://digitalpromise.org/2026/06/03/new-grants-support-research-into-math-education-using-datasets-from-curriculum-associates-edlight-khan-academy-and-university-of-florida-lastinger-center-for-learning/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Digital Promise (2026)</a>
+            </div>
           </div>
         </div>
       </div>
