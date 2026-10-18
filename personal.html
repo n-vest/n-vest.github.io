@@ -314,6 +314,7 @@ footer {
 /* Tablet */
 
 @media (max-width: 720px) {
+
   .container {
     width: min(calc(100% - 40px), var(--width));
   }
@@ -352,6 +353,7 @@ footer {
 /* Mobile */
 
 @media (max-width: 570px) {
+
   .header-inner {
     min-height: 54px;
     gap: 10px;
@@ -392,6 +394,7 @@ footer {
 }
 
 @media (max-width: 420px) {
+
   .music {
     padding: 26px 18px 30px;
   }
@@ -408,8 +411,14 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /*
+   * Give every artist the same left inset.
+   * This fixes Charli xcx appearing too far left.
+   */
+
   .artist-grid li:nth-child(odd) {
     border-left: 0;
+    padding-left: 12px;
   }
 
   .artist-grid li:nth-child(even) {
@@ -421,6 +430,7 @@ footer {
     border-top: 1px solid #333;
   }
 }
+
 </style>
 </head>
 
@@ -428,17 +438,30 @@ footer {
 
 <header class="site-header">
   <div class="container header-inner">
+
     <a class="wordmark" href="https://nicholasvest.com/">
       NICHOLAS A. VEST
     </a>
 
     <nav class="nav" aria-label="Main navigation">
-      <a href="https://nicholasvest.com/research.html">Research</a>
-      <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
-      <a href="https://nicholasvest.com/personal.html" aria-current="page">
+
+      <a href="https://nicholasvest.com/research.html">
+        Research
+      </a>
+
+      <a href="https://nicholasvest.com/cv_navest.pdf">
+        CV
+      </a>
+
+      <a
+        href="https://nicholasvest.com/personal.html"
+        aria-current="page"
+      >
         Personal
       </a>
+
     </nav>
+
   </div>
 </header>
 
@@ -447,12 +470,15 @@ footer {
   <!-- Introduction -->
 
   <header class="intro">
+
     <h1>Outside the lab</h1>
+
     <p>
       When I'm not working, I'm usually doing something active,
       looking for somewhere new to explore, listening to music,
       or hanging out with Mila.
     </p>
+
   </header>
 
   <!-- Staying Active -->
@@ -468,6 +494,7 @@ footer {
     >
 
     <div class="section-copy">
+
       <p class="eyebrow">Staying active</p>
 
       <h2 id="active-title">I like to keep moving.</h2>
@@ -483,7 +510,9 @@ footer {
         ways to explore a place are running through it with
         other people or finding a new trail with Mila.
       </p>
+
     </div>
+
   </section>
 
   <!-- Mila -->
@@ -500,9 +529,12 @@ footer {
     >
 
     <div class="section-copy">
+
       <p class="eyebrow">Mila</p>
 
-      <h2 id="mila-title">My favorite adventure buddy.</h2>
+      <h2 id="mila-title">
+        My favorite adventure buddy.
+      </h2>
 
       <p>
         Mila is my border collie and has been with me
@@ -511,7 +543,9 @@ footer {
         exploring, which works out pretty well for
         both of us.
       </p>
+
     </div>
+
   </section>
 
   <!-- Music -->
@@ -520,7 +554,10 @@ footer {
 
     <div class="music-inner">
 
-      <div class="music-accent" aria-hidden="true"></div>
+      <div
+        class="music-accent"
+        aria-hidden="true"
+      ></div>
 
       <p class="eyebrow">On repeat</p>
 
@@ -541,7 +578,10 @@ footer {
 
       </div>
 
-      <ul class="genre-list" aria-label="Favorite music genres">
+      <ul
+        class="genre-list"
+        aria-label="Favorite music genres"
+      >
         <li>Pop</li>
         <li>Art Pop</li>
         <li>Hyperpop</li>
@@ -551,41 +591,56 @@ footer {
         <li>Country</li>
       </ul>
 
-      <ol class="artist-grid" aria-label="Artists on repeat">
+      <ol
+        class="artist-grid"
+        aria-label="Artists on repeat"
+      >
+
         <li>
           <span class="number">01</span>
           Charli xcx
         </li>
+
         <li>
           <span class="number">02</span>
           Kacey Musgraves
         </li>
+
         <li>
           <span class="number">03</span>
           Ariana Grande
         </li>
+
         <li>
           <span class="number">04</span>
           Tove Lo
         </li>
+
         <li>
           <span class="number">05</span>
           SZA
         </li>
+
         <li>
           <span class="number">06</span>
           Carly Rae Jepsen
         </li>
+
       </ol>
 
     </div>
+
   </section>
 
 </main>
 
 <footer>
   <div class="container footer-inner">
-    <span class="copyright">© Nicholas A. Vest</span>
+
+    <span class="copyright">
+      © Nicholas A. Vest
+    </span>
+
   </div>
 </footer>
 
