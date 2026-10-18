@@ -341,8 +341,14 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /*
+   * First item in the second row:
+   * remove both the border and inherited padding.
+   */
+
   .artist-grid li:nth-child(4) {
     border-left: 0;
+    padding-left: 0;
   }
 
   .artist-grid li:nth-child(n+4) {
@@ -393,6 +399,8 @@ footer {
   }
 }
 
+/* Narrow mobile */
+
 @media (max-width: 420px) {
 
   .music {
@@ -412,8 +420,8 @@ footer {
   }
 
   /*
-   * Give every artist the same left inset.
-   * This fixes Charli xcx appearing too far left.
+   * Reset tablet-specific first-column rules
+   * and use consistent padding for both columns.
    */
 
   .artist-grid li:nth-child(odd) {
