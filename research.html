@@ -31,13 +31,11 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   background: #fff;
   color: var(--ink);
-  font: 400 15px/1.65 Inter, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font: 400 15px/1.65 Inter, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,6 +46,7 @@ a {
 }
 
 a:hover { color: #555; }
+
 a:focus-visible {
   outline: 2px solid #222;
   outline-offset: 4px;
@@ -58,9 +57,11 @@ a:focus-visible {
   margin-inline: auto;
 }
 
-/* Header */
+/* HEADER */
 
-.site-header { border-bottom: 1px solid var(--line); }
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
 
 .header-inner {
   min-height: 52px;
@@ -78,7 +79,10 @@ a:focus-visible {
   white-space: nowrap;
 }
 
-.nav { display: flex; gap: 27px; }
+.nav {
+  display: flex;
+  gap: 27px;
+}
 
 .nav a {
   font-size: 13px;
@@ -86,7 +90,7 @@ a:focus-visible {
   text-decoration: none;
 }
 
-/* Research sections */
+/* MAIN LAYOUT */
 
 main {
   flex: 1 0 auto;
@@ -99,10 +103,17 @@ main {
   scroll-margin-top: 20px;
 }
 
-.representation-section { --accent: #168C69; }
-.ai-section { --accent: #008FC2; }
+.representation-section {
+  --accent: #168C69;
+}
 
-.research-section:first-child { padding-top: 0; }
+.ai-section {
+  --accent: #008FC2;
+}
+
+.research-section:first-child {
+  padding-top: 0;
+}
 
 .research-section + .research-section {
   border-top: 1px solid var(--line);
@@ -115,6 +126,8 @@ main {
   gap: 26px;
   align-items: start;
 }
+
+/* SECTION TITLES */
 
 .research-short-title {
   margin-top: 0;
@@ -135,7 +148,9 @@ main {
   margin: 0;
 }
 
-.research-question .neon { color: var(--accent); }
+.research-question .neon {
+  color: var(--accent);
+}
 
 .research-lead {
   margin: 12px 0 0;
@@ -143,7 +158,7 @@ main {
   line-height: 1.7;
 }
 
-/* Research illustrations */
+/* ILLUSTRATIONS */
 
 .research-illustration {
   display: block;
@@ -160,7 +175,7 @@ main {
   max-width: 100%;
 }
 
-/* Consistent alignment of illustrations */
+/* DESKTOP GRAPHIC ALIGNMENT */
 
 @media (min-width: 571px) {
   .research-short-title {
@@ -179,14 +194,14 @@ main {
   }
 
   .external-illustration {
-    width: 115% !important;
+    width: 115%;
     max-width: none;
     margin-top: 22px;
     margin-left: -7.5% !important;
   }
 }
 
-/* Hover enlargement */
+/* HOVER ENLARGEMENT */
 
 @media (hover: hover) and (min-width: 571px) {
   .research-illustration.zoomable-figure {
@@ -210,9 +225,11 @@ main {
   }
 }
 
-.zoomable-figure { cursor: zoom-in; }
+.zoomable-figure {
+  cursor: zoom-in;
+}
 
-/* Click-to-enlarge lightbox */
+/* ENLARGED IMAGE MODAL */
 
 .figure-lightbox {
   border: 1px solid #e5e5e5;
@@ -245,7 +262,7 @@ main {
   color: #444;
 }
 
-/* Research themes */
+/* RESEARCH THEMES */
 
 .focus-grid {
   display: grid;
@@ -270,9 +287,11 @@ main {
   margin: 0;
 }
 
-/* Representative work */
+/* PUBLICATIONS */
 
-.work { margin-top: 17px; }
+.work {
+  margin-top: 17px;
+}
 
 .small-label {
   font-size: 10px;
@@ -306,11 +325,15 @@ main {
   text-decoration-thickness: 1px;
 }
 
-.work-item a:hover { color: var(--accent); }
+.work-item a:hover {
+  color: var(--accent);
+}
 
-/* Footer */
+/* FOOTER */
 
-footer { border-top: 1px solid var(--line); }
+footer {
+  border-top: 1px solid var(--line);
+}
 
 .footer-inner {
   min-height: 59px;
@@ -323,7 +346,7 @@ footer { border-top: 1px solid var(--line); }
   color: var(--muted);
 }
 
-/* Responsive layout */
+/* TABLET */
 
 @media (max-width: 720px) {
   .container {
@@ -344,11 +367,16 @@ footer { border-top: 1px solid var(--line); }
 @media (max-width: 720px) and (min-width: 571px) {
   .ai-chat-preview {
     width: 100%;
-    max-width: 100%;
   }
 }
 
+/* =========================================
+   IMPROVED MOBILE LAYOUT
+   ========================================= */
+
 @media (max-width: 570px) {
+
+  /* Header */
   .header-inner {
     min-height: 54px;
     gap: 10px;
@@ -356,40 +384,114 @@ footer { border-top: 1px solid var(--line); }
     padding-block: 12px;
   }
 
-  .nav { gap: 18px; }
-  .nav a { font-size: 12px; }
+  .nav {
+    gap: 18px;
+  }
 
-  main { padding-block: 26px 34px; }
+  .nav a {
+    font-size: 12px;
+  }
 
-  .research-section { padding-block: 26px; }
-  .research-grid { display: block; }
+  main {
+    padding-block: 26px 34px;
+  }
 
+  /* Compact research sections */
+  .research-section {
+    padding-block: 24px 30px;
+  }
+
+  /* Reorganize mobile content */
+  .research-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .research-grid > div:first-child,
+  .research-content {
+    display: contents;
+  }
+
+  /* 1. Section label */
   .research-short-title {
+    order: 1;
+    width: 100%;
     max-width: none;
-    margin-top: 0;
-    margin-bottom: 13px;
+    min-height: 0;
+    margin: 0 0 11px;
   }
 
-  .research-question { font-size: 24px; }
+  /* 2. Research question */
+  .research-question {
+    order: 2;
+    width: 100%;
+    font-size: clamp(22px, 5.8vw, 25px);
+    line-height: 1.3;
+  }
 
+  /* 3. Description */
+  .research-lead {
+    order: 3;
+    width: 100%;
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  /* 4. Centered illustrations */
+  .research-grid .research-illustration,
+  .research-grid .research-illustration.zoomable-figure,
+  .research-grid .research-illustration.ai-chat-preview {
+    order: 4;
+    display: block;
+    width: min(205px, 66%);
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto 6px;
+    object-fit: contain;
+  }
+
+  /* Green pattern illustration */
+  .research-grid .external-illustration {
+    width: min(225px, 73%);
+  }
+
+  /* ChatGPT animation */
+  .research-grid .ai-chat-preview {
+    width: min(210px, 70%);
+  }
+
+  /* 5. Research themes */
   .focus-grid {
+    order: 5;
+    width: 100%;
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
+    margin-top: 17px;
+    padding-top: 15px;
   }
 
-  .work { margin-top: 20px; }
+  .focus-item h3 {
+    margin-bottom: 2px;
+  }
 
-  .research-illustration { display: none; }
+  /* 6. Publications */
+  .work {
+    order: 6;
+    width: 100%;
+    margin-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
   .research-illustration.zoomable-figure {
-    display: block;
-    width: min(230px, 85%);
-    margin: 12px 0 18px;
-  }
-
-  .ai-chat-preview {
-    width: 100%;
-    max-width: 100%;
+    transition: none;
   }
 }
 </style>
@@ -399,23 +501,24 @@ footer { border-top: 1px solid var(--line); }
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="https://nicholasvest.com/">
+    <a class="wordmark" href="index.html">
       NICHOLAS A. VEST
     </a>
+
     <nav aria-label="Main navigation" class="nav">
-      <a aria-current="page" href="https://nicholasvest.com/research.html">Research</a>
-      <a href="https://nicholasvest.com/cv_navest.pdf">CV</a>
-      <a href="https://nicholasvest.com/personal.html">Personal</a>
+      <a aria-current="page" href="research.html">Research</a>
+      <a href="cv_navest.pdf">CV</a>
+      <a href="personal.html">Personal</a>
     </nav>
   </div>
 </header>
 
-<main aria-label="Research areas" class="container">
+<main class="container" aria-label="Research areas">
 
-  <!-- ABSTRACT CONCEPTS -->
+  <!-- SECTION 1: ABSTRACT CONCEPTS -->
 
   <section class="research-section abstract-section" id="abstract">
-    <div class="container research-grid">
+    <div class="research-grid">
 
       <div>
         <div class="research-short-title">
@@ -425,9 +528,9 @@ footer { border-top: 1px solid var(--line); }
         <img
           class="research-illustration zoomable-figure"
           src="Integers_%20Lines%2C%20Circles%2C%20and%20Bars.svg"
-          alt="Three aligned representations of integers from negative three to positive three: a number line, circles varying with absolute magnitude, and signed bars."
-          decoding="async"
+          alt="Number line, circles, and signed bars representing integers from negative three to positive three."
           loading="lazy"
+          decoding="async"
           width="230"
         >
       </div>
@@ -439,34 +542,33 @@ footer { border-top: 1px solid var(--line); }
         </h2>
 
         <p class="research-lead">
-          I use zero and negative numbers as model systems for
-          studying how mathematical representations emerge across
-          development, vary across individuals and contexts, and
-          shape problem solving.
+          I use zero and negative numbers as model systems for studying
+          how mathematical representations emerge across development,
+          vary across individuals and contexts, and shape problem solving.
         </p>
 
         <div class="focus-grid">
           <div class="focus-item">
             <h3>Zero</h3>
             <p>
-              How learners develop a spatial conception of zero
-              as a reference point between positive and negative numbers.
+              How learners develop a spatial conception of zero as a
+              reference point between positive and negative numbers.
             </p>
           </div>
 
           <div class="focus-item">
             <h3>Negative numbers</h3>
             <p>
-              How representations of negative magnitude vary
-              across development, individuals, and contexts.
+              How representations of negative magnitude vary across
+              development, individuals, and contexts.
             </p>
           </div>
 
           <div class="focus-item">
             <h3>Flexibility</h3>
             <p>
-              When learners recruit different representations
-              and how those representations support mathematical reasoning.
+              When learners recruit different representations and
+              how those representations support mathematical reasoning.
             </p>
           </div>
         </div>
@@ -496,10 +598,10 @@ footer { border-top: 1px solid var(--line); }
     </div>
   </section>
 
-  <!-- EXTERNAL REPRESENTATIONS -->
+  <!-- SECTION 2: EXTERNAL REPRESENTATIONS -->
 
   <section class="research-section representation-section" id="representations">
-    <div class="container research-grid">
+    <div class="research-grid">
 
       <div>
         <div class="research-short-title">
@@ -509,9 +611,9 @@ footer { border-top: 1px solid var(--line); }
         <img
           class="research-illustration external-illustration zoomable-figure"
           src="External%20Representations%20%E2%80%94%20Research%20Illustration.svg"
-          alt="Visual mathematical patterns and arrays illustrating how external representations reveal structure."
-          decoding="async"
+          alt="Mathematical patterns and arrays illustrating how external representations make structure visible."
           loading="lazy"
+          decoding="async"
           width="230"
         >
       </div>
@@ -579,10 +681,10 @@ footer { border-top: 1px solid var(--line); }
     </div>
   </section>
 
-  <!-- HUMAN–AI INTERACTIONS -->
+  <!-- SECTION 3: HUMAN–AI INTERACTIONS -->
 
   <section class="research-section ai-section" id="ai">
-    <div class="container research-grid">
+    <div class="research-grid">
 
       <div>
         <div class="research-short-title">
@@ -592,7 +694,7 @@ footer { border-top: 1px solid var(--line); }
         <img
           class="research-illustration ai-chat-preview"
           src="slope_chatgpt_clean_header.gif"
-          alt="Animated example of a student asking ChatGPT about negative slope and receiving an explanation."
+          alt="Animated ChatGPT conversation about negative slope."
           width="230"
         >
       </div>
@@ -613,8 +715,8 @@ footer { border-top: 1px solid var(--line); }
           <div class="focus-item">
             <h3>Measurement</h3>
             <p>
-              Using longitudinal student work to model
-              developing mathematical knowledge and mastery.
+              Using longitudinal student work to model developing
+              mathematical knowledge and mastery.
             </p>
           </div>
 
@@ -639,9 +741,7 @@ footer { border-top: 1px solid var(--line); }
           <div class="small-label">Current Work</div>
 
           <div class="work-item">
-            <strong>
-              Student-AI interactions in high school mathematics.
-            </strong>
+            <strong>Student-AI interactions in high school mathematics.</strong>
             Examining how students seek, interpret, and engage
             with AI-generated mathematical support.
           </div>
@@ -664,7 +764,7 @@ footer { border-top: 1px solid var(--line); }
   </div>
 </footer>
 
-<!-- Enlarged figure dialog -->
+<!-- CLICK-TO-ENLARGE ILLUSTRATIONS -->
 
 <dialog
   class="figure-lightbox"
@@ -676,7 +776,6 @@ footer { border-top: 1px solid var(--line); }
     id="close-figure"
     aria-label="Close enlarged illustration"
   >×</button>
-
   <img id="large-figure" alt="">
 </dialog>
 
