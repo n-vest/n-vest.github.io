@@ -123,8 +123,26 @@ main {
   width: 100%;
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
-  gap: 26px;
+  gap: 42px;
   align-items: start;
+}
+
+/* SUBTLE SECTION-COLORED VERTICAL DIVIDER */
+
+.research-content {
+  position: relative;
+}
+
+.research-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -21px;
+  width: 1px;
+  background: var(--accent);
+  opacity: .45;
+  pointer-events: none;
 }
 
 /* SECTION TITLES */
@@ -370,7 +388,11 @@ footer {
 
   .research-grid {
     grid-template-columns: 160px minmax(0, 1fr);
-    gap: 20px;
+    gap: 28px;
+  }
+
+  .research-content::before {
+    left: -14px;
   }
 
   .focus-grid {
@@ -388,6 +410,7 @@ footer {
 /* MOBILE */
 
 @media (max-width: 570px) {
+
   .header-inner {
     min-height: 54px;
     gap: 10px;
@@ -411,6 +434,11 @@ footer {
     padding-block: 24px 30px;
   }
 
+  /* Hide vertical dividers on mobile */
+  .research-content::before {
+    display: none;
+  }
+
   .research-grid {
     display: flex;
     flex-direction: column;
@@ -423,7 +451,6 @@ footer {
   }
 
   /* Section label */
-
   .research-short-title {
     order: 1;
     width: 100%;
@@ -433,7 +460,6 @@ footer {
   }
 
   /* Research question */
-
   .research-question {
     order: 2;
     width: 100%;
@@ -442,7 +468,6 @@ footer {
   }
 
   /* Description */
-
   .research-lead {
     order: 3;
     width: 100%;
@@ -452,7 +477,6 @@ footer {
   }
 
   /* Illustrations */
-
   .research-grid .research-illustration,
   .research-grid .research-illustration.zoomable-figure,
   .research-grid .research-illustration.ai-chat-preview {
@@ -474,14 +498,13 @@ footer {
   }
 
   /* Research themes */
-
   .focus-grid {
     order: 5;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
-    margin-top: 17px;
+    margin-top: 20px;
     padding-top: 15px;
   }
 
@@ -490,7 +513,6 @@ footer {
   }
 
   /* Publications and current work */
-
   .work {
     order: 6;
     width: 100%;
@@ -704,7 +726,6 @@ footer {
           Human–AI Interactions
         </div>
 
-        <!-- GIF NOW SUPPORTS HOVER AND CLICK-TO-ZOOM -->
         <img
           class="research-illustration ai-chat-preview zoomable-figure"
           src="slope_chatgpt_clean_header.gif"
