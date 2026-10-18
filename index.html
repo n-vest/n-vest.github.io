@@ -290,6 +290,7 @@ footer {
 /* MOBILE */
 
 @media (max-width: 620px) {
+
   .container {
     width: min(calc(100% - 40px), var(--width));
   }
@@ -313,10 +314,18 @@ footer {
     padding-block: 28px 40px;
   }
 
+  /*
+   * Mobile order:
+   * 1. Introduction
+   * 2. Landscape portrait
+   * 3. Biography
+   * 4. Education
+   */
+
   .profile-grid {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 0;
   }
 
   .profile-left,
@@ -324,24 +333,12 @@ footer {
     display: contents;
   }
 
-  .portrait {
-    order: 1;
-    width: min(100%, 340px);
-    aspect-ratio: 305 / 370;
-  }
+  /* INTRODUCTION */
 
   .intro {
-    order: 2;
-  }
-
-  .bio {
-    order: 3;
-    font-size: 15px;
-  }
-
-  .education {
-    order: 4;
-    margin-top: 5px;
+    order: 1;
+    width: 100%;
+    margin-bottom: 25px;
   }
 
   .eyebrow {
@@ -360,6 +357,34 @@ footer {
   .social-links {
     gap: 14px;
     margin-bottom: 0;
+  }
+
+  /* LANDSCAPE PORTRAIT */
+
+  .portrait {
+    order: 2;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 3;
+    object-fit: cover;
+    object-position: center 38%;
+    margin-bottom: 26px;
+  }
+
+  /* BIOGRAPHY */
+
+  .bio {
+    order: 3;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  /* EDUCATION */
+
+  .education {
+    order: 4;
+    width: 100%;
+    margin-top: 32px;
   }
 
   .degree {
@@ -524,9 +549,9 @@ footer {
           and contribute to research projects affiliated
           with the
           <a href="https://cseveryonecenter.org/">CS Everyone Center</a>.
-        I am also a principal investigator on a project supported by the
-<a href="https://digitalpromise.org/initiative/advancing-innovative-math-solutions-aims-home/">Advancing Innovative Math Solutions (AIMS) EduData Initiative</a>,
-funded by the Gates Foundation.
+          I am also a principal investigator on a project supported by the
+          <a href="https://digitalpromise.org/initiative/advancing-innovative-math-solutions-aims-home/">Advancing Innovative Math Solutions (AIMS) EduData Initiative</a>,
+          funded by the Gates Foundation.
         </p>
 
         <p>
